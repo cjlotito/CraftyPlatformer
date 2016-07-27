@@ -103,10 +103,25 @@
 				<td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></td>
 				<td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></td>
 				<td><input id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" /></td>
+				<!--Saving Stuff-->
+				<td><label for="input-fileName">File name</label></td>
+				<td><input type="text" class="form-control" id="input-fileName" value="textFile" placeholder="Enter file name"></td>
+				<td><button id="btn-save" type="submit" class="btn btn-primary">Save to file</button></td>
 			</tr>
 		</table>
-			<textarea id="UserCode" rows="4" cols="150"></textarea>
+			<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
+			<textarea id="UserCode" class="form-control" rows="4" cols="150" placeholder="Enter text to save"></textarea>
+
 	</div>	
 	</div>
+<!--Saving Script-->
+<script>
+$('#btn-save').click(function () {
+    var text = $('#textarea').val();
+    var filename = $('#input-fileName').val();
+    var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    saveAs(blob, filename + '.txt');
+});
+</script>	
 </body>
 </html>
