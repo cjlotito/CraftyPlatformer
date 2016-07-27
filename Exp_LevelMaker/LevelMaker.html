@@ -107,13 +107,15 @@
 				<td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></td>
 				<td><input id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" /></td>
 				<!--Saving Stuff-->
+				<form role="form">
 				<td><label for="input-fileName">File name</label></td>
 				<td><input type="text" class="form-control" id="input-fileName" value="textFile" placeholder="Enter file name"></td>
 				<td><button id="btn-save" type="submit" class="btn btn-primary">Save to file</button></td>
+				</form>
 			</tr>
 		</table>
 			<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
-			<textarea id="UserCode" class="form-control" rows="4" cols="150" placeholder="Enter text to save">Spave</textarea>
+			<textarea id="UserCode" class="form-control" rows="4" cols="150" placeholder="Enter text to save"></textarea>
 
 	</div>	
 	</div>
