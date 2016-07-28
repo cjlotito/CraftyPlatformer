@@ -467,12 +467,19 @@ Game = {
 		}
 	},
 	toggleVisibility: function(id) {
-		var e = document.getElementById(id);
-		if(e.style.display == 'block') {
-			e.style.display = 'none';
+		//var e = document.getElementById(id);
+		var x = document.getElementsByClassName("example");
+		if(x[0].style.display == 'block') {
+			x[0].style.display = 'none';
 			document.getElementById("UserCode").value = "";
 		} else {
-			e.style.display = 'block';
+			x[0].style.display = 'block';
+		}
+		if(x[1].style.display == 'block') {
+			x[1].style.display = 'none';
+			document.getElementById("UserCode").value = "";
+		} else {
+			x[1].style.display = 'block';
 		}
 	},
 	on_canvas_click: function(ev) {
