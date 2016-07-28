@@ -156,7 +156,7 @@
 			<tr>
 				<!--Saving Stuff-->
 				<button id="createT">Create file</button>
-				<a download="textures.txt" id="downloadlink" style="display: none">Download</a>
+				<a download="textures.txt" id="downloadlinkT" style="display: none">Download</a>
 				<textarea id="UserCodeT" class="form-control" rows="4" cols="15" placeholder="Enter text to save"></textarea>
 
 			</tr>
@@ -303,7 +303,7 @@ var textFile = null,
   var create = document.getElementById('createT'),
     textbox = document.getElementById('UserCodeT');
   create.addEventListener('click', function () {
-    var link = document.getElementById('downloadlink');
+    var link = document.getElementById('downloadlinkT');
     link.href = makeTextFile(textbox.value);
     link.style.display = 'block';
   }, false);
