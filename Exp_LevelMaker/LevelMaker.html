@@ -24,16 +24,16 @@
 	}
     #cr-stage { 
 		/*border:2px solid white;*/
-		position: absolute;
-    		left: 0px;
+		/*position: absolute;
+    		left: 0px;*/
 		outline-color: lightblue;
 		outline-style: outset;
 		/*margin:0px auto;*/
 		color: white;
 	}
      #Swatches {
-     		position: absolute;
-    		right: 200px;
+     		/*position: absolute;
+    		right: 200px;*/
     		background-color: red;
     		font-size:10px; 
      	}
@@ -139,9 +139,9 @@ li.dropdown {
 }
 .dropdown-content a:hover {background-color: #f1f1f1}
 .show {display:block;}
-.column-left{ float: left; width: 33%; }
-.column-right{ float: right; width: 33%; }
-.column-center{ display: inline-block; width: 33%; }
+.column-left{ float: left; width: 25%; }
+.column-right{ float: right; width: 25%; }
+.column-center{ display: inline-block; width: 50%; }
     </style>
 	<title>Curtis' Level Maker</title>
 </head>
@@ -183,7 +183,7 @@ window.onclick = function(e) {
 }
 </script>
 	<div id="middle">
-	<div class="column-right" style="width:25%;>Column right
+	<div class="column-right">Column right
 	<div id="Swatches">
 		<table>
 			<tr>
@@ -256,7 +256,7 @@ window.onclick = function(e) {
   		</script>
 	</div>
 	</div>
-	<div class="column-center" style="width:50%;>Column center
+	<div class="column-center">Column center
 	<div id="cr-stage">
 		<div style="background-color:mediumpurple">
 			<table style="width:100%">
@@ -269,11 +269,11 @@ window.onclick = function(e) {
 	</div>
 	</div>
 	</div>
-	<div class="column-left" style="width:25%;>Column left
+	<div class="column-left">Column left
 	<div>
 		
 		<p></p>
-		<table align="center"style="width:60%">
+		<table align="center">
 			<tr>
 				Block Class: <select id="Class" onchange="Game.getDropdown1(this)">
 					<option>Building Block 1x1</option>
@@ -330,7 +330,7 @@ window.onclick = function(e) {
 			</tr>
 		</table>
 	<div id="debug" align="center" class="styled-select" style="display: none">
-		<table style="width:50%">
+		<table >
 			<tr>
 				<td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></td>
 				<td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></td>
