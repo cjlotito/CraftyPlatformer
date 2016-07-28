@@ -253,7 +253,9 @@
 				<td><input type="text" class="form-control" id="input-fileName" value="textFile" placeholder="Enter file name"></td>
 				<td><button name="UserCode" id="btn-save" type="submit" class="btn btn-primary">Save to file</button></td>
 				</form>
-				<textarea id="textbox">Type something here</textarea> <button id="create">Create file</button> <a download="info.txt" id="downloadlink" style="display: none">Download</a>
+				<textarea id="textbox">Type something here</textarea> 
+				<button id="create">Create file</button> 
+				<a download="levels.txt" id="downloadlink" style="display: none">Download</a>
 			</tr>
 		</table>
 			<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
@@ -273,7 +275,7 @@ $('#btn-save').click(function () {
 });
 </script>
 <script>
-	(function () {
+(function () {
 var textFile = null,
   makeTextFile = function (text) {
     var data = new Blob([text], {type: 'text/plain'});
@@ -286,7 +288,7 @@ var textFile = null,
     return textFile;
   };
   var create = document.getElementById('create'),
-    textbox = document.getElementById('textbox');
+    textbox = document.getElementById('UserCode');
   create.addEventListener('click', function () {
     var link = document.getElementById('downloadlink');
     link.href = makeTextFile(textbox.value);
