@@ -253,6 +253,7 @@
 				<td><input type="text" class="form-control" id="input-fileName" value="textFile" placeholder="Enter file name"></td>
 				<td><button name="UserCode" id="btn-save" type="submit" class="btn btn-primary">Save to file</button></td>
 				</form>
+				<textarea id="textbox">Type something here</textarea> <button id="create">Create file</button> <a download="info.txt" id="downloadlink" style="display: none">Download</a>
 			</tr>
 		</table>
 			<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
@@ -270,6 +271,28 @@ $('#btn-save').click(function () {
     var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
     saveAs(blob, filename + '.txt');
 });
-</script>	
+</script>
+<script>
+	(function () {
+var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: 'text/plain'});
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+    textFile = window.URL.createObjectURL(data);
+    return textFile;
+  };
+  var create = document.getElementById('create'),
+    textbox = document.getElementById('textbox');
+  create.addEventListener('click', function () {
+    var link = document.getElementById('downloadlink');
+    link.href = makeTextFile(textbox.value);
+    link.style.display = 'block';
+  }, false);
+})();
+</script>
 </body>
 </html>
