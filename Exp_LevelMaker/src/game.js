@@ -468,19 +468,22 @@ Game = {
 	},
 	toggleVisibility: function(id) {
 		//var e = document.getElementById(id);
+		//if(e.style.display == 'block') {
+		//	e.style.display = 'none';
+		//	document.getElementById("UserCode").value = "";
+		//} else {
+		//	e.style.display = 'block';
+		//}
 		var x = document.getElementsByClassName("debug");
-		if(x[0].style.display == 'block') {
-			x[0].style.display = 'none';
-			document.getElementById("UserCode").value = "";
-		} else {
-			x[0].style.display = 'block';
-		}
-		if(x[1].style.display == 'block') {
-			x[1].style.display = 'none';
-			document.getElementById("UserCode").value = "";
-		} else {
-			x[1].style.display = 'block';
-		}
+		var i;
+    		for (i = 0; i < x.length; i++) {
+        		if(x[i].style.display == 'block') {
+				x[i].style.display = 'none';
+				document.getElementById("UserCode").value = "";
+			} else {
+				x[i].style.display = 'block';
+			}
+    		}
 	},
 	on_canvas_click: function(ev) {
 		var x = ev.clientX - Game.canvas.offsetLeft;
