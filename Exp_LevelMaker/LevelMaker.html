@@ -251,7 +251,7 @@
 				<form role="form">
 				<td><label for="input-fileName">File name</label></td>
 				<td><input type="text" class="form-control" id="input-fileName" value="textFile" placeholder="Enter file name"></td>
-				<td><button id="btn-save" type="submit" class="btn btn-primary">Save to file</button></td>
+				<td><button name="UserCode" id="btn-save" type="submit" class="btn btn-primary">Save to file</button></td>
 				</form>
 			</tr>
 		</table>
@@ -263,6 +263,8 @@
 <!--Saving Script-->
 <script>
 $('#btn-save').click(function () {
+    var stuff = this.name;
+    console.log(stuff);
     var text = $('#UserCode').val();
     var filename = $('#input-fileName').val();
     var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
