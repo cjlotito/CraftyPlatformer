@@ -9,6 +9,7 @@
 		<script src="lib/Blob.js"></script>
 		<script src="lib/FileSaver.js"></script>
 		<script>window.addEventListener('keypress', Game.specialText);</script>
+		<script>function sizer() {var w = window.innerWidth;var h = window.innerHeight;console.log(w, h);Game.start();}</script>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<style>
 			body, html { 
@@ -142,7 +143,7 @@
 		</style>
 		<title>Curtis' Level Maker</title>
 	</head>
-	<body onload="Game.start()">
+	<body onload="sizer()">
 		<div><h3>Curtis' Test Level Maker!</h3></div>
 		<div class="container">
 			<ul>
