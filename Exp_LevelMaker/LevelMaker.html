@@ -139,11 +139,18 @@ li.dropdown {
 }
 .dropdown-content a:hover {background-color: #f1f1f1}
 .show {display:block;}
+.column-left{ float: left; width: 33%; }
+.column-right{ float: right; width: 33%; }
+.column-center{ display: inline-block; width: 33%; }
     </style>
 	<title>Curtis' Level Maker</title>
 </head>
 <body onload="Game.start()">
 	<div><h3>Curtis' Test Level Maker!</h3></div>
+	<div class="container">
+   
+   
+   
 	<ul>
   <li><a class="active" href="#home">Home</a></li>
   <li><a href="#news">News</a></li>
@@ -176,6 +183,7 @@ window.onclick = function(e) {
 }
 </script>
 	<div id="middle">
+	<div class="column-right">Column right
 	<div id="Swatches">
 		<table>
 			<tr>
@@ -247,6 +255,8 @@ window.onclick = function(e) {
 		}
   		</script>
 	</div>
+	</div>
+	<div class="column-center">Column center
 	<div id="cr-stage">
 		<div style="background-color:mediumpurple">
 			<table style="width:100%">
@@ -254,9 +264,9 @@ window.onclick = function(e) {
 			</table>
 		</div>
 	</div>
-	
 	</div>
-	
+	</div>
+	<div class="column-left">Column left
 	<div>
 		<textarea id="console" rows="1" cols="100"></textarea>
 		<p></p>
@@ -329,11 +339,13 @@ window.onclick = function(e) {
 				<a download="levels.txt" id="downloadlink" style="display: none">Download</a>
 			</tr>
 		</table>
+	</div>
 			<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
 			<textarea id="UserCode" class="form-control" rows="4" cols="150" placeholder="Enter text to save"></textarea>
 
 	</div>	
 	</div>
+	
 <!--Saving Script-->
 <script>
 (function () {
@@ -379,5 +391,6 @@ var textFile = null,
   }, false);
 })();
 </script>
+</div>
 </body>
 </html>
