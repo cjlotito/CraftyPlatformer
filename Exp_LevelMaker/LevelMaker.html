@@ -16,7 +16,7 @@
 			body, html { 
 				text-align: center;
 				font-family:"Times New Roman",Times,serif; 
-				font-size:30px; 
+				font-size:15px; 
 				background-color: black; 
 				color: white;
 				/*width:100%;*/
@@ -297,36 +297,24 @@
 							</select>
 							<noscript><input type="submit" value="Submit"></noscript>
 						</tr>
-						<tr>
-							<label id="speck" style="display:none"><label id="inner"></label><input type="text" id="specialText" value='0' style="width:100px" onkeypress="Game.specialText()"></label>
-						</tr>
-						<tr></tr>
-						<tr>
-							<div id="options">
-								<td> <label><input id="colorCheck" type="checkbox" onchange="Game.colorChange(this)">Type Check</label></td>
-								<!--<td><label><input id="Paste" type="checkbox" onchange="Game.Paste(this)">Paste</label></td>-->
-								<!--<td><label><input id="clearCheck" type="checkbox" onchange="Game.clearBlock(this)">Remove</label></td>-->
-								<td><label><input id="saveMode" type="checkbox" onchange="Game.toggleVisibility('debug')">Save/Load</label></td>
-								<!--<td><label><input id="invisiblify" type="checkbox" onchange="Game.invisiBlock()">Invisible Block</label></td>-->
-								<td><input id="Undo" type="button" value="Undo" onclick="Game.undo();" /></td>
-								<td><input id="Skin" type="button" value="Skin" onclick="Game.reSkin();" /></td>
-							</div>
-						</tr>
+						<tr><label id="speck" style="display:none"><label id="inner"></label><input type="text" id="specialText" value='0' style="width:100px" onkeypress="Game.specialText()"></label></tr>
+						<div id="options">
+							<tr> <label><input id="colorCheck" type="checkbox" onchange="Game.colorChange(this)">Type Check</label></tr>
+							<!--<tr><label><input id="Paste" type="checkbox" onchange="Game.Paste(this)">Paste</label></tr>-->
+							<!--<tr><label><input id="clearCheck" type="checkbox" onchange="Game.clearBlock(this)">Remove</label></tr>-->
+							<tr><label><input id="saveMode" type="checkbox" onchange="Game.toggleVisibility('debug')">Save/Load</label></tr>
+							<!--<tr><label><input id="invisiblify" type="checkbox" onchange="Game.invisiBlock()">Invisible Block</label></tr>-->
+							<tr><input id="Undo" type="button" value="Undo" onclick="Game.undo();" /></tr>
+							<tr><input id="Skin" type="button" value="Skin" onclick="Game.reSkin();" /></tr>
+						</div>
+						<div id="debug" align="center" class="styled-select" style="display: none">
+							<tr><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></tr>
+							<tr><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></tr>
+							<tr><input id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" /></tr>
+							<tr><button id="create">Create file</button></tr>
+							<tr><a download="levels.txt" id="downloadlink" style="display: none">Download</a></tr>
+						</div>
 					</table>
-					<div id="debug" align="center" class="styled-select" style="display: none">
-					<table >
-						<tr>
-							<td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></td>
-							<td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></td>
-							<td><input id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" /></td>
-						</tr>
-						<tr>
-							<!--Saving Stuff-->
-							<button id="create">Create file</button>
-							<a download="levels.txt" id="downloadlink" style="display: none">Download</a>
-						</tr>
-					</table>
-				</div>
 				</div>	
 			</div>
 		</div>
