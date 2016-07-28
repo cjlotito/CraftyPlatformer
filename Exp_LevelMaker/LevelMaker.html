@@ -105,30 +105,50 @@
 <body onload="Game.start()">
 	<div><h3>Curtis' Test Level Maker!</h3></div>
 	<div id="Swatches">
-		<div id="orange">Orange<input type='file' onchange="readURL(this);" />
-    			<img id="blah" src="#" alt="your image" />
-  			<script> function readURL(input) {
-            			if (input.files && input.files[0]) {
-        				 var reader = new FileReader();
-                			reader.onload = function (e) {
-                    		$('#blah')
-                        		.attr('src', e.target.result)
-                        		.width(150)
-                        		.height(200);
-                			};
-                		reader.readAsDataURL(input.files[0]);
-            			}
-        		}
-  			</script>
-  		</div>
-		<div id="blue"></div>
-		<div id="red"></div>
-		<div id="yellow"></div>
-		<div id="purple"></div>
-		<div id="black"></div>
-		<div id="green"></div>
-		<div id="lightpurple"></div>
-		<div id="white"></div>
+		<table>
+			<td>
+				<div id="orange">Orange<input type='file' onchange="readURL(this);" />
+		    			<img id="blah" src="#" alt="your image" />
+		  			<script> function readURL(input) {
+		            			if (input.files && input.files[0]) {
+		        				 var reader = new FileReader();
+		                			reader.onload = function (e) {
+		                    		$('#blah')
+		                        		.attr('src', e.target.result)
+		                        		.width(150)
+		                        		.height(200);
+		                			};
+		                		reader.readAsDataURL(input.files[0]);
+		            			}
+		        		}
+		  			</script>
+		  		</div>
+		  	</td>
+		  	<td>
+				<div id="blue"></div>
+			</td>
+			<td>
+				<div id="red"></div>
+			</td>
+			<td>
+				<div id="yellow"></div>
+			</td>
+			<td>
+				<div id="purple"></div>
+			</td>
+			<td>	
+				<div id="black"></div>
+			</td>
+			<td>
+				<div id="green"></div>
+			</td>
+			<td>
+				<div id="lightpurple"></div>
+			</td>
+			<td>
+				<div id="white"></div>
+			</td>
+		</table>
 	</div>
 	<div id="cr-stage">
 		<div style="background-color:mediumpurple">
