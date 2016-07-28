@@ -1,395 +1,374 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script src="lib/crafty6.js"></script>
-  <script src="src/game.js"></script>
-  <script src="src/components.js"></script>
-  <script src="src/scenes.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="lib/Blob.js"></script>
-  <script src="lib/FileSaver.js"></script>
-  
-  <script>
-	window.addEventListener('keypress', Game.specialText);
-  </script>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <style>
-    body, html { 
-		text-align: center;
-		font-family:"Times New Roman",Times,serif; 
-		font-size:30px; 
-		background-color: black; 
-		color: white;
-		/*width:100%;*/
-	}
-    #cr-stage { 
-		/*border:2px solid white;*/
-		/*position: absolute;
-    		left: 0px;*/
-		outline-color: lightblue;
-		outline-style: outset;
-		/*margin:0px auto;*/
-		color: white;
-	}
-     #Swatches {
-     		/*position: absolute;
-    		right: 200px;*/
-    		background-color: red;
-    		font-size:10px; 
-     	}
-     #orange {
-    		width:35px;
-    		height:20px;
-    		background:orange;
-    		outline-color: white;
-    		border:2px solid white;
-     	}
-     #blue {
-    		width:35px;
-    		height:20px;
-    		background:blue;
-    		outline-color: white;
-    		border:2px solid white;
-     	}
-     #red {
-    		width:35px;
-    		height:20px;
-    		background:red;
-    		outline-color: white;
-    		border:2px solid white;
-     	}
-     #yellow {
-    		width:35px;
-    		height:20px;
-    		background:yellow;
-    		outline-color: white;
-    		border:2px solid white;
-     }
-     #purple {
-    		width:35px;
-    		height:20px;
-    		background:indigo;
-    		outline-color: white;
-    		border:2px solid white;
-     }
-     #black {
-    		width:35px;
-    		height:20px;
-    		background:black;
-    		outline-color: white;
-    		border:2px solid white;
-     }
-     #green {
-    		width:35px;
-    		height:20px;
-    		background:green;
-    		outline-color: white;
-    		border:2px solid white;
-     }
-     #lightpurple {
-    		width:35px;
-    		height:20px;
-    		background:violet;
-    		outline-color: white;
-    		border:2px solid white;
-     }
-     #white {
-    		width:35px;
-    		height:20px;
-    		background:white;
-    		outline-color: white;
-    		border:2px solid white;
-     }
-     ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-li {
-    float: left;
-}
-li a, .dropbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-}
-li.dropdown {
-    display: inline-block;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-.dropdown-content a:hover {background-color: #f1f1f1}
-.show {display:block;}
-.column-left{ float: left; width: 25%; }
-.column-right{ float: right; width: 25%; }
-.column-center{ display: inline-block; width: 50%; }
-    </style>
-	<title>Curtis' Level Maker</title>
-</head>
-<body onload="Game.start()">
-	<div><h3>Curtis' Test Level Maker!</h3></div>
-	<div class="container">
-   
-   
-   
-	<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Dropdown</a>
-    <div class="dropdown-content" id="myDropdown">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </li>
-</ul>
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var d = 0; d < dropdowns.length; d++) {
-      var openDropdown = dropdowns[d];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
-	<div class="column-right">Column right
-	<div id="Swatches">
-		<table>
-			<tr>
-				<td><div id="orange">Orange</div></td>
-				<td><input name="orangeSw" type='file' onchange="readURL(this);" /></td>
-		    		<td><img id="orangeSw" src="#" alt="your image" height="20" width="35"/></td>
-		  	</tr>
-		  	<tr>
-				<td><div id="blue">Blue</div></td>
-				<td><input name="blueSw" type='file' onchange="readURL(this);" /></td>
-		    		<td><img id="blueSw" src="#" alt="your image" height="20" width="35"/></td>
-			</tr>
-			<tr>
-				<td><div id="red">Red</div></td>
-				<td><input name="redSw" type='file' onchange="readURL(this);" /></td>
-		    		<td><img id="redSw" src="#" alt="your image" height="20" width="35"/></td>
-			</tr>
-			<tr>
-				<td><div id="yellow">Yellow</div></td>
-				<td><input name="yellowSw" type='file' onchange="readURL(this);" /></td>
-		    		<td><img id="yellowSw" src="#" alt="your image" height="20" width="35"/></td>
-			</tr>
-			<tr>
-				<td><div id="purple">Purple</div></td>
-				<td><input name="purpleSw" type='file' onchange="readURL(this);" /></td>
-		    		<td><img id="purpleSw" src="#" alt="your image" height="20" width="35"/></td>
-			</tr>
-			<tr>	
-				<td><div id="black">Black</div></td>
-				<td><input name="blackSw" type='file' onchange="readURL(this);" /></td>
-		    		<td><img id="blackSw" src="#" alt="your image" height="20" width="35"/></td>
-			</tr>
-			<tr>
-				<td><div id="green">Green</div></td>
-				<td><input name="greenSw" type='file' onchange="readURL(this);" /></td>
-		    		<td><img id="greenSw" src="#" alt="your image" height="20" width="35"/></td>
-			</tr>
-			<tr>
-				<td><div id="lightpurple">Light Purple</div></td>
-				<td><input name="lpSw" type='file' onchange="readURL(this);" /></td>
-		    		<td><img id="lpSw" src="#" alt="your image" height="20" width="35"/></td>
-			</tr>
-			<tr>
-				<td><div id="white">White</div></td>
-				<td><input name="whiteSw" type='file' onchange="readURL(this);" /></td>
-		    		<td><img id="whiteSw" src="#" alt="your image" height="20" width="35"/></td>
-			</tr>
-			<tr>
-				<!--Saving Stuff-->
-				<button id="createT">Create file</button>
-				<a download="textures.txt" id="downloadlinkT" style="display: none">Download</a>
-				<textarea id="UserCodeT" class="form-control" rows="4" cols="15" placeholder="Enter text to save"></textarea>
-
-			</tr>
-		</table>
-		<script> function readURL(input) {
-  			element = input.name
-  			console.log(element);
-    			if (input.files && input.files[0]) {
-				 var reader = new FileReader();
-        			reader.onload = function (e) {
-            		$("#" + element)
-                		.attr('src', e.target.result)
-                		.width(35)
-                		.height(20);
-        			};
-        		reader.readAsDataURL(input.files[0]);
-    			}
-		}
-  		</script>
-	</div>
-	</div>
-	<div class="column-center">Column center
-		<div id="cr-stage">
-			<div style="background-color:mediumpurple">
-				<table>
-					<tr><td>Design Area</td></tr>
-				</table>
+	<head>
+		<script src="lib/crafty6.js"></script>
+		<script src="src/game.js"></script>
+		<script src="src/components.js"></script>
+		<script src="src/scenes.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="lib/Blob.js"></script>
+		<script src="lib/FileSaver.js"></script>
+		<script>window.addEventListener('keypress', Game.specialText);</script>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<style>
+			body, html { 
+				text-align: center;
+				font-family:"Times New Roman",Times,serif; 
+				font-size:30px; 
+				background-color: black; 
+				color: white;
+				/*width:100%;*/
+			}
+			#cr-stage { 
+				/*border:2px solid white;*/
+				/*position: absolute;
+				left: 0px;*/
+				outline-color: lightblue;
+				outline-style: outset;
+				/*margin:0px auto;*/
+				color: white;
+			}
+			#Swatches {
+				/*position: absolute;
+				right: 200px;*/
+				background-color: red;
+				font-size:10px; 
+			}
+			#orange {
+				width:35px;
+				height:20px;
+				background:orange;
+				outline-color: white;
+				border:2px solid white;
+			}
+			#blue {
+				width:35px;
+				height:20px;
+				background:blue;
+				outline-color: white;
+				border:2px solid white;
+			}
+			#red {
+				width:35px;
+				height:20px;
+				background:red;
+				outline-color: white;
+				border:2px solid white;
+			}
+			#yellow {
+				width:35px;
+				height:20px;
+				background:yellow;
+				outline-color: white;
+				border:2px solid white;
+			}
+			#purple {
+				width:35px;
+				height:20px;
+				background:indigo;
+				outline-color: white;
+				border:2px solid white;
+			}
+			#black {
+				width:35px;
+				height:20px;
+				background:black;
+				outline-color: white;
+				border:2px solid white;
+			}
+			#green {
+				width:35px;
+				height:20px;
+				background:green;
+				outline-color: white;
+				border:2px solid white;
+			}
+			#lightpurple {
+				width:35px;
+				height:20px;
+				background:violet;
+				outline-color: white;
+				border:2px solid white;
+			}
+			#white {
+				width:35px;
+				height:20px;
+				background:white;
+				outline-color: white;
+				border:2px solid white;
+			}
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #333;
+			}
+			li {
+				float: left;
+			}
+			li a, .dropbtn {
+				display: inline-block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+			}
+			li a:hover, .dropdown:hover .dropbtn {
+				background-color: red;
+			}
+			li.dropdown {
+				display: inline-block;
+			}
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			}
+			.dropdown-content a {
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+			}
+			.dropdown-content a:hover {background-color: #f1f1f1}
+			.show {display:block;}
+			.column-left{ float: left; width: 25%; }
+			.column-right{ float: right; width: 25%; }
+			.column-center{ display: inline-block; width: 50%; }
+		</style>
+		<title>Curtis' Level Maker</title>
+	</head>
+	<body onload="Game.start()">
+		<div><h3>Curtis' Test Level Maker!</h3></div>
+		<div class="container">
+			<ul>
+				<li><a class="active" href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li class="dropdown">
+					<a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Dropdown</a>
+					<div class="dropdown-content" id="myDropdown">
+						<a href="#">Link 1</a>
+						<a href="#">Link 2</a>
+						<a href="#">Link 3</a>
+					</div>
+				</li>
+			</ul>
+			<div class="column-right">Column right
+				<div id="Swatches">
+					<table>
+						<tr>
+							<td><div id="orange">Orange</div></td>
+							<td><input name="orangeSw" type='file' onchange="readURL(this);" /></td>
+							<td><img id="orangeSw" src="#" alt="your image" height="20" width="35"/></td>
+						</tr>
+						<tr>
+							<td><div id="blue">Blue</div></td>
+							<td><input name="blueSw" type='file' onchange="readURL(this);" /></td>
+							<td><img id="blueSw" src="#" alt="your image" height="20" width="35"/></td>
+						</tr>
+						<tr>
+							<td><div id="red">Red</div></td>
+							<td><input name="redSw" type='file' onchange="readURL(this);" /></td>
+							<td><img id="redSw" src="#" alt="your image" height="20" width="35"/></td>
+						</tr>
+						<tr>
+							<td><div id="yellow">Yellow</div></td>
+							<td><input name="yellowSw" type='file' onchange="readURL(this);" /></td>
+							<td><img id="yellowSw" src="#" alt="your image" height="20" width="35"/></td>
+						</tr>
+						<tr>
+							<td><div id="purple">Purple</div></td>
+							<td><input name="purpleSw" type='file' onchange="readURL(this);" /></td>
+							<td><img id="purpleSw" src="#" alt="your image" height="20" width="35"/></td>
+						</tr>
+						<tr>	
+							<td><div id="black">Black</div></td>
+							<td><input name="blackSw" type='file' onchange="readURL(this);" /></td>
+							<td><img id="blackSw" src="#" alt="your image" height="20" width="35"/></td>
+						</tr>
+						<tr>
+							<td><div id="green">Green</div></td>
+							<td><input name="greenSw" type='file' onchange="readURL(this);" /></td>
+							<td><img id="greenSw" src="#" alt="your image" height="20" width="35"/></td>
+						</tr>
+						<tr>
+							<td><div id="lightpurple">Light Purple</div></td>
+							<td><input name="lpSw" type='file' onchange="readURL(this);" /></td>
+							<td><img id="lpSw" src="#" alt="your image" height="20" width="35"/></td>
+						</tr>
+						<tr>
+							<td><div id="white">White</div></td>
+							<td><input name="whiteSw" type='file' onchange="readURL(this);" /></td>
+							<td><img id="whiteSw" src="#" alt="your image" height="20" width="35"/></td>
+						</tr>
+					</table>
+					<!--Saving Stuff-->
+					<button id="createT">Create file</button>
+					<a download="textures.txt" id="downloadlinkT" style="display: none">Download</a>
+					<textarea id="UserCodeT" class="form-control" rows="4" cols="15" placeholder="Enter text to save"></textarea>
+				</div>
+			</div>
+			<div class="column-center">Column center
+				<div id="cr-stage">
+					<div style="background-color:mediumpurple">
+						<table>
+							<tr><td>Design Area</td></tr>
+						</table>
+					</div>
+				</div>
+				<textarea id="console" rows="1" cols="100"></textarea>
+				<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
+				<textarea id="UserCode" class="form-control" rows="4" cols="100" placeholder="Enter text to save"></textarea>
+			</div>
+			<div class="column-left">Column left
+				<div>
+					<p></p>
+					<table align="center">
+						<tr>
+							Block Class: <select id="Class" onchange="Game.getDropdown1(this)">
+								<option>Building Block 1x1</option>
+								<option>Pit 1x1</option>
+								<option>Check Point 1x1</option>
+								<option>Start Point 1x1</option>
+								<option>Item 1x1</option>
+								<option>Colorized 1x1</option>
+								<option>Door 1x3</option>
+								<option>Wall 1x5</option>
+								<option>Elevator 2x4</option>
+								<option>Eraser Tool 1x1</option>
+								<!--<option>TinyGround</option>
+								<option>RockTB</option>
+								<option>RockLR</option>
+								<option>Decor</option>
+								<option>Menu</option>
+								<option>Icon</option>
+								<option>Blank</option>-->
+							</select>
+							<noscript><input type="submit" value="Submit"></noscript>
+						</tr>
+						<tr>
+							<label id="attr1Drop" style="display:inline"> Attr1:</label> <select id="attr1" onchange="Game.getDropdown2(this)">
+								<option></option>
+								<option>Upside Down</option>
+							</select>
+							<noscript><input type="submit" value="Submit"></noscript>
+						</tr>
+						<tr>
+							<label id="speck" style="display:none"><label id="inner"></label><input type="text" id="specialText" value='0' style="width:100px" onkeypress="Game.specialText()"></label>
+						</tr>
+						<tr></tr>
+						<tr>
+							<div id="options">
+								<td> <label><input id="colorCheck" type="checkbox" onchange="Game.colorChange(this)">Type Check</label></td>
+								<!--<td><label><input id="Paste" type="checkbox" onchange="Game.Paste(this)">Paste</label></td>-->
+								<!--<td><label><input id="clearCheck" type="checkbox" onchange="Game.clearBlock(this)">Remove</label></td>-->
+								<td><label><input id="saveMode" type="checkbox" onchange="Game.toggleVisibility('debug')">Save/Load</label></td>
+								<!--<td><label><input id="invisiblify" type="checkbox" onchange="Game.invisiBlock()">Invisible Block</label></td>-->
+								<td><input id="Undo" type="button" value="Undo" onclick="Game.undo();" /></td>
+								<td><input id="Skin" type="button" value="Skin" onclick="Game.reSkin();" /></td>
+							</div>
+						</tr>
+					</table>
+					<div id="debug" align="center" class="styled-select" style="display: none">
+					<table >
+						<tr>
+							<td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></td>
+							<td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></td>
+							<td><input id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" /></td>
+						</tr>
+						<tr>
+							<!--Saving Stuff-->
+							<button id="create">Create file</button>
+							<a download="levels.txt" id="downloadlink" style="display: none">Download</a>
+						</tr>
+					</table>
+				</div>
+				</div>	
 			</div>
 		</div>
-		<textarea id="console" rows="1" cols="30"></textarea>
-		<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
-		<textarea id="UserCode" class="form-control" rows="4" cols="30" placeholder="Enter text to save"></textarea>
-	</div>
-	<div class="column-left">Column left
-	<div>
-		<p></p>
-		<table align="center">
-			<tr>
-				Block Class: <select id="Class" onchange="Game.getDropdown1(this)">
-					<option>Building Block 1x1</option>
-					<option>Pit 1x1</option>
-					<option>Check Point 1x1</option>
-					<option>Start Point 1x1</option>
-					<option>Item 1x1</option>
-					<option>Colorized 1x1</option>
-					<option>Door 1x3</option>
-					<option>Wall 1x5</option>
-					<option>Elevator 2x4</option>
-					<option>Eraser Tool 1x1</option>
-					<!--<option>TinyGround</option>
-					<option>RockTB</option>
-					<option>RockLR</option>
-					<option>Decor</option>
-					<option>Menu</option>
-					<option>Icon</option>
-					<option>Blank</option>-->
-				</select>
-				<noscript><input type="submit" value="Submit"></noscript>
-			</tr>
-			<tr>
-				<label id="attr1Drop" style="display:inline"> Attr1: <select id="attr1" onchange="Game.getDropdown2(this)"></label>
-					<option></option>
-					<option>Upside Down</option>
-				</select>
-				<noscript><input type="submit" value="Submit"></noscript>
-			</tr>
-				<!--Attr2:
-				<select id="attr2" onchange="Game.getDropdown3(this)">
-					<option>'0'</option>
-					<option>Left</option>
-					<option>Right</option>
-					<option>Trap</option>
-					<option>WallChange</option>
-					<option>Special</option>
-				</select>
-				<noscript><input type="submit" value="Submit"></noscript>-->
-			<tr>
-				<label id="speck" style="display:none"><label id="inner"></label><input type="text" id="specialText" value='0' style="width:100px" onkeypress="Game.specialText()"></label>
-			</tr>
-			<tr></tr>
-			<tr>
-				<div id="options">
-					<td> <label><input id="colorCheck" type="checkbox" onchange="Game.colorChange(this)">Type Check</label></td>
-					<!--<td><label><input id="Paste" type="checkbox" onchange="Game.Paste(this)">Paste</label></td>-->
-					<!--<td><label><input id="clearCheck" type="checkbox" onchange="Game.clearBlock(this)">Remove</label></td>-->
-					<td><label><input id="saveMode" type="checkbox" onchange="Game.toggleVisibility('debug')">Save/Load</label></td>
-					<!--<td><label><input id="invisiblify" type="checkbox" onchange="Game.invisiBlock()">Invisible Block</label></td>-->
-					<td><input id="Undo" type="button" value="Undo" onclick="Game.undo();" /></td>
-					<td><input id="Skin" type="button" value="Skin" onclick="Game.reSkin();" /></td>
-				</div>
-			</tr>
-		</table>
-	<div id="debug" align="center" class="styled-select" style="display: none">
-		<table >
-			<tr>
-				<td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></td>
-				<td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></td>
-				<td><input id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" /></td>
-			</tr>
-			<tr>
-				<!--Saving Stuff-->
-				<button id="create">Create file</button>
-				<a download="levels.txt" id="downloadlink" style="display: none">Download</a>
-			</tr>
-		</table>
-	</div>
-			
-
-	</div>	
-	</div>
-	
-<!--Saving Script-->
-<script>
-(function () {
-var textFile = null,
-  makeTextFile = function (text) {
-    var data = new Blob([text], {type: 'text/plain'});
-    // If we are replacing a previously generated file we need to
-    // manually revoke the object URL to avoid memory leaks.
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
-    }
-    textFile = window.URL.createObjectURL(data);
-    return textFile;
-  };
-  var create = document.getElementById('create'),
-    textbox = document.getElementById('UserCode');
-  create.addEventListener('click', function () {
-    var link = document.getElementById('downloadlink');
-    link.href = makeTextFile(textbox.value);
-    link.style.display = 'block';
-  }, false);
-})();
-</script>
-<script>
-(function () {
-var textFile = null,
-  makeTextFile = function (text) {
-    var data = new Blob([text], {type: 'text/plain'});
-    // If we are replacing a previously generated file we need to
-    // manually revoke the object URL to avoid memory leaks.
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
-    }
-    textFile = window.URL.createObjectURL(data);
-    return textFile;
-  };
-  var create = document.getElementById('createT'),
-    textbox = document.getElementById('UserCodeT');
-  create.addEventListener('click', function () {
-    var link = document.getElementById('downloadlinkT');
-    link.href = makeTextFile(textbox.value);
-    link.style.display = 'block';
-  }, false);
-})();
-</script>
-</div>
-</body>
+		<!--Saving Script-->
+		<script>
+			(function () {
+				var textFile = null,
+				makeTextFile = function (text) {
+					var data = new Blob([text], {type: 'text/plain'});
+					// If we are replacing a previously generated file we need to
+					// manually revoke the object URL to avoid memory leaks.
+					if (textFile !== null) {
+						window.URL.revokeObjectURL(textFile);
+					}
+					textFile = window.URL.createObjectURL(data);
+					return textFile;
+				};
+				var create = document.getElementById('create'),
+				textbox = document.getElementById('UserCode');
+				create.addEventListener('click', function () {
+					var link = document.getElementById('downloadlink');
+					link.href = makeTextFile(textbox.value);
+					link.style.display = 'block';
+				}, false);
+			})();
+		</script>
+		<script>
+			(function () {
+				var textFile = null,
+				makeTextFile = function (text) {
+					var data = new Blob([text], {type: 'text/plain'});
+					// If we are replacing a previously generated file we need to
+					// manually revoke the object URL to avoid memory leaks.
+					if (textFile !== null) {
+						window.URL.revokeObjectURL(textFile);
+					}
+					textFile = window.URL.createObjectURL(data);
+					return textFile;
+				};
+				var create = document.getElementById('createT'),
+				textbox = document.getElementById('UserCodeT');
+				create.addEventListener('click', function () {
+					var link = document.getElementById('downloadlinkT');
+					link.href = makeTextFile(textbox.value);
+					link.style.display = 'block';
+				}, false);
+			})();
+		</script>
+		<script>
+			/* When the user clicks on the button,
+			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+				document.getElementById("myDropdown").classList.toggle("show");
+			}
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(e) {
+				if (!e.target.matches('.dropbtn')) {
+					var dropdowns = document.getElementsByClassName("dropdown-content");
+					for (var d = 0; d < dropdowns.length; d++) {
+						var openDropdown = dropdowns[d];
+						if (openDropdown.classList.contains('show')) {
+							openDropdown.classList.remove('show');
+						}
+					}
+				}
+			}
+		</script>
+		<script> 
+			function readURL(input) {
+				element = input.name
+				console.log(element);
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function (e) {
+						$("#" + element)
+						.attr('src', e.target.result)
+						.width(35)
+						.height(20);
+					};
+					reader.readAsDataURL(input.files[0]);
+				}
+			}
+		</script>
+	</body>
 </html>
