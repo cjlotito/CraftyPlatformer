@@ -262,7 +262,7 @@
 				</div>
 				<textarea id="console" rows="1" cols="80"></textarea>
 				<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
-				<textarea id="UserCode" class="form-control" rows="4" cols="80" placeholder="Enter text to save"></textarea>
+				<textarea class="debug" id="UserCode" class="form-control" rows="4" cols="80" placeholder="Enter text to save"></textarea>
 			</div>
 			<div class="column-left" align="left">
 				<div>
@@ -312,7 +312,7 @@
 							<tr><td><input id="Skin" type="button" value="Skin" onclick="Game.reSkin();" /></td></tr>
 						</div>
 					</table>
-						<div id="debug" align="center" class="styled-select" style="display: none">
+						<div class="debug" id="debug" align="center" class="styled-select" style="display: none">
 							<table>
 								<tr><td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></tr>
 								<tr><td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></tr>
