@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" src="/js/lib/dummy.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  <style type="text/css">
+  </style>
+  <title>Creating a downloadable text-file using blobs by UselessCode</title>
+<script type='text/javascript'>//<![CDATA[
+window.onload=function(){
+(function () {
+var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: 'text/plain'});
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+    textFile = window.URL.createObjectURL(data);
+    return textFile;
+  };
+  var create = document.getElementById('create'),
+    textbox = document.getElementById('textbox');
+  create.addEventListener('click', function () {
+    var link = document.getElementById('downloadlink');
+    link.href = makeTextFile(textbox.value);
+    link.style.display = 'block';
+  }, false);
+})();
+}//]]> 
+</script>
+</head>
+<body>
+  <textarea id="textbox">Type something here</textarea> <button id="create">Create file</button> <a download="info.txt" id="downloadlink" style="display: none">Download</a>
+</body>
+</html>
