@@ -468,7 +468,7 @@ Game = {
 	},
 	toggleVisibility: function(id) {
 		//var e = document.getElementById(id);
-		var x = document.getElementsByClassName("example");
+		var x = document.getElementsByClassName("debug");
 		if(x[0].style.display == 'block') {
 			x[0].style.display = 'none';
 			document.getElementById("UserCode").value = "";
