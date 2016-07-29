@@ -169,9 +169,14 @@
 		<div class="container">
 			<ul>
 				<li><a class="active" href="#home">Home</a></li>
-				<li><a href="#news">News</a></li>
-				<li class="dropdown">
-					<a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Dropdown</a>
+				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="myFunction2()">News</a>
+					<div class="dropdown-content" id="myDropdown2">
+						<a href="#" onclick="myFunction3()">Link 4</a>
+						<a href="#">Link 5</a>
+						<a href="#">Link 6</a>
+					</div>
+				</li>
+				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Dropdown</a>
 					<div class="dropdown-content" id="myDropdown">
 						<a href="#">Link 1</a>
 						<a href="#">Link 2</a>
@@ -376,6 +381,12 @@
 				function myFunction() {
 					document.getElementById("myDropdown").classList.toggle("show");
 				}
+				function myFunction2() {
+					document.getElementById("myDropdown2").classList.toggle("show");
+				}
+				function myFunction3() {
+					console.log('hi');
+				}		
 				// Close the dropdown if the user clicks outside of it
 				window.onclick = function(e) {
 					if (!e.target.matches('.dropbtn')) {
