@@ -177,10 +177,10 @@
 						<a href="#" onclick="Game.reSkin();">Skin</a>
 						<a href="#" onclick="">Debug Mode</a>
 						<a href="#" onclick="saveMode()">Save</a>-->
-						<div class="inputWrapper">Undo<input class="fileInput hidden" type="file" name="undo" onchange="Game.undo();" /></div>
-						<div class="inputWrapper">Skin<input class="fileInput hidden" type="file" name="skin" onchange="Game.reSkin();" /></div>
-						<div class="inputWrapper">Debug Mode<input class="fileInput hidden" type="file" name="debug" onchange="" /></div>
-						<div class="inputWrapper">Save<input class="fileInput hidden" type="file" name="save" onchange="saveMode();" /></div>
+						<div class="inputWrapper" onchange="Game.undo()">Undo</div>
+						<div class="inputWrapper" onchange="Game.reSkin();">Skin</div>
+						<div class="inputWrapper" onchange="">Debug Mode</div>
+						<div class="inputWrapper" onchange="saveMode();">Save</div>
 						<div class="inputWrapper">Load<input class="fileInput hidden" type="file" name="load" onchange="readURL(this);" /></div>
 					</div>
 				</li>
