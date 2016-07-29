@@ -152,6 +152,9 @@
 				/*Using a background color, but you can use a background image to represent a button*/
 				background-color: #BCBDB6;
 			}
+			.blankWrapper {
+				font-size:15px; 
+			}
 			.fileInput {
 				cursor: pointer;
 				height: 100%;
@@ -174,7 +177,7 @@
 						<a href="#" onclick="Game.reSkin();">Skin</a>
 						<a href="#" onclick="">Debug Mode</a>
 						<a href="#" onclick="saveMode()">Save</a>
-						<div class="inputWrapper" style="height: 15px; width: 90px;">Load<input class="fileInput hidden" type="file" name="greenSw" onchange="readURL(this);" /></div>
+						<div class="blankWrapper">Load<input class="fileInput hidden" type="file" onchange="readURL(this);" /></div>
 					</div>
 				</li>
 				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button2()">News</a>
