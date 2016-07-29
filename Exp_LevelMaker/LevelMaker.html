@@ -317,9 +317,10 @@
 						<tr><td><label id="speck" style="display:none"><label id="inner"></label><input type="text" id="specialText" value='0' style="width:100px" onkeypress="Game.specialText()"></label></td></tr>
 						<div id="options">
 							<tr><td><label><input id="colorCheck" type="checkbox" onchange="Game.colorChange(this)">Type Check</label></td></tr>
+							<tr><td><a download="levels.txt" id="downloadlink" style="display: none">Download</a></td></tr>
 							<!--<tr><td><label><input id="Paste" type="checkbox" onchange="Game.Paste(this)">Paste</label></td></tr>-->
 							<!--<tr><td><label><input id="clearCheck" type="checkbox" onchange="Game.clearBlock(this)">Remove</label></td></tr>-->
-							<tr><td><label><input id="saveMode" type="checkbox" onchange="Game.toggleVisibility('debug')">Save/Load</label></td></tr>
+							<!--<tr><td><label><input id="saveMode" type="checkbox" onchange="Game.toggleVisibility('debug')">Save/Load</label></td></tr>-->
 							<!--<tr><td><label><input id="invisiblify" type="checkbox" onchange="Game.invisiBlock()">Invisible Block</label></td></tr>-->
 							<!--<tr><td><input id="Undo" type="button" value="Undo" onclick="Game.undo();" /></td></tr>-->
 							<!--<tr><td><input id="Skin" type="button" value="Skin" onclick="Game.reSkin();" /></td></tr>-->
@@ -331,7 +332,6 @@
 								<!--<tr><td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></tr>-->
 								<tr><td><input id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" /></tr>
 								<!--<tr><td><button id="create">Create file</button></tr>-->
-								<tr><td><a download="levels.txt" id="downloadlink" style="display: block">Download</a></tr>
 							</table>
 						</div>
 				</div>	
@@ -360,29 +360,6 @@
 					link.href = makeTextFile(textbox.value);
 					link.style.display = 'block';
 				}
-			</script>
-			<!--Saving Script-->
-			<script>
-				(function () {
-					var textFile = null,
-					makeTextFile = function (text) {
-						var data = new Blob([text], {type: 'text/plain'});
-						// If we are replacing a previously generated file we need to
-						// manually revoke the object URL to avoid memory leaks.
-						if (textFile !== null) {
-							window.URL.revokeObjectURL(textFile);
-						}
-						textFile = window.URL.createObjectURL(data);
-						return textFile;
-					};
-					var create = document.getElementById('create'),
-					textbox = document.getElementById('UserCode');
-					create.addEventListener('click', function () {
-						var link = document.getElementById('downloadlink');
-						link.href = makeTextFile(textbox.value);
-						link.style.display = 'block';
-					}, false);
-				})();
 			</script>
 			<script>
 				(function () {
