@@ -444,9 +444,10 @@
 						var reader = new FileReader();
 						if(fileRead=='load') {
 							reader.onload = function(e) { 
-								var contents = e.target.result;
-								console.log(contents);
+								console.log(reader.result);
+								var contents = reader.result;
 							};
+							reader.readAsText(file, encoding);
 						} else {
 							reader.onload = function (e) {
 								$("#" + fileRead)
