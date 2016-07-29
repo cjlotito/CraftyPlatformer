@@ -10,6 +10,7 @@
 		<script src="lib/Blob.js"></script>
 		<script src="lib/FileSaver.js"></script>
 		<script>window.addEventListener('keypress', Game.specialText);</script>
+		<script>var textFile = null, create = document.getElementById('create'), textbox = document.getElementById('textbox');</script>
 		<script>function sizer() {var w = window.innerWidth;var h = window.innerHeight;console.log(w, h);Game.start(w,h);}</script>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<style>
@@ -339,7 +340,6 @@
 		</div>
 		<div id="scripts">
 			<script>
-				var textFile = null, create = document.getElementById('create'), textbox = document.getElementById('textbox');
 				function saveMode() {
 					var link = document.getElementById('downloadlink');
 					link.href = makeTextFile(textbox.value);
