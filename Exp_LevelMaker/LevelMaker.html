@@ -340,11 +340,6 @@
 		<div id="scripts">
 			<script>
 				var textFile = null, textbox = document.getElementById('UserCode');
-				function saveMode() {
-					var link = document.getElementById('downloadlink');
-					link.href = makeTextFile(textbox.value);
-					link.style.display = 'block';
-				}
 				function makeTextFile(text) {
 					var data = new Blob([text], {type: 'text/plain'});
 					
@@ -357,6 +352,13 @@
 					textFile = window.URL.createObjectURL(data);
 					
 					return textFile;
+				}
+				function saveMode() {
+					alert('hi');
+					Game.printArray();
+					var link = document.getElementById('downloadlink');
+					link.href = makeTextFile(textbox.value);
+					link.style.display = 'block';
 				}
 			</script>
 			<!--Saving Script-->
