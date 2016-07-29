@@ -447,7 +447,7 @@
 								console.log(reader.result);
 								var contents = reader.result;
 							};
-							reader.readAsText(file, encoding);
+							reader.readAsText(input.files[0]);
 						} else {
 							reader.onload = function (e) {
 								$("#" + fileRead)
