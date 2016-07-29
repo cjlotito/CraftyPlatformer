@@ -338,6 +338,27 @@
 			</div>
 		</div>
 		<div id="scripts">
+			<script>
+				var textFile = null, create = document.getElementById('create'), textbox = document.getElementById('textbox');
+				function saveMode() {
+					var link = document.getElementById('downloadlink');
+					link.href = makeTextFile(textbox.value);
+					link.style.display = 'block';
+				}
+				function makeTextFile(text) {
+					var data = new Blob([text], {type: 'text/plain'});
+					
+					// If we are replacing a previously generated file we need to
+					// manually revoke the object URL to avoid memory leaks.
+					if (textFile !== null) {
+						window.URL.revokeObjectURL(textFile);
+					}
+				
+					textFile = window.URL.createObjectURL(data);
+					
+					return textFile;
+				}
+			</script>
 			<!--Saving Script-->
 			<script>
 				(function () {
@@ -362,7 +383,7 @@
 				})();
 			</script>
 			<script>
-				function saveToFile() {
+				(function () {
 					var textFile = null,
 					makeTextFile = function (text) {
 						var data = new Blob([text], {type: 'text/plain'});
@@ -381,7 +402,7 @@
 						link.href = makeTextFile(textbox.value);
 						link.style.display = 'block';
 					}, false);
-				}
+				})();
 			</script>
 			<script>
 				/* When the user clicks on the button,
