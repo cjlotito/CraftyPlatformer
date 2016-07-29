@@ -82,6 +82,7 @@ Game = {
 			setStart = false;
 			playerColor = tempColor;
 			document.getElementById("attr1Drop").style.display = 'inline';
+			document.getElementById("attr1-cell").style.display = 'inline';
 			document.getElementById("speck").style.display = 'none';
 		} else if (block == 'Pit 1x1') {
 			blockClass = 'RockCover';
@@ -92,6 +93,7 @@ Game = {
 			playerColor = tempColor;
 			document.getElementById("inner").innerHTML = ' end Stop Point: ';
 			document.getElementById("attr1Drop").style.display = 'none';
+			document.getElementById("attr1-cell").style.display = 'none';
 			document.getElementById("speck").style.display = 'inline';
 		} else if (block == 'Check Point 1x1') {
 			blockClass = 'RockCover';
@@ -101,6 +103,7 @@ Game = {
 			setStart = false;
 			playerColor = tempColor;
 			document.getElementById("attr1Drop").style.display = 'none';
+			document.getElementById("attr1-cell").style.display = 'none';
 			document.getElementById("speck").style.display = 'none';
 		} else if (block == 'Start Point 1x1') {
 			blockClass = '00';
@@ -110,11 +113,13 @@ Game = {
 			setStart = true;
 			playerColor = tempColor;
 			document.getElementById("attr1Drop").style.display = 'none';
+			document.getElementById("attr1-cell").style.display = 'none';
 			document.getElementById("speck").style.display = 'none';
 		}else if (block == 'Item 1x1') {
 			blockClass = 'RockCover';
 			attr1 = '';
 			document.getElementById("attr1Drop").style.display = 'inline';
+			document.getElementById("attr1-cell").style.display = 'inline';
 			stack = items;
 			erase = false;
 			setStart = false;
@@ -128,6 +133,7 @@ Game = {
 			setStart = false;
 			playerColor = tempColor;
 			document.getElementById("attr1Drop").style.display = 'inline';
+			document.getElementById("attr1-cell").style.display = 'inline';
 			document.getElementById("speck").style.display = 'none';
 		} else if (block == 'Wall 1x5') {
 			blockClass = 'Wall';
@@ -137,6 +143,7 @@ Game = {
 			setStart = false;
 			playerColor = tempColor;
 			document.getElementById("attr1Drop").style.display = 'none';
+			document.getElementById("attr1-cell").style.display = 'none';
 			document.getElementById("inner").innerHTML = ' colorFrom,colorTo: ';
 			document.getElementById("speck").style.display = 'inline';
 		} else if (block == 'Door 1x3') {
@@ -147,6 +154,7 @@ Game = {
 			setStart = false;
 			playerColor = tempColor;
 			document.getElementById("attr1Drop").style.display = 'none';
+			document.getElementById("attr1-cell").style.display = 'none';
 			document.getElementById("speck").style.display = 'none';
 		} else if (block == 'Elevator 2x4') {
 			blockClass = 'Elevator';
@@ -156,6 +164,7 @@ Game = {
 			setStart = false;
 			playerColor = tempColor;
 			document.getElementById("attr1Drop").style.display = 'none';
+			document.getElementById("attr1-cell").style.display = 'none';
 			//document.getElementById("inner").innerHTML = ' Start-X,Start-Y: ';
 			document.getElementById("speck").style.display = 'none';
 		} else if (block == 'Eraser Tool 1x1') {
@@ -166,6 +175,7 @@ Game = {
 			playerColor = permBackground;
 			stack = none;
 			document.getElementById("attr1Drop").style.display = 'none';
+			document.getElementById("attr1-cell").style.display = 'none';
 			document.getElementById("speck").style.display = 'none';
 		} else {
 			blockClass = block;
@@ -175,6 +185,7 @@ Game = {
 			setStart = false;
 			playerColor = tempColor;
 			document.getElementById("attr1Drop").style.display = 'none';
+			document.getElementById("attr1-cell").style.display = 'none';
 			document.getElementById("speck").style.display = 'none';
 		}
 		Game.killDrop();
