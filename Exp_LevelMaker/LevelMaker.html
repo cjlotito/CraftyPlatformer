@@ -100,6 +100,9 @@
 				outline-color: white;
 				border:2px solid white;
 			}
+			#container {
+				position: relative;
+			}
 			ul {
 				list-style-type: none;
 				margin: 0;
@@ -140,9 +143,15 @@
 			}
 			.dropdown-content a:hover {background-color: #f1f1f1}
 			.show {display:block;}
-			.column-left{ float: left; width: 20%; background-color: red; min-width: 225px;}
+			.column-left{width: 20%; background-color: red; min-width: 225px;}
 			.column-right{ float: right; width: 15% ;min-width: 150px;}
-			.column-center{ display: inline-block; width: 50%; min-width: 600px;}
+			.column-center{    
+				position:absolute;
+    				top:0;
+    				left:255px;
+    				display: inline-block; 
+    				width: 50%; 
+    				min-width: 600px;}
 			.inputWrapper {
 				overflow: hidden;
 				position: relative;
