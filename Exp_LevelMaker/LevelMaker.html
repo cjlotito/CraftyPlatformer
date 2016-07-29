@@ -168,16 +168,23 @@
 		<div><h3>Curtis' Test Level Maker!</h3></div>
 		<div class="container">
 			<ul>
-				<li><a class="active" href="#home">Home</a></li>
-				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="myFunction2()">News</a>
-					<div class="dropdown-content" id="myDropdown2">
+				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button1()">Game</a>
+					<div class="dropdown-content" id="button1">
+						<a href="#" onclick="Game.undo();">Undo</a>
+						<a href="#" onclick="Game.reSkin();">Skin</a>
+						<a href="#" onclick="">Debug Mode</a>
+						<a href="#" onclick="saveMode()">Save</a>
+					</div>
+				</li>
+				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button2()">News</a>
+					<div class="dropdown-content" id="button2">
 						<a href="#" onclick="myFunction3()">Link 4</a>
 						<a href="#">Link 5</a>
 						<a href="#">Link 6</a>
 					</div>
 				</li>
-				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Dropdown</a>
-					<div class="dropdown-content" id="myDropdown">
+				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button3()">Dropdown</a>
+					<div class="dropdown-content" id="button3">
 						<a href="#">Link 1</a>
 						<a href="#">Link 2</a>
 						<a href="#">Link 3</a>
@@ -268,6 +275,7 @@
 				<textarea id="console" rows="1" cols="80"></textarea>
 				<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
 				<textarea style="display: none" id="UserCode" class="form-control debug" rows="4" cols="80" placeholder="Enter text to save"></textarea>
+				<tr class="debug" style="display: none"><td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></tr>
 			</div>
 			<div class="column-left" align="left">
 				<div>
@@ -313,16 +321,16 @@
 							<!--<tr><td><label><input id="clearCheck" type="checkbox" onchange="Game.clearBlock(this)">Remove</label></td></tr>-->
 							<tr><td><label><input id="saveMode" type="checkbox" onchange="Game.toggleVisibility('debug')">Save/Load</label></td></tr>
 							<!--<tr><td><label><input id="invisiblify" type="checkbox" onchange="Game.invisiBlock()">Invisible Block</label></td></tr>-->
-							<tr><td><input id="Undo" type="button" value="Undo" onclick="Game.undo();" /></td></tr>
-							<tr><td><input id="Skin" type="button" value="Skin" onclick="Game.reSkin();" /></td></tr>
+							<!--<tr><td><input id="Undo" type="button" value="Undo" onclick="Game.undo();" /></td></tr>-->
+							<!--<tr><td><input id="Skin" type="button" value="Skin" onclick="Game.reSkin();" /></td></tr>-->
 						</div>
 					</table>
 						<div class="debug" id="debug" align="center" class="styled-select" style="display: none">
 							<table>
-								<tr><td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></tr>
-								<tr><td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></tr>
+								<!--<tr><td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></tr>-->
+								<!--<tr><td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></tr>-->
 								<tr><td><input id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" /></tr>
-								<tr><td><button id="create">Create file</button></tr>
+								<!--<tr><td><button id="create">Create file</button></tr>-->
 								<tr><td><a download="levels.txt" id="downloadlink" style="display: none">Download</a></tr>
 							</table>
 						</div>
@@ -354,7 +362,7 @@
 				})();
 			</script>
 			<script>
-				(function () {
+				function saveToFile() {
 					var textFile = null,
 					makeTextFile = function (text) {
 						var data = new Blob([text], {type: 'text/plain'});
@@ -373,20 +381,28 @@
 						link.href = makeTextFile(textbox.value);
 						link.style.display = 'block';
 					}, false);
-				})();
+				}
 			</script>
 			<script>
 				/* When the user clicks on the button,
 				toggle between hiding and showing the dropdown content */
-				function myFunction() {
-					document.getElementById("myDropdown").classList.toggle("show");
+				function button1() {
+					document.getElementById("button1").classList.toggle("show");
 				}
-				function myFunction2() {
-					document.getElementById("myDropdown2").classList.toggle("show");
+				function button2() {
+					document.getElementById("button2").classList.toggle("show");
+				}
+				function button3() {
+					document.getElementById("button3").classList.toggle("show");
 				}
 				function myFunction3() {
 					console.log('hi');
-				}		
+				}
+				function saveMode() {
+					console.log('bye');
+					Game.printArray();
+					saveToFile();
+				}
 				// Close the dropdown if the user clicks outside of it
 				window.onclick = function(e) {
 					if (!e.target.matches('.dropbtn')) {
