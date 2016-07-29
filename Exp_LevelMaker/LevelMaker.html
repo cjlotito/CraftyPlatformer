@@ -364,28 +364,6 @@
 					link.style.display = 'block';
 				}
 			</script>
-				<script type="text/javascript">
-				
-				function readSingleFile(e) {
-					var file = e.target.files[0];
-					if (!file) {
-						return;
-					}
-					var reader = new FileReader();
-					reader.onload = function(e) {
-						var contents = e.target.result;
-						displayContents(contents);
-					};
-					reader.readAsText(file);
-				}
-				
-				function displayContents(contents) {
-					var element = document.getElementById('file-content');
-					element.innerHTML = contents;
-				}
-				//document.getElementById('file-input')
-				//.addEventListener('change', readSingleFile, false);
-			</script>
 			<script>
 				(function () {
 					var textFile = null,
@@ -444,8 +422,9 @@
 						if(fileRead=='load') {
 							console.log('load');
 							reader.onload = function(e) { 
-								console.log(reader.result);
 								var contents = reader.result;
+								document.getElementById("UserCode").value = reader.result;
+								Game.setBackground(document.getElementById('UserCode').value);
 							};
 							reader.readAsText(input.files[0]);
 						} else {
