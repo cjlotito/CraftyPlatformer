@@ -443,7 +443,7 @@
 						console.log(input.files + ' ' + input.files[0]);
 						var reader = new FileReader();
 						if(fileRead=='load') {
-							r.onload = function(e) { 
+							reader.onload = function(e) { 
 								var contents = e.target.result;
 								console.log(contents);
 							};
