@@ -177,7 +177,7 @@
 						<a href="#" onclick="Game.reSkin();">Skin</a>
 						<a href="#" onclick="">Debug Mode</a>
 						<a href="#" onclick="saveMode()">Save</a>
-						<div class="blankWrapper">Load<input class="fileInput hidden" type="file" onchange="readURL(this);" /></div>
+						<div class="blankWrapper">Load<input class="fileInput hidden" type="file" name="load" onchange="readURL(this);" /></div>
 					</div>
 				</li>
 				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button2()">News</a>
@@ -438,17 +438,20 @@
 			</script>
 			<script> 
 				function readURL(input) {
-					element = input.name
-					console.log(element);
+					fileRead = input.name
+					console.log(fileRead);
 					if (input.files && input.files[0]) {
-						var reader = new FileReader();
-						reader.onload = function (e) {
-							$("#" + element)
-							.attr('src', e.target.result)
-							.width(35)
-							.height(20);
-						};
-						reader.readAsDataURL(input.files[0]);
+						if (fileRead=='load') {readSingleFile(input);}
+						else {
+							var reader = new FileReader();
+							reader.onload = function (e) {
+								$("#" + fileRead)
+								.attr('src', e.target.result)
+								.width(35)
+								.height(20);
+							};
+							reader.readAsDataURL(input.files[0]);
+						}
 					}
 				}
 			</script>
