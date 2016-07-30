@@ -476,6 +476,8 @@ Game = {
 			}
 			i++;
 		}
+		Game.printArray();
+		Game.setBackground(document.getElementById('UserCode').value);
 	},
 	toggleVisibility: function(id) {
 		//var e = document.getElementById(id);
