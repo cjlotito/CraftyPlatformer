@@ -179,25 +179,18 @@
 						<a href="#" onclick="saveMode()">Save</a>-->
 						<div class="inputWrapper" onchange="Game.undo()">Undo</div>
 						<div class="inputWrapper" onchange="Game.reSkin();">Skin</div>
-						<div class="inputWrapper" onchange="">Debug Mode</div>
+						<div class="inputWrapper" onchange="Game.toggleVisibility('debug');">Debug Mode</div>
 						<div class="inputWrapper" onchange="saveMode();">Save</div>
 						<div class="inputWrapper">Load<input class="fileInput hidden" type="file" name="load" onchange="readURL(this);" /></div>
 					</div>
 				</li>
-				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button2()">News</a>
+				<!--<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button2()">News</a>
 					<div class="dropdown-content" id="button2">
 						<a href="#" onclick="myFunction3()">Link 4</a>
 						<a href="#">Link 5</a>
 						<a href="#">Link 6</a>
 					</div>
-				</li>
-				<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button3()">Dropdown</a>
-					<div class="dropdown-content" id="button3">
-						<a href="#">Link 1</a>
-						<a href="#">Link 2</a>
-						<a href="#">Link 3</a>
-					</div>
-				</li>
+				</li>-->
 			</ul>
 			<div class="column-center" align="center">
 				<div id="cr-stage">
@@ -210,6 +203,7 @@
 				<textarea id="console" rows="1" cols="80"></textarea>
 				<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
 				<textarea style="display: none" id="UserCode" class="form-control debug" rows="4" cols="80" placeholder="Enter text to save"></textarea>
+				<input style="display: none" class="debug" id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" />
 				<!--<tr class="debug" style="display: none"><td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></tr>-->
 			</div>
 			<div class="column-left" align="left">
@@ -265,7 +259,7 @@
 							<table>
 								<!--<tr><td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></tr>-->
 								<!--<tr><td><input id="Display" type="button" value="Display Array" onclick="Game.printArray();" /></tr>-->
-								<tr><td><input id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" /></tr>
+								<!--<tr><td><input id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" /></tr>-->
 								<!--<tr><td><button id="create">Create file</button></tr>-->
 							</table>
 						</div>
