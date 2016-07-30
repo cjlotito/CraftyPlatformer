@@ -146,21 +146,6 @@ Crafty.c('Stop', {
 		this.requires('Actor, Color, Collision, Mouse')     
 			.attr({x: 120, y: 300, w: 35, h: 20})
 			.color('gray');
-	},
-	
-	setBackground: function () {
-		text = 'SetBackground to: ' + background;
-		document.getElementById("console").value = text;
-		setBack = "Crafty.background('" + background + "');";
-		specialList.push(setBack);
-		permBackground = background;
-		i = 0;
-		while (i < Game.map_grid.height - 1) {
-			for (j=0; j < Game.map_grid.width; j++) {
-				Crafty.e('Box').color(background).at(j, i);
-			}
-			i++;
-		}
 	}
 });
 
