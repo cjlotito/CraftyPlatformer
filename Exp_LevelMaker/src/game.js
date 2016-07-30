@@ -58,7 +58,7 @@ Game = {
 		for(i=0;i<ttl;i++) {
 			atts.remove(atts.i);
 		}
-    },
+    	},
 	popDrop: function(list) {
 		//attrSet
 		atts = document.getElementById("attr1");
@@ -446,7 +446,7 @@ Game = {
 	},**/
 	blockSetBackground: function() {
 		Game.setBackground(document.getElementById('UserCode').value);
-	}
+	},
 	setBackground: function (hold) {
 		list = JSON.parse(hold);
 		sceneList = list;
