@@ -463,7 +463,7 @@ Game = {
 						if(rockName == "START") {console.log("start here");}
 						else {
 							rockColor = playerColor;
-							Crafty.e('Box').color(rockColor)at(j,i);
+							Crafty.e('Box').color(rockColor).at(j,i);
 							make[1] = rockColor;
 						}
 					}
