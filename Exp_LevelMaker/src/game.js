@@ -493,6 +493,7 @@ Game = {
 				document.getElementById("UserCode").value = "";
 			} else {
 				x[i].style.display = 'block';
+				Game.printArray();
 			}
     		}
 	},
