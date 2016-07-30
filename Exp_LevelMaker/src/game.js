@@ -446,7 +446,30 @@ Game = {
 	},**/
 	blockSetBackground: function() {
 		Game.printArray();
-		Game.setBackground(document.getElementById('UserCode').value);
+		hold = document.getElementById('UserCode').value);
+		list = JSON.parse(hold);
+		sceneList = list;
+			i = 0;
+			while (i < sceneList.length) {
+				for (j=0; j < sceneList[i].length; j++) {
+					//[blockClass, blockColor, attr1(name), attr2(type)]
+					//Rock(  38,         10,     1,       1,      red,  'RockCover', 'Unlock', 'Right');
+					ex = j, wy = i;
+					make = sceneList[wy][ex];
+					rockClass = make[0], rockColor = make[1], rockName = make[2], rockType = make[3]; 
+					text = 'Class: ' + rockClass + ' Color: ' + rockColor + ' Name: ' + rockName + ' Type: ' + rockType;
+					document.getElementById("console").value = text;
+					if (rockClass == 00) {
+						if(rockName == "START") {console.log("start here");}
+						else {
+							rockColor = playerColor;
+							Crafty.e('Box').color(rockColor)at(j,i);
+							make[1] = rockColor;
+						}
+					}
+				}
+				i++;
+			}
 	},
 	setBackground: function (hold) {
 		list = JSON.parse(hold);
