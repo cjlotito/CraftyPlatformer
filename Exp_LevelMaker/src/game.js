@@ -461,7 +461,7 @@ Game = {
 					rockClass = make[0], rockColor = make[1], rockName = make[2], rockType = make[3]; 
 					text = 'Class: ' + rockClass + ' Color: ' + rockColor + ' Name: ' + rockName + ' Type: ' + rockType;
 					document.getElementById("console").value = text;
-					if (rockColor == 0) rockColor = 'white';
+					if (rockColor == "0") rockColor = 'white';
 					Crafty.e('Box').color(rockColor).at(j, i);
 				}
 				i++;
