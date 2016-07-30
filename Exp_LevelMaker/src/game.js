@@ -446,7 +446,7 @@ Game = {
 	},**/
 	blockSetBackground: function() {
 		Game.printArray();
-		hold = document.getElementById('UserCode').value);
+		hold = document.getElementById('UserCode').value;
 		list = JSON.parse(hold);
 		sceneList = list;
 			i = 0;
