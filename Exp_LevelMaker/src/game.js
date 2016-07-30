@@ -445,12 +445,11 @@ Game = {
 		document.getElementById("console").value = text;
 	},**/
 	setBackground: function () {
-		console.log(sceneList[0,0][0]);
 		i = 0;
 		while (i < sceneList.length) {
 			for (j=0; j < sceneList[i].length; j++) {
 				ex = j, wy = i, make = sceneList[wy][ex], rockColor = make[1]; 
-				if (rockColor == 0) {
+				if (rockColor == "0") {
 					rockColor = playerColor;
 					Crafty.e('Box').color(rockColor);
 					make[1] = rockColor;
