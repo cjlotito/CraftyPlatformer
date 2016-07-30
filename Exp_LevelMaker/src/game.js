@@ -488,6 +488,7 @@ Game = {
 		var x = document.getElementsByClassName("debug");
 		var i;
     		for (i = 0; i < x.length; i++) {
+    			console.log("element # " + i);
         		if(x[i].style.display == 'block') {
 				x[i].style.display = 'none';
 				document.getElementById("UserCode").value = "";
