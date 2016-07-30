@@ -444,7 +444,7 @@ Game = {
 		text = 'Paste is: ' + paste;
 		document.getElementById("console").value = text;
 	},**/
-	setBackground: function (hold) {
+	setBackground: function () {
 		i = 0;
 		while (i < sceneList.length) {
 			for (j=0; j < sceneList[i].length; j++) {
