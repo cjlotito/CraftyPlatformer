@@ -444,20 +444,23 @@ Game = {
 		text = 'Paste is: ' + paste;
 		document.getElementById("console").value = text;
 	},**/
+	blockSetBackground: function() {
+		Game.setBackground(document.getElementById('UserCode').value);
+	}
 	setBackground: function (hold) {
 		list = JSON.parse(hold);
 		sceneList = list;
 			i = 0;
 			while (i < sceneList.length) {
 				for (j=0; j < sceneList[i].length; j++) {
-				//[blockClass, blockColor, attr1(name), attr2(type)]
-				//Rock(  38,         10,     1,       1,      red,  'RockCover', 'Unlock', 'Right');
-				ex = j, wy = i;
-				make = sceneList[wy][ex];
-				rockClass = make[0], rockColor = make[1], rockName = make[2], rockType = make[3]; 
-				text = 'Class: ' + rockClass + ' Color: ' + rockColor + ' Name: ' + rockName + ' Type: ' + rockType;
-				document.getElementById("console").value = text;
-				if (rockColor == 0) rockColor = 'white';
+					//[blockClass, blockColor, attr1(name), attr2(type)]
+					//Rock(  38,         10,     1,       1,      red,  'RockCover', 'Unlock', 'Right');
+					ex = j, wy = i;
+					make = sceneList[wy][ex];
+					rockClass = make[0], rockColor = make[1], rockName = make[2], rockType = make[3]; 
+					text = 'Class: ' + rockClass + ' Color: ' + rockColor + ' Name: ' + rockName + ' Type: ' + rockType;
+					document.getElementById("console").value = text;
+					if (rockColor == 0) rockColor = 'white';
 					Crafty.e('Box').color(rockColor).at(j, i);
 				}
 				i++;
