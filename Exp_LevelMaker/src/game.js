@@ -445,6 +445,7 @@ Game = {
 		document.getElementById("console").value = text;
 	},**/
 	setBackground: function () {
+		console.log(sceneList[0,0][0]);
 		i = 0;
 		while (i < sceneList.length) {
 			for (j=0; j < sceneList[i].length; j++) {
