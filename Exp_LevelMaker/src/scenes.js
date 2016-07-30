@@ -31,7 +31,7 @@ Crafty.scene('game', function () {
 	});
 	
 	//Stops
-	Crafty.e('Stop').at(0,15).bind('Click', function(){this.setBackground();});
+	Crafty.e('Stop').at(0,15).bind('Click', function(){Game.setBackground(document.getElementById('UserCode').value);});
 	Crafty.e('Stop').at(99, 15);
 	
 	//HorzLine
