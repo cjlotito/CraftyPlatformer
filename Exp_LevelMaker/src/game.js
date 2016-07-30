@@ -445,6 +445,7 @@ Game = {
 		document.getElementById("console").value = text;
 	},**/
 	blockSetBackground: function() {
+		Game.printArray();
 		Game.setBackground(document.getElementById('UserCode').value);
 	},
 	setBackground: function (hold) {
