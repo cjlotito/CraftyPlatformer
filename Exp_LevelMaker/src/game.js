@@ -29,6 +29,7 @@ var redo = false;
 var tempColor = 'red';
 var erase = false;
 var setStart = false;
+var excluded = 'white';
 
 Game = {
 	map_grid: {
@@ -459,7 +460,7 @@ Game = {
 					rockClass = make[0], rockColor = make[1], rockName = make[2], rockType = make[3]; 
 					text = 'Class: ' + rockClass + ' Color: ' + rockColor + ' Name: ' + rockName + ' Type: ' + rockType;
 					document.getElementById("console").value = text;
-					if (rockClass == "00") {
+					if (rockClass == exclude) {
 						if(rockName == "START") {console.log("start here");}
 						else {
 							rockColor = playerColor;
@@ -470,6 +471,7 @@ Game = {
 				}
 				i++;
 			}
+			exclude = rockColor;
 	},
 	setBackground: function (hold) {
 		list = JSON.parse(hold);
@@ -495,7 +497,7 @@ Game = {
 		while (i < sceneList.length) {
 			for (j=0; j < sceneList[i].length; j++) {
 				ex = j, wy = i, make = sceneList[wy][ex], rockColor = make[1]; 
-				if (rockColor != 0) {
+				if (rockColor != exclude) {
 					rockColor = playerColor;
 					Crafty.e('Box').color(rockColor);
 					make[1] = rockColor;
