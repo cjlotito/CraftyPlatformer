@@ -459,7 +459,7 @@ Game = {
 					rockClass = make[0], rockColor = make[1], rockName = make[2], rockType = make[3]; 
 					text = 'Class: ' + rockClass + ' Color: ' + rockColor + ' Name: ' + rockName + ' Type: ' + rockType;
 					document.getElementById("console").value = text;
-					if (rockClass == 00) {
+					if (rockClass == "00") {
 						if(rockName == "START") {console.log("start here");}
 						else {
 							rockColor = playerColor;
