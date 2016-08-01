@@ -460,7 +460,7 @@ Game = {
 					rockClass = make[0], rockColor = make[1], rockName = make[2], rockType = make[3]; 
 					text = 'Class: ' + rockClass + ' Color: ' + rockColor + ' Name: ' + rockName + ' Type: ' + rockType;
 					document.getElementById("console").value = text;
-					if (rockClass == exclude) {
+					if (rockClass == excluded) {
 						if(rockName == "START") {console.log("start here");}
 						else {
 							rockColor = playerColor;
@@ -471,7 +471,7 @@ Game = {
 				}
 				i++;
 			}
-			exclude = rockColor;
+			excluded = rockColor;
 	},
 	setBackground: function (hold) {
 		list = JSON.parse(hold);
@@ -497,7 +497,7 @@ Game = {
 		while (i < sceneList.length) {
 			for (j=0; j < sceneList[i].length; j++) {
 				ex = j, wy = i, make = sceneList[wy][ex], rockColor = make[1]; 
-				if (rockColor != exclude) {
+				if (rockColor != excluded) {
 					rockColor = playerColor;
 					Crafty.e('Box').color(rockColor);
 					make[1] = rockColor;
