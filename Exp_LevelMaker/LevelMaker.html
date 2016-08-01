@@ -203,7 +203,7 @@
 				</div>
 				<textarea id="console" rows="1" cols="80"></textarea>
 				<!--Original TextArea <textarea id="UserCode" rows="4" cols="150"></textarea>-->
-				<textarea style="display: none" id="UserCode" class="form-control debug" rows="4" cols="80" placeholder="Enter text to save"></textarea>
+				<textarea style="display: none" id="UserCode" class="debug" rows="4" cols="80"></textarea>
 				<input style="display: none" class="debug" id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" />
 				<!--<tr class="debug" style="display: none"><td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></tr>-->
 			</div>
@@ -336,7 +336,7 @@
 					<!--Saving Stuff-->
 					<button id="createT">Create file</button>
 					<a download="textures.txt" id="downloadlinkT" style="display: none">Download</a>
-					<textarea id="UserCodeT" class="form-control" rows="4" cols="15" placeholder="Enter text to save"></textarea>
+					<textarea id="UserCodeT" rows="4" cols="15" placeholder="Enter text to save"></textarea>
 				</div>
 			</div>
 			
