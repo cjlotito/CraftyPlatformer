@@ -533,6 +533,9 @@ Game = {
 		var y = ev.clientY - Game.canvas.offsetTop;
 		console.log(x + ',' + y);
 	},
+	playC: function(sel) {
+		playerColor = sel;
+	},
 	// Initialize and start our game
 	start: function() {
 		Game.specialText();
