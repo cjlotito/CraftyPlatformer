@@ -462,6 +462,7 @@ Game = {
 					document.getElementById("console").value = text;
 					if (rockClass == excluded) {
 						if(rockName == "START") {console.log("start here");}
+						else if (rockColor == excluded) {console.log('This block is ' + excluded);}
 						else {
 							rockColor = playerColor;
 							Crafty.e('Box').color(rockColor).at(j,i);
@@ -471,7 +472,7 @@ Game = {
 				}
 				i++;
 			}
-			excluded = rockColor;
+			excluded = playerColor;
 	},
 	setBackground: function (hold) {
 		list = JSON.parse(hold);
