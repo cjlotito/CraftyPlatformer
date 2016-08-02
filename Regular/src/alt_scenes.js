@@ -13,7 +13,7 @@ var sceneSet = function(list) {
 			make = list[wy][ex];
 			rockClass = make[0], rockColor = make[1], rockName = make[2], rockType = make[3]; 
 			//console.log(rockClass + ' ' + rockColor + ' ' + rockName + ' ' + rockType);
-			if (rockClass == "00" || typeof rockClass == 'undefined') continue;
+			if (rockClass == "00" || typeof rockClass == 'undefined') Crafty.e('RockCover').at(ex, wy).color(rockColor);
 			//COPIED ROCK FUNCTION
 			if (rockClass === undefined || rockClass === "") {
 				if (rockName === 'Anti') {
