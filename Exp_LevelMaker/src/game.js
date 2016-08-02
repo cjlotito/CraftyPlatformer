@@ -526,6 +526,7 @@ Game = {
 				Game.printArray();
 			}
     		}
+    		console.log(playerColor);
 	},
 	on_canvas_click: function(ev) {
 		var x = ev.clientX - Game.canvas.offsetLeft;
