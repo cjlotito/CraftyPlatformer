@@ -461,13 +461,9 @@ Game = {
 					text = 'Class: ' + rockClass + ' Color: ' + rockColor + ' Name: ' + rockName + ' Type: ' + rockType;
 					document.getElementById("console").value = text;
 					if (rockColor == excluded) {
-						if(rockName == "START") {console.log("start here");}
-						else if (rockColor == excluded) {console.log('This block is ' + excluded);}
-						else {
-							rockColor = playerColor;
-							Crafty.e('Box').color(rockColor).at(j,i);
-							make[1] = rockColor;
-						}
+						rockColor = playerColor;
+						Crafty.e('Box').color(rockColor).at(j,i);
+						make[1] = rockColor;
 					}
 				}
 				i++;
