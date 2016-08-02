@@ -350,9 +350,11 @@
 					console.log("Game.playerColor: " + Game.playerColor);
 					for (i = 0; i < swatchList.length; i++) {
 						if (swatchList[i] != outColor.id) {
-							document.getElementById(swatchList[i].style="outline-color:white");	
+							var change = document.getElementById(swatchList[i]);
+							change.style="outline-color:white"; 
 						} else {
-							document.getElementById(swatchList[i].style="outline-color:red");
+							var change = document.getElementById(swatchList[i]);
+							change.style="outline-color:red"; 
 						}
 					} 
 				}
