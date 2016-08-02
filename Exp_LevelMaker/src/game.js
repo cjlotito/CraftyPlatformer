@@ -464,6 +464,7 @@ Game = {
 						rockColor = playerColor;
 						Crafty.e('Box').color(rockColor).at(j,i);
 						make[1] = rockColor;
+						make[0] = 'back';
 					}
 				}
 				i++;
