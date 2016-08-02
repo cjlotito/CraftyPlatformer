@@ -55,6 +55,8 @@ var sceneSet = function(list) {
 						if (debug == false) Crafty.e('ColorCover').at(ex, wy).color(rockColor).attr({name: rockName, type: rockType});
 					}
 				}
+			} else if (rockClass == 'Back') {
+				Crafty.e('Background').at(ex, wy).color(rockColor);	
 			} else {
 				if (rockColor == 'clear') {
 					Crafty.e(rockClass).at(ex, wy - 0.05).removeComponent('Color').attr({name: rockName, type: rockType});
