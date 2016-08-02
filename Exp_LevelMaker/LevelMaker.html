@@ -355,8 +355,6 @@
 				var swatchList = ["orange", "blue", "red", "yellow", "purple", "black", "green", "lightpurple", "white"];
 				function swatchSelect(outColor) {
 					Game.playerColor = outColor.id;
-					console.log("outColor: " + outColor.id);
-					console.log("Game.playerColor: " + Game.playerColor);
 					for (i = 0; i < swatchList.length; i++) {
 						if (swatchList[i] != outColor.id) {
 							var change = document.getElementById(swatchList[i]);
