@@ -270,14 +270,14 @@
 				<div id="Swatches">
 					<table>
 						<tr>
-							<td><div id="orange">Orange</div></td>
+							<td><div id="orange" onclick="swatchSelect(this)">Orange</div></td>
 							<!--<td><input name="orangeSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="orangeSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="orangeSw" onchange="readURL(this);" /></div></td>
 							<td><img id="orangeSw" src="#" alt="your image" height="20" width="35"/></td>
 						</tr>
 						<tr>
-							<td><div id="blue">Blue</div></td>
+							<td><div id="blue" onclick="swatchSelect(this)">Blue</div></td>
 							<!--<td><input name="blueSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="blueSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="blueSw" onchange="readURL(this);" /></div></td>
@@ -342,6 +342,21 @@
 			
 		</div>
 		<div id="scripts">
+			<script>
+				var swatchList = ["orange", "blue", "red", "yellow", "purple", "black", "green", "lightpurple", "white"];
+				function swatchSelect(outColor) {
+					Game.playerColor = outColor;
+					console.log("outColor: " + outColor);
+					console.log("Game.playerColor: " + Game.playerColor);
+					for (i = 0; i < swatchList.length; i++) {
+						if (swatchList[i] != outColor) {
+							document.getElementById(swatchList[i].style="outline-color:white");	
+						} else {
+							document.getElementById(swatchList[i].style="outline-color:red");
+						}
+					} 
+				}
+			</script>
 			<script>
 				var textFile = null, textbox = document.getElementById('UserCode');
 				function makeTextFile(text) {
