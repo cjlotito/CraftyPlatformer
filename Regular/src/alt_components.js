@@ -678,3 +678,11 @@ Crafty.c('Platform', {
     }
   }
 });
+
+Crafty.c('Background', {
+	init: function() {		
+		this.requires('Basics, 2D, Canvas, Color');      
+		this.attr({x: 200, y: 100, w: 35, h: 20, z:2})
+			.color('white');
+	}
+});
