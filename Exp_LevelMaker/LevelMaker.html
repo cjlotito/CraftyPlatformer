@@ -344,12 +344,12 @@
 		<div id="scripts">
 			<script>
 				var swatchList = ["orange", "blue", "red", "yellow", "purple", "black", "green", "lightpurple", "white"];
-				function swatchSelect(outColor) {
-					Game.playerColor = outColor;
-					console.log("outColor: " + outColor);
+				function swatchSelect(outColor.id) {
+					Game.playerColor = outColor.id;
+					console.log("outColor: " + outColor.id);
 					console.log("Game.playerColor: " + Game.playerColor);
 					for (i = 0; i < swatchList.length; i++) {
-						if (swatchList[i] != outColor) {
+						if (swatchList[i] != outColor.id) {
 							document.getElementById(swatchList[i].style="outline-color:white");	
 						} else {
 							document.getElementById(swatchList[i].style="outline-color:red");
