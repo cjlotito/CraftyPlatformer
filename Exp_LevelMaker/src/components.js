@@ -26,7 +26,7 @@ Crafty.c('Scroll', {
 		speed = 7;
 		keys = {RIGHT_ARROW: 0, LEFT_ARROW: 180};
 		this.requires('Actor, Color, Multiway, Collision, Mouse')
-			.attr({x: 35, y: 300, w: Game.tileW, h: Game.tileH, z: 3})
+			.attr({x: 35, y: 300, w: 35, h: 20, z: 3})
 			.color('red')
 			.multiway(speed, keys)
 			.onHit('Stop', function(object) {
@@ -129,7 +129,7 @@ Crafty.c('Icon', {
 Crafty.c('Height', {
 	init: function() {		
 		this.requires('Actor, Color, Reference');      
-		this.attr({x: 200, y: 100, w: 0, h: 0, z:10});
+		this.attr({x: 200, y: 100, w: Game.tileW, h: Game.tileH, z:10});
 	}
 });
 	
@@ -137,7 +137,7 @@ Crafty.c('Height', {
 Crafty.c('Blank', {
 	init: function() {		
 		this.requires('Actor, Keyboard');      
-		this.attr({x: 200, y: 100, w: 0, h: 0, z:10});
+		this.attr({x: 200, y: 100, w: Game.tileW, h: Game.tileH, z:10});
 	}
 });
 	
@@ -176,7 +176,7 @@ Crafty.c('HorzLine', {
 Crafty.c('VertLine', {
 	init: function() {		
 		this.requires('Actor, Color')     
-			.attr({x: 0, y: 0, w: 2, h: 3500, z:10, alpha:0.3})
+			.attr({x: 0, y: 0, w: 2, h: 300, z:10, alpha:0.3})
 			.color('black');
 	}
 });
