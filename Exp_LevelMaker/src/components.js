@@ -144,7 +144,7 @@ Crafty.c('Blank', {
 Crafty.c('Stop', {
 	init: function() {		
 		this.requires('Actor, Color, Collision, Mouse')     
-			.attr({x: 120, y: 300, w: Game.tileW, h: Game.tileH})
+			.attr({x: 35, y: 300, w: tileW, h: tileH})
 			.color('gray');
 	}
 });
@@ -152,7 +152,7 @@ Crafty.c('Stop', {
 Crafty.c('TenMarker', {
 	init: function() {		
 		this.requires('Actor, Color')     
-			.attr({x: 120, y: 300, w: Game.tileW, h: Game.tileH})
+			.attr({x: 35, y: 300, w: Game.tileW, h: Game.tileH})
 			.color('blue');
 	}
 });
@@ -160,7 +160,7 @@ Crafty.c('TenMarker', {
 Crafty.c('FiveMarker', {
 	init: function() {		
 		this.requires('Actor, Color')     
-			.attr({x: 120, y: 300, w: Game.tileW, h: Game.tileH})
+			.attr({x: 35, y: 300, w: Game.tileW, h: Game.tileH})
 			.color('green');
 	}
 });
