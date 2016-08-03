@@ -17,7 +17,8 @@ Crafty.scene('game', function () {
 		i++;
 	}
 	//Player
-	var player = Crafty.e('Scroll').bind('Click', function() {playerColor = 'clear';console.log(playerColor);});
+	var player = Crafty.e('Scroll');
+	var Uplayer = Crafty.e('UpScroll');
 	start();
 	Crafty.viewport.follow(player, 0, 0);
 	
