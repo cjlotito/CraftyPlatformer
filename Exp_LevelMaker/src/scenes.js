@@ -31,8 +31,8 @@ Crafty.scene('game', function () {
 	//});
 	
 	//Stops
-	Crafty.e('Stop').at(0,14);
-	Crafty.e('Stop').at(99,14);
+	Crafty.e('Stop').at(0,15);
+	Crafty.e('Stop').at(99,15);
 	
 	//HorzLine
 	for (i=0;i<16;i++) {
@@ -44,11 +44,11 @@ Crafty.scene('game', function () {
 	}
 	//FiveMarker
 	for (i=5;i<100;i+=5) {
-		Crafty.e('FiveMarker').at(i,14);
+		Crafty.e('FiveMarker').at(i,15);
 	}
 	//TenMarker
 	for (i=10;i<100;i+=10) {
-		Crafty.e('TenMarker').at(i,14);
+		Crafty.e('TenMarker').at(i,15);
 	}
 	
 	//Crafty.viewport.scale(1.5);
