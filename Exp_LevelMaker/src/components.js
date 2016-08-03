@@ -108,6 +108,27 @@ Crafty.c('Scroll', {
 	},
 });
 
+Crafty.c('UpScroll', {
+	init: function() {
+		player = this; 
+		clicked = false;
+		speed = 7;
+		keys = {UP_ARROW: -90, DOWN_ARROW: 90};
+		this.requires('Actor, Color, Multiway, Collision, Mouse')
+			.attr({x: 0, y: 35, w: 20, h: 35, z: 3})
+			.color('blue')
+			.multiway(speed, keys)
+			.onHit('Stop', function(object) {
+				entity = object[0].obj;
+				if (this.x > entity.x) {
+					this.x = entity.x + entity.w;
+				} else if (this.x < entity.x) {
+					this.x = entity.x - this.w;
+				}
+			});
+	}
+});
+
 //Costume/Pause Menu
 Crafty.c('Menu', {
 	init: function() {
