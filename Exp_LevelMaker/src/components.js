@@ -129,7 +129,7 @@ Crafty.c('Icon', {
 Crafty.c('Height', {
 	init: function() {		
 		this.requires('Actor, Color, Reference');      
-		this.attr({x: 200, y: 100, w: Game.tileW, h: Game.tileH, z:10});
+		this.attr({x: 200, y: 100, w: 0, h: 0, z:10});
 	}
 });
 	
