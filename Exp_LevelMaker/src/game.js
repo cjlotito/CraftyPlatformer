@@ -30,14 +30,16 @@ var tempColor = 'red';
 var erase = false;
 var setStart = false;
 var excluded = 'white';
+var tileW = 35;
+var tileH = 20;
 
 Game = {
 	map_grid: {
 		width: 100, 
 		height: 16, 
 		tile: {
-			width: 35, 
-			height: 20
+			width: tileW, 
+			height: tileH
 		}
 	},
 
@@ -535,6 +537,10 @@ Game = {
 	},
 	playC: function(sel) {
 		playerColor = sel;
+	},
+	setGrid: function(x,y) {
+		tileW = x, tileH = y;
+		Game.start();
 	},
 	// Initialize and start our game
 	start: function() {
