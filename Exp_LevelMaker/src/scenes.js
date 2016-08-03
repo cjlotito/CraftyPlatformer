@@ -17,7 +17,7 @@ Crafty.scene('game', function () {
 		i++;
 	}
 	//Player
-	var player = Crafty.e('Scroll').bind('Click', function() {playerColor = 'clear';console.log(playerColor);});
+	var player = Crafty.e('Scroll');
 	start();
 	Crafty.viewport.follow(player, 0, 0);
 	
@@ -35,7 +35,7 @@ Crafty.scene('game', function () {
 	Crafty.e('Stop').at(99,15);
 	
 	//HorzLine
-	for (i=0;i<16;i++) {
+	for (i=0;i<15;i++) {
 		Crafty.e('HorzLine').at(0,i);
 	}
 	//VertLine
