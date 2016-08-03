@@ -30,8 +30,8 @@ var tempColor = 'red';
 var erase = false;
 var setStart = false;
 var excluded = 'white';
-var tileW = 50; //35
-var tileH = 50; //20
+var tileW = 35; //35
+var tileH = 20; //20
 
 Game = {
 	map_grid: {
@@ -539,6 +539,7 @@ Game = {
 		playerColor = sel;
 	},
 	setGrid: function(x,y) {
+		console.log("x: " + x + "y: " + y);
 		tileW = x, tileH = y;
 		Game.start();
 	},
