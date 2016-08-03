@@ -539,8 +539,8 @@ Game = {
 		playerColor = sel;
 	},
 	setGrid: function(x,y) {
-		console.log("x: " + x + "y: " + y);
-		tileW = x, tileH = y;
+		Game.tileW = x, Game.tileH = y;
+		console.log("x: " + Game.tileW + "y: " + Game.tileH);
 		Game.start();
 	},
 	// Initialize and start our game
