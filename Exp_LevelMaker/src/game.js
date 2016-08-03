@@ -30,8 +30,8 @@ var tempColor = 'red';
 var erase = false;
 var setStart = false;
 var excluded = 'white';
-var tileW = 35;
-var tileH = 20;
+var tileW = 10;
+var tileH = 10;
 
 Game = {
 	map_grid: {
