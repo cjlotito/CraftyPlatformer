@@ -137,7 +137,7 @@ Crafty.c('Height', {
 Crafty.c('Blank', {
 	init: function() {		
 		this.requires('Actor, Keyboard');      
-		this.attr({x: 200, y: 100, w: Game.tileW, h: Game.tileH, z:10});
+		this.attr({x: 200, y: 100, w: 0, h: 0, z:10});
 	}
 });
 	
