@@ -18,7 +18,6 @@ Crafty.scene('game', function () {
 	}
 	//Player
 	var player = Crafty.e('Scroll');
-	var Uplayer = Crafty.e('UpScroll');
 	start();
 	Crafty.viewport.follow(player, 0, 0);
 	
@@ -32,7 +31,7 @@ Crafty.scene('game', function () {
 	//});
 	
 	//Stops
-	Crafty.e('Stop').at(0,15);
+	Crafty.e('Stop').at(0,0);
 	Crafty.e('Stop').at(99, 15);
 	
 	//HorzLine
