@@ -185,6 +185,7 @@ Crafty.c('VertLine', {
 Crafty.c('Box', {
 	init: function() {
 		this.requires('Actor, Mouse, Color, Solid, Keyboard')
+			.attr({x: 0, y: 0, w: tileW, h: tileH})
 			.color('red')
 			.bind('MouseDown', function(e) {
 				hold = false;
