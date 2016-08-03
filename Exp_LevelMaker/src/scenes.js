@@ -31,7 +31,7 @@ Crafty.scene('game', function () {
 	//});
 	
 	//Stops
-	Crafty.e('Stop').at(0,14);
+	Crafty.e('Stop').at(0,15);
 	Crafty.e('Stop').at(99, 15);
 	
 	//HorzLine
