@@ -121,7 +121,7 @@ Crafty.c('Menu', {
 Crafty.c('Icon', {
 	init: function() {		
 		this.requires('Actor, Menu, Mouse');      
-		this.attr({x: 200, y: 100, w: 35, h: 20, z:10});
+		this.attr({x: 200, y: 100, w: Game.tileW, h: Game.tileH, z:10});
 	}
 });
 
@@ -129,7 +129,7 @@ Crafty.c('Icon', {
 Crafty.c('Height', {
 	init: function() {		
 		this.requires('Actor, Color, Reference');      
-		this.attr({x: 200, y: 100, w: 35, h: 20, z:10});
+		this.attr({x: 200, y: 100, w: Game.tileW, h: Game.tileH, z:10});
 	}
 });
 	
@@ -137,14 +137,14 @@ Crafty.c('Height', {
 Crafty.c('Blank', {
 	init: function() {		
 		this.requires('Actor, Keyboard');      
-		this.attr({x: 200, y: 100, w: 35, h: 20, z:10});
+		this.attr({x: 200, y: 100, w: Game.tileW, h: Game.tileH, z:10});
 	}
 });
 	
 Crafty.c('Stop', {
 	init: function() {		
 		this.requires('Actor, Color, Collision, Mouse')     
-			.attr({x: 120, y: 300, w: 35, h: 20})
+			.attr({x: 120, y: 300, w: Game.tileW, h: Game.tileH})
 			.color('gray');
 	}
 });
@@ -152,7 +152,7 @@ Crafty.c('Stop', {
 Crafty.c('TenMarker', {
 	init: function() {		
 		this.requires('Actor, Color')     
-			.attr({x: 120, y: 300, w: 35, h: 20})
+			.attr({x: 120, y: 300, w: Game.tileW, h: Game.tileH})
 			.color('blue');
 	}
 });
@@ -160,7 +160,7 @@ Crafty.c('TenMarker', {
 Crafty.c('FiveMarker', {
 	init: function() {		
 		this.requires('Actor, Color')     
-			.attr({x: 120, y: 300, w: 35, h: 20})
+			.attr({x: 120, y: 300, w: Game.tileW, h: Game.tileH})
 			.color('green');
 	}
 });
