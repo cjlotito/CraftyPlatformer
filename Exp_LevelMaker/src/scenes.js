@@ -22,13 +22,13 @@ Crafty.scene('game', function () {
 	Crafty.viewport.follow(player, 0, 0);
 	
 	//PAUSE BUTTON
-	var pauseBtn = Crafty.e('Blank').at(0, 0).bind('KeyDown', function(e) {
-		if(e.key == pauseKey) {
-			player.playerPause(player);
-		} else if(e.key == Crafty.keys.ADD) {
-			player.playerHeightRef(player);
-		}
-	});
+	//var pauseBtn = Crafty.e('Blank').at(0, 0).bind('KeyDown', function(e) {
+		//if(e.key == pauseKey) {
+			//player.playerPause(player);
+		//} else if(e.key == Crafty.keys.ADD) {
+			//player.playerHeightRef(player);
+		//}
+	//});
 	
 	//Stops
 	Crafty.e('Stop').at(0,15);
