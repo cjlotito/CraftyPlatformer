@@ -295,15 +295,20 @@
 						<div id='gridMod' class="gridMod" style="display: none"> 
 							<table>
 								<tr>Grid Size
-									<td>Width<textarea id="gridW" rows="1" cols="10">100</textarea></td>
-									<td>Height<textarea id="gridH" rows="1" cols="10">16</textarea></td>
+									<td>Width<input type="number" id="gridW" min="1" max="100" size="1"></td>
+									<td>Height<input type="number" id="gridH" min="1" max="100" size="1"></td>
+									<!--<td>Width<textarea id="gridW" rows="1" cols="10">100</textarea></td>
+									<td>Height<textarea id="gridH" rows="1" cols="10">16</textarea></td>-->
 								</tr>
 								<tr>Tile Size
-									<td>Width<textarea id="tileW" rows="1" cols="10">20</textarea></td>
-									<td>Height<textarea id="tileH" rows="1" cols="10">35</textarea></td>
+									<td>Width<input type="number" id="tileW" min="1" max="100" size="1"></td>
+									<td>Height<input type="number" id="tileH" min="1" max="100" size="1"></td>
+									<!--<td>Width<textarea id="tileW" rows="1" cols="10">20</textarea></td>
+									<td>Height<textarea id="tileH" rows="1" cols="10">35</textarea></td>-->
 								</tr>
 							</table>
-							<div class="inputWrapper" onclick="sendGrid();">Resize Grid</div>
+								<input type="submit" onclick="sendGrid()">
+							<!--<div class="inputWrapper" onclick="sendGrid();">Resize Grid</div>-->
 						</div>
 				</div>	
 			</div>
@@ -390,7 +395,7 @@
 					var HtileW = document.getElementById('tileW').value;
 					var HtileH = document.getElementById('tileH').value;
 					console.log("calling send grid(" + HgridW, + ", " + HgridH + ", " + HtileW + ", " + HtileH +")");
-					Game.setGrid(10, 10, 10, 10);
+					Game.setGrid(HtileW, HtileH, 10, 10);
 				}
 			</script>
 			<script>
