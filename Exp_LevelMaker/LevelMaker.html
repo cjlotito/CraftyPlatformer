@@ -390,10 +390,10 @@
 		<div id="scripts">
 			<script>
 				function sendGrid() {
-					var HgridW = document.getElementById('gridW').value;
-					var HgridH = document.getElementById('gridH').value;
-					var HtileW = document.getElementById('tileW').value;
-					var HtileH = document.getElementById('tileH').value;
+					var HgridW = parseInt(document.getElementById('gridW').value);
+					var HgridH = parseInt(document.getElementById('gridH').value);
+					var HtileW = parseInt(document.getElementById('tileW').value);
+					var HtileH = parseInt(document.getElementById('tileH').value);
 					console.log("calling send grid(" + HgridW, + ", " + HgridH + ", " + HtileW + ", " + HtileH +")");
 					Game.setGrid(HtileW, HtileH, 10, 10);
 				}
