@@ -518,16 +518,20 @@ Game = {
 		//} else {
 		//	e.style.display = 'block';
 		//}
-		var x = document.getElementsByClassName("debug");
+		var x = document.getElementsByClassName(id);
 		var i;
     		for (i = 0; i < x.length; i++) {
     			console.log("element # " + i);
         		if(x[i].style.display == 'block') {
 				x[i].style.display = 'none';
-				document.getElementById("UserCode").value = "";
+				if (id == 'debug') {
+					document.getElementById("UserCode").value = "";
+				}
 			} else {
 				x[i].style.display = 'block';
-				Game.printArray();
+				if (id == 'debug') {
+					Game.printArray();
+				}
 			}
     		}
     		console.log(playerColor);
