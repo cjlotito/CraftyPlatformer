@@ -124,8 +124,8 @@
 				margin-bottom:5px;
 			}
 			#gridMod {
-				border:3px solid white;
-				background-color: red;
+				border: 3px solid #BEBEBE;
+				background: red;
 			}
 			ul {
 				list-style-type: none;
@@ -292,22 +292,22 @@
 								<!--<tr><td><button id="create">Create file</button></tr>-->
 							</table>
 						</div>
-						<div class="gridMod" style="display: none" style="background:red"> 
-						<table>
-							<tr>Grid Size
-								<td><input type="text" id="gridW" value="100"></td>
-								<td><input type="text" id="gridH" value="16"></td>
-								<!--<td>Width<textarea id="gridW" rows="1" cols="10">100</textarea></td>
-								<td>Height<textarea id="gridH" rows="1" cols="10">16</textarea></td>-->
-							</tr>
-							<tr>Tile Size
-								<td><input type="text" id="tileW" value="20"></td>
-								<td><input type="text" id="tileH" value="35"></td>
-								<!--<td>Width<textarea id="tileW" rows="1" cols="10">20</textarea></td>
-								<td>Height<textarea id="tileH" rows="1" cols="10">35</textarea></td>-->
-							</tr>
-						</table>
-							<input type="button" onclick="sendGrid()" value="Submit">
+						<div id='gm' class="gridMod" style="display: none"> 
+							<table>
+								<tr>Grid Size
+									<td><input type="text" id="gridW" value="100"></td>
+									<td><input type="text" id="gridH" value="16"></td>
+									<!--<td>Width<textarea id="gridW" rows="1" cols="10">100</textarea></td>
+									<td>Height<textarea id="gridH" rows="1" cols="10">16</textarea></td>-->
+								</tr>
+								<tr>Tile Size
+									<td><input type="text" id="tileW" value="20"></td>
+									<td><input type="text" id="tileH" value="35"></td>
+									<!--<td>Width<textarea id="tileW" rows="1" cols="10">20</textarea></td>
+									<td>Height<textarea id="tileH" rows="1" cols="10">35</textarea></td>-->
+								</tr>
+							</table>
+								<input type="button" onclick="sendGrid()" value="Submit">
 						</div>
 				</div>	
 			</div>
