@@ -32,11 +32,13 @@ var setStart = false;
 var excluded = 'white';
 var tileW = 35;
 var tileH = 20;
+var gridW = 100;
+var gridH = 16;
 
 Game = {
 	map_grid: {
-		width: 100, 
-		height: 16, 
+		width: gridW, 
+		height: gridH, 
 		tile: {
 			width: tileW, 
 			height: tileH
@@ -538,8 +540,9 @@ Game = {
 	playC: function(sel) {
 		playerColor = sel;
 	},
-	setGrid: function(x,y) {
+	setGrid: function(x,y, gx, gy) {
 		tileW = x, tileH = y, Game.map_grid.tile.width = x, Game.map_grid.tile.height = y;
+		gridW = gx, gridH = gy, Game.map_grid.width = gx, Game.map_grip.height = gy; 
 		Game.start();
 	},
 	// Initialize and start our game
