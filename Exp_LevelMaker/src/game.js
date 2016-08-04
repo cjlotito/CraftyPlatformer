@@ -544,7 +544,7 @@ Game = {
 	playC: function(sel) {
 		playerColor = sel;
 	},
-	setGrid: function(x,y, gx, gy) {
+	setGrid: function(x,y) {
 		tileW = x, tileH = y, Game.map_grid.tile.width = x, Game.map_grid.tile.height = y;
 		//gridW = gx, gridH = gy, Game.map_grid.width = gx, Game.map_grid.height = gy; 
 		//console.log("setgrid started. Received: " + Game.map_grid.tile.width + ", " + Game.map_grid.tile.height + ", " + Game.map_grid.width + ", " + Game.map_grid.height);
