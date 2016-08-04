@@ -542,7 +542,7 @@ Game = {
 	},
 	setGrid: function(x,y, gx, gy) {
 		tileW = x, tileH = y, Game.map_grid.tile.width = x, Game.map_grid.tile.height = y;
-		gridW = gx, gridH = gy, Game.map_grid.width = gx, Game.map_grip.height = gy; 
+		gridW = gx, gridH = gy, Game.map_grid.width = gx, Game.map_grid.height = gy; 
 		Game.start();
 	},
 	// Initialize and start our game
