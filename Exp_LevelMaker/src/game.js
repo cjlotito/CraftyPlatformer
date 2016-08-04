@@ -23,7 +23,8 @@ var invisible = false;
 var wide = 6.1;
 var high = 1.5;
 var scaled = 1.3;
-var start = function() {Crafty.init((Game.map_grid.width * Game.map_grid.tile.width)/wide, (Game.map_grid.height * Game.map_grid.tile.height) * high);Crafty.viewport.init((Game.map_grid.width * Game.map_grid.tile.width)/wide, (Game.map_grid.height * Game.map_grid.tile.height) * high);Crafty.viewport.scale(scaled);};
+//var start = function() {Crafty.init((Game.map_grid.width * Game.map_grid.tile.width)/wide, (Game.map_grid.height * Game.map_grid.tile.height) * high);Crafty.viewport.init((Game.map_grid.width * Game.map_grid.tile.width)/wide, (Game.map_grid.height * Game.map_grid.tile.height) * high);Crafty.viewport.scale(scaled);};
+var start = function() {Crafty.init(600, 250);Crafty.viewport.init(600,250);Crafty.viewport.scale(scaled);};
 var extraRelease = [0,0];
 var redo = false;
 var tempColor = 'red';
@@ -554,7 +555,8 @@ Game = {
 	start: function() {
 		Game.specialText();
 		// Start crafty and set a background color so that we can see it's working
-		Crafty.init((Game.map_grid.width * Game.map_grid.tile.width)/wide, (Game.map_grid.height * Game.map_grid.tile.height) * high); //Start
+		//Crafty.init((Game.map_grid.width * Game.map_grid.tile.width)/wide, (Game.map_grid.height * Game.map_grid.tile.height) * high); //Start
+		Crafty.init(600, 250); //Start
 		Crafty.background('white');
 
 		// Simply start the "Loading" scene to get things going
