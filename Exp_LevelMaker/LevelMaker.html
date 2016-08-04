@@ -206,9 +206,23 @@
 						<div class="inputWrapper" onclick="saveMode();">Save</div>
 						<div class="inputWrapper">Load<input class="fileInput hidden" type="file" name="load" onchange="readURL(this);" /></div>
 						<div class="inputWrapper" onclick="Game.blockSetBackground();">Chage Background</div>
-						<div class="inputWrapper" onclick="Game.setGrid(10, 30, 10, 6);">Resize Grid</div>
+						<div class="inputWrapper" onclick="Game.toggleVisibility('gridMod');">Resize Grid</div>
 					</div>
 				</li>
+				<div class="gridMod" style="display: none"> 
+						<table>
+							<tr>Grid Size
+								<td>Width<textarea id="gridW" rows="1" cols="20" placeholder="100"></textarea></td>
+								<td>Height<textarea id="gridH" rows="1" cols="20" placeholder="16"></textarea></td>
+							</tr>
+							<tr>Tile Size
+								<td>Width<textarea id="tileW" rows="1" cols="20" placeholder="20"></td>
+								<td>Height<textarea id="tileH" rows="1" cols="20" placeholder="35"></td>
+							</tr>
+						</table>
+						<div class="inputWrapper" onclick="sendGrid();">Resize Grid</div>
+						
+				</div>
 				<!--<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button2()">News</a>
 					<div class="dropdown-content" id="button2">
 						<a href="#" onclick="myFunction3()">Link 4</a>
@@ -366,6 +380,15 @@
 			
 		</div>
 		<div id="scripts">
+			<script>
+				var HgridW = document.getElementById('gridW').value;
+				var HgridH = document.getElementById('gridH').value;
+				var HtileW = document.getElementById('tileW').value;
+				var HtileH = document.getElementById('tileH').value;
+				function sendGrid() {
+					Game.setGrid(HgridW, HgridH, HtileW, HtileH);
+				}
+			</script>
 			<script>
 				var swatchList = ["orange", "blue", "red", "yellow", "indigo", "black", "green", "violet", "white"];
 				function swatchSelect(outColor) {
