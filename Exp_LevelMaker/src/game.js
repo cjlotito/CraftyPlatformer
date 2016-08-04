@@ -539,7 +539,7 @@ Game = {
 		playerColor = sel;
 	},
 	setGrid: function(x,y) {
-		tileW = x, tileH = y;
+		tileW = x, tileH = y, Game.map_grid.tile.width = x, Game.map_grid.tile.height = y;
 		Game.start();
 	},
 	// Initialize and start our game
