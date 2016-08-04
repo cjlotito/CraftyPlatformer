@@ -294,13 +294,15 @@
 						</div>
 						<div id='gridMod' class="gridMod" style="display: none"> 
 							<table>
-								<tr>Grid Size
+								<tr>
+									<td>Grid Size</td>
 									<td>Width<input type="number" id="gridW" min="1" max="100" size="1"></td>
 									<td>Height<input type="number" id="gridH" min="1" max="100" size="1"></td>
 									<!--<td>Width<textarea id="gridW" rows="1" cols="10">100</textarea></td>
 									<td>Height<textarea id="gridH" rows="1" cols="10">16</textarea></td>-->
 								</tr>
-								<tr>Tile Size
+								<tr>
+									<td>Tile Size</td>
 									<td>Width<input type="number" id="tileW" min="1" max="100" size="1"></td>
 									<td>Height<input type="number" id="tileH" min="1" max="100" size="1"></td>
 									<!--<td>Width<textarea id="tileW" rows="1" cols="10">20</textarea></td>
@@ -395,7 +397,7 @@
 					var HtileW = parseInt(document.getElementById('tileW').value);
 					var HtileH = parseInt(document.getElementById('tileH').value);
 					console.log("calling send grid(" + HgridW, + ", " + HgridH + ", " + HtileW + ", " + HtileH +")");
-					Game.setGrid(HtileW, HtileH, 10, 10);
+					Game.setGrid(HgridW, HgridH, HtileW, HtileH);
 				}
 			</script>
 			<script>
