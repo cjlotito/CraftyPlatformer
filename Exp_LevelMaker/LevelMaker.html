@@ -288,7 +288,7 @@
 								<!--<tr><td><button id="create">Create file</button></tr>-->
 							</table>
 						</div>
-						<div class="gridMod" style="display: none" style="background="red"> 
+						<div class="gridMod" style="display: none" style="background:red"> 
 						<table>
 							<tr>Grid Size
 								<td>Width<textarea id="gridW" rows="1" cols="10">100</textarea></td>
@@ -385,6 +385,7 @@
 				var HgridH = document.getElementById('gridH').value;
 				var HtileW = document.getElementById('tileW').value;
 				var HtileH = document.getElementById('tileH').value;
+				console.log("calling send grid(" + HgridW, + ", " + HgridH + ", " + HtileW + ", " + HtileH +")");
 				function sendGrid() {
 					Game.setGrid(HgridW, HgridH, HtileW, HtileH);
 				}
