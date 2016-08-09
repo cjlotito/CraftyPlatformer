@@ -20,6 +20,13 @@ Crafty.scene('game', function () {
 	var player = Crafty.e('Scroll').bind('KeyDown', function(e) {
 		if(e.key == Crafty.keys.SPACE) {
 			console.log(player.direction);
+			if(player.direction == 'left') {
+				player.multiway(7, {UP_ARROW: -90, DOWN_ARROW: 90});
+				player.direction = 'up';
+			} else if(player.direction == 'up') {
+				player.multiway(7, {RIGHT_ARROW: 0, LEFT_ARROW: 180});
+				player.direction = 'left';
+			}
 		}
 	});
 	start();
