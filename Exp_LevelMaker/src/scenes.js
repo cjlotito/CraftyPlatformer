@@ -44,8 +44,8 @@ Crafty.scene('game', function () {
 	
 	
 	//Stops
-	Crafty.e('Stop').at(0,0);
-	Crafty.e('Stop').at(99,0);
+	Crafty.e('Stop').at(-1,0);
+	Crafty.e('Stop').at(100,0);
 	
 	Crafty.e('StopUp').at(0,-1);
 	Crafty.e('StopUp').at(0,16);
