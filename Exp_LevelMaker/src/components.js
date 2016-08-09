@@ -36,7 +36,17 @@ Crafty.c('Scroll', {
 				} else if (this.x < entity.x) {
 					this.x = entity.x - this.w;
 				}
-			});
+			})
+			.onHit('StopUp', function(object) {
+				entity = object[0].obj;
+				if (this.y > entity.y) {
+					//alert("Hit the Bottom " + entity.y);
+					this.y = entity.y + entity.h;
+				} else if (this.y < entity.y) {
+					//alert("Hit the Top " + entity.y);
+					this.y = entity.y - this.h;
+				}
+        		 });
 	},
 	playerPause: function(first_entity) {
 		if (clicked == false) {
@@ -144,7 +154,14 @@ Crafty.c('Blank', {
 Crafty.c('Stop', {
 	init: function() {		
 		this.requires('Actor, Color, Collision, Mouse')     
-			.attr({x: 35, y: 300, w: tileW, h: tileH})
+			.attr({x: 35, y: 300, w: tileW, h: tileH*Game.map_grid.height})
+			.color('gray');
+	}
+});
+Crafty.c('StopUp', {
+	init: function() {		
+		this.requires('Actor, Color, Collision, Mouse')     
+			.attr({x: 35, y: 300, w: tileW*Game.map_grid.width, h: tileH})
 			.color('gray');
 	}
 });
