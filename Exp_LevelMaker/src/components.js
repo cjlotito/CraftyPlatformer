@@ -185,7 +185,7 @@ Crafty.c('FiveMarker', {
 Crafty.c('HorzLine', {
 	init: function() {		
 		this.requires('Actor, Color')     
-			.attr({x: 0, y: 0, w: 3500, h: 2, z:10, alpha:0.3})
+			.attr({x: 0, y: 0, w: (Game.map_grid.width*Game.map_grid.tile.width), h: 2, z:10, alpha:0.3})
 			.color('black');
 	}
 });
@@ -193,7 +193,7 @@ Crafty.c('HorzLine', {
 Crafty.c('VertLine', {
 	init: function() {		
 		this.requires('Actor, Color')     
-			.attr({x: 0, y: 0, w: 2, h: 300, z:10, alpha:0.3})
+			.attr({x: 0, y: 0, w: 2, h: (Game.map_grid.height*Game.map_grid.tile.height), z:10, alpha:0.3})
 			.color('black');
 	}
 });
