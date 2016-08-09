@@ -17,7 +17,11 @@ Crafty.scene('game', function () {
 		i++;
 	}
 	//Player
-	var player = Crafty.e('Scroll');
+	var player = Crafty.e('Scroll').bind('KeyDown', function(e) {
+		if(e.key == Crafty.Keys.SPACE) {
+			console.log(player.direction);
+		}
+	});
 	start();
 	Crafty.viewport.follow(player, 0, 0);
 	
@@ -29,6 +33,8 @@ Crafty.scene('game', function () {
 			//player.playerHeightRef(player);
 		//}
 	//});
+	
+	
 	
 	//Stops
 	Crafty.e('Stop').at(0,15);
