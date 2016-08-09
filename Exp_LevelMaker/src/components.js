@@ -25,9 +25,8 @@ Crafty.c('Scroll', {
 		clicked = false;
 		speed = 7;
 		keys = {RIGHT_ARROW: 0, LEFT_ARROW: 180};
-		direction = 'up';
 		this.requires('Actor, Color, Multiway, Collision, Mouse')
-			.attr({x: 35, y: 300, w: tileW, h: tileH, z: 3})
+			.attr({x: 35, y: 300, w: tileW, h: tileH, z: 3, direction: 'left'})
 			.color('red')
 			.multiway(speed, keys)
 			.onHit('Stop', function(object) {
