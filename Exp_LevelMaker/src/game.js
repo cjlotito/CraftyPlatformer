@@ -560,8 +560,14 @@ Game = {
 			sceneRow[i] = sceneBlank;
 			for (j = 0; j < Game.map_grid.height-1; j++) { 
 				sceneList[j] = sceneRow;
+				make = sceneList[j][i];
+				coords = j+','+i;
+				console.log(coords);
+				make[4] = coords;
+				console.log(make);
 			}
 		}
+		console.log(sceneList);
 	},
 	// Initialize and start our game
 	start: function() {
