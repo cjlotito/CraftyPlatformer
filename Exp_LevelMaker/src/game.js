@@ -561,7 +561,7 @@ Game = {
 			sceneRow[i] = sceneBlank;
 			for (j = 0; j < Game.map_grid.height-1; j++) { 
 				sceneList[j] = sceneRow;
-				setExWy(j,i);
+				Game.setExWy(j,i);
 				console.log(sceneList[j][i]);
 			}
 		}
