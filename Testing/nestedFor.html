@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var cars2 = [];
+var cars3 = [];
+var text = "";
+var i;
+for (i = 0; i < 16; i++) {
+    cars2[i] = cars + i;
+    for (j = 0; j < 20; j++) {
+        cars3[j] = cars2 + j;
+    }
+}
+
+text = cars3[10];
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
