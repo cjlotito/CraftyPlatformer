@@ -561,7 +561,7 @@ Game = {
 			for (j = 0; j < Game.map_grid.height-1; j++) { 
 				sceneList[j] = sceneRow;
 				make = sceneList[j][i];
-				coords = j+','+i;
+				coords = i+','+j;
 				console.log(coords);
 				make[4] = coords;
 				console.log(make);
