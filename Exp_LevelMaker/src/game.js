@@ -557,10 +557,11 @@ Game = {
 	},
 	sceneListMaker: function() {
 		var i = 0;
-		for (i = 0; i < Game.map_grid.width; i++) {
+		for (i = 0; i < Game.map_grid.width-1; i++) {
 			sceneRow[i] = sceneBlank;
-			for (j = 0; j < Game.map_grid.height; j++) { 
+			for (j = 0; j < Game.map_grid.height-1; j++) { 
 				sceneList[j] = sceneRow;
+				console.log(sceneList[i][j][4]);
 			}
 		}
 		console.log(sceneList);
