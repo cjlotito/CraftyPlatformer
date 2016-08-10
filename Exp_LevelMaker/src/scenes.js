@@ -45,10 +45,10 @@ Crafty.scene('game', function () {
 	
 	//Stops
 	Crafty.e('Stop').at(-1,-1);
-	Crafty.e('Stop').at(Game.map_grid.width+1,-1);
+	Crafty.e('Stop').at(Game.map_grid.width,-1);
 	
 	Crafty.e('StopUp').at(0,-1);
-	Crafty.e('StopUp').at(0,Game.map_grid.height+1);
+	Crafty.e('StopUp').at(0,Game.map_grid.height);
 	
 	//HorzLine
 	for (i=0;i<Game.map_grid.height;i++) {
