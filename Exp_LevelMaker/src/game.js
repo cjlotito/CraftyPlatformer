@@ -39,8 +39,6 @@ var tileW = 35;
 var tileH = 20;
 var gridW = 100;
 var gridH = 16;
-var ex = 1;
-var wy = 2;
 
 Game = {
 	map_grid: {
@@ -562,12 +560,8 @@ Game = {
 			sceneRow[i] = sceneBlank;
 			for (j = 0; j < Game.map_grid.height-1; j++) { 
 				sceneList[j] = sceneRow;
-				ex = j, wy = i;
-				sceneList[j][i][4] = ex+','+wy;
-				console.log(sceneList[j][i]);
 			}
 		}
-		console.log(sceneList);
 	},
 	// Initialize and start our game
 	start: function() {
