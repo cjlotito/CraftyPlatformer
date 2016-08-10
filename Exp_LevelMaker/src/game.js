@@ -562,9 +562,7 @@ Game = {
 			for (j = 0; j < Game.map_grid.height-1; j++) { 
 				sceneList[j] = sceneRow;
 				//Atempt to Keep Coords
-				make = sceneList[j][i];
-				numbers = make[4].split(',');
-				ex = numbers[1], wy = numbers[0];
+				ex = j, wy = i;
 				exx = ex.toString(), wyy = wy.toString();
 				coords = exx+','+wyy;
 				sceneList[j][i][4] = coords;
