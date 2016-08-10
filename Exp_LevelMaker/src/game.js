@@ -561,7 +561,7 @@ Game = {
 			sceneRow[i] = sceneBlank;
 			for (j = 0; j < Game.map_grid.height-1; j++) { 
 				sceneList[j] = sceneRow;
-				console.log(sceneList[i][j][4]);
+				console.log(sceneList[j][i][4]);
 			}
 		}
 		console.log(sceneList);
