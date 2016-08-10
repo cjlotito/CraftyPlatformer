@@ -45,10 +45,10 @@ Crafty.scene('game', function () {
 	
 	//Stops
 	Crafty.e('Stop').at(-1,0);
-	Crafty.e('Stop').at(100,0);
+	Crafty.e('Stop').at(Game.map_grid.width+tileW,0);
 	
 	Crafty.e('StopUp').at(0,-1);
-	Crafty.e('StopUp').at(0,16);
+	Crafty.e('StopUp').at(0,Game.map_grid.height+tileH);
 	
 	//HorzLine
 	for (i=0;i<Game.map_grid.height;i++) {
@@ -60,11 +60,11 @@ Crafty.scene('game', function () {
 	}
 	//FiveMarker
 	for (i=5;i<Game.map_grid.width;i+=5) {
-		Crafty.e('FiveMarker').at(i,Game.map_grid.height);
+		Crafty.e('FiveMarker').at(i,Game.map_grid.height-tileH);
 	}
 	//TenMarker
 	for (i=10;i<Game.map_grid.width;i+=10) {
-		Crafty.e('TenMarker').at(i,Game.map_grid.height);
+		Crafty.e('TenMarker').at(i,Game.map_grid.height-tileH);
 	}
 	
 	//Crafty.viewport.scale(1.5);
