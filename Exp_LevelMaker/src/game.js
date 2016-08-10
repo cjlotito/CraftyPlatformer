@@ -39,6 +39,8 @@ var tileW = 35;
 var tileH = 20;
 var gridW = 100;
 var gridH = 16;
+var ex = 1;
+var wy = 2;
 
 Game = {
 	map_grid: {
@@ -556,19 +558,16 @@ Game = {
 		Game.start();
 	},
 	sceneListMaker: function() {
-		var i = 0;
 		for (i = 0; i < Game.map_grid.width; i++) {
 			sceneRow[i] = sceneBlank;
 			for (j = 0; j < Game.map_grid.height-1; j++) { 
 				sceneList[j] = sceneRow;
-				Game.setExWy(j,i);
+				ex = j, wy = i;
+				sceneList[j][i][4] = ex+','+wy;
 				console.log(sceneList[j][i]);
 			}
 		}
 		console.log(sceneList);
-	},
-	setExWy: function (ex,wy) {
-		sceneList[ex][wy][4] = ex+','+wy;	
 	},
 	// Initialize and start our game
 	start: function() {
