@@ -561,15 +561,14 @@ Game = {
 			sceneRow[i] = sceneBlank;
 			for (j = 0; j < Game.map_grid.height-1; j++) { 
 				sceneList[j] = sceneRow;
-				//Atempt to Keep Coords
-				ex = j, wy = i;
-				exx = ex.toString(), wyy = wy.toString();
-				coords = exx+','+wyy;
-				sceneList[j][i][4] = coords;
+				setExWy(j,i);
 				console.log(sceneList[j][i]);
 			}
 		}
 		console.log(sceneList);
+	},
+	setExWy: function (ex,wy) {
+		sceneList[ex][wy][4] = ex+','+wy;	
 	},
 	// Initialize and start our game
 	start: function() {
