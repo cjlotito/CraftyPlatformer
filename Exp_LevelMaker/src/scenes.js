@@ -7,23 +7,14 @@ Crafty.scene('game', function () {
 		i++;
 	}
 	
-//	i = 0;
-//	while (i < sceneList.length) {
-//		for (j=0; j < sceneList[i].length; j++) {
-//			ex = j, wy = i;
-//			make = sceneList[wy][ex];
-//			make[4] = wy + ',' + ex;
-//		}
-//		i++;
-//	}
-
-	for (i = 0; i < Game.map_grid.width; i++) {
-		for (j = 0; j < Game.map_grid.height-1; j++) { 
+	i = 0;
+	while (i < sceneList.length) {
+		for (j=0; j < sceneList[i].length; j++) {
 			ex = j, wy = i;
-			sceneList[j][i][4] = ex+','+wy;
-			console.log(sceneList[j][i]);
+			make = sceneList[wy][ex];
+			make[4] = wy + ',' + ex;
 		}
-		console.log(sceneList);
+		i++;
 	}
 	//Player
 	var player = Crafty.e('Scroll').bind('KeyDown', function(e) {
