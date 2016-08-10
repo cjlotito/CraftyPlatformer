@@ -16,6 +16,15 @@ Crafty.scene('game', function () {
 //		}
 //		i++;
 //	}
+
+	for (i = 0; i < Game.map_grid.width; i++) {
+		for (j = 0; j < Game.map_grid.height-1; j++) { 
+			ex = j, wy = i;
+			sceneList[j][i][4] = ex+','+wy;
+			console.log(sceneList[j][i]);
+		}
+		console.log(sceneList);
+	}
 	//Player
 	var player = Crafty.e('Scroll').bind('KeyDown', function(e) {
 		if(e.key == Crafty.keys.SPACE) {
