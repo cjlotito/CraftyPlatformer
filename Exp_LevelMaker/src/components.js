@@ -154,7 +154,7 @@ Crafty.c('Blank', {
 Crafty.c('Stop', {
 	init: function() {		
 		this.requires('Actor, Color, Collision, Mouse')     
-			.attr({x: 35, y: 300, w: tileW, h: (tileH*Game.map_grid.height)+tileH})
+			.attr({x: 35, y: 300, w: tileW, h: (tileH*Game.map_grid.height)+(tileH*2)})
 			.color('gray');
 	}
 });
