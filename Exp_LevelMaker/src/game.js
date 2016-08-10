@@ -561,7 +561,13 @@ Game = {
 			sceneRow[i] = sceneBlank;
 			for (j = 0; j < Game.map_grid.height-1; j++) { 
 				sceneList[j] = sceneRow;
-				sceneList[j][i][4] = j + ',' + i;
+				//Atempt to Keep Coords
+				make = sceneList[j][i];
+				numbers = make[4].split(',');
+				ex = numbers[1], wy = numbers[0];
+				exx = ex.toString(), wyy = wy.toString();
+				coords = exx+','+wyy;
+				sceneList[j][i][4] = coords;
 				console.log(sceneList[j][i]);
 			}
 		}
