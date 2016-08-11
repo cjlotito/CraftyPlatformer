@@ -34,7 +34,7 @@ Crafty.c('Basics', {
 Crafty.c('TinyGround', {
 	init: function() {
 		this.requires('Basics, Floor, 2D, Canvas');
-		this.attr({x: 0, y: 250, w: tileW, h: 5});
+		this.attr({x: 0, y: 250, w: tileW - 10, h: 5});
 		this.origin(12.5, 2.5);
 		this.ID = 'ground';
 	}
