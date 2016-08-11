@@ -565,9 +565,9 @@ Game = {
 		//		console.log(make);
 		//	}
 		//}
-		for (i = 0; i < Game.map_grid.width; i++) {
-		    sceneRow = new Array(Game.map_grid.height);
-		    for (j = 0; j < Game.map_grid.height; j++) {
+		for (i = 0; i < Game.map_grid.height; i++) {
+		    sceneRow = new Array(Game.map_grid.width);
+		    for (j = 0; j < Game.map_grid.width; j++) {
 		        sceneRow[j] = ["00","white","0","0", i +',' + j];
 		    }
 		    Game.c3(sceneRow, i);
