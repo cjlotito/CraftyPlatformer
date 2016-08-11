@@ -574,7 +574,7 @@ Game = {
 				scene4[j] = sceneBlank;
 			}
 			console.log(scene4);
-			c3(scene4, i);
+			Game.c3(scene4, i);
 			console.log(sceneList);
 		}
 	},
