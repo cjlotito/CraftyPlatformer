@@ -14,7 +14,7 @@ var playerColor = 'yellow';
 var clicked = false;
 var rise = false;
 var color_default = ['blue'];
-var debug = false;
+var debug = true;
 var specialSceneList = [];
 var pauseKey = Crafty.keys.Q;
 //Key Color RED BLUE GREEN ORANGE BLACK INDIGO VIOLET WHITE YELLOW
