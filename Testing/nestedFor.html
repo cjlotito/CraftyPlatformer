@@ -9,17 +9,24 @@ var cars = ["BMW", "Volvo", "Saab", "Ford"];
 var cars2 = [];
 var cars3 = [];
 var text = "";
+var numb = new Array(10);
 var i;
 for (i = 0; i < 16; i++) {
-    cars2[i] = cars + i;
+    cars3[i] = cars2;
+    cars4 = new Array(20);
     for (j = 0; j < 20; j++) {
-        cars3[j] = cars2 + j;
+        cars4[j] = j +',' + i;
     }
+    console.log(cars4);
+    c3(cars4, i);
 }
-
-text = cars3[10];
+function c3(cList, x) {
+    cars3[x] = cList;
+}
+console.log(cars3);
 document.getElementById("demo").innerHTML = text;
 </script>
 
 </body>
 </html>
+
