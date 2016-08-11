@@ -578,7 +578,7 @@ Game = {
 		    for (j = 0; j < Game.map_grid.width; j++) {
 		        sceneRow[j] = ["00","white",0,0, i +',' + j];
 		        if(i==(Game.map_grid.height-2)&&j==(Game.map_grid.width-1)) {
-		        	sceneRow[(j+1)] = ["00","white", tileW + ',' + tileH ,"1,1", i +',' + (j+1)];
+		        	sceneRow[(j+1)] = ["00",gridW +',' + gridH, tileW + ',' + tileH ,"1,1", i +',' + (j+1)];
 		        }
 		    }
 		    Game.c3(sceneRow, i);
