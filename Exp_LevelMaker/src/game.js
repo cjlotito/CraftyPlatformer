@@ -568,15 +568,16 @@ Game = {
 		//	}
 		//}
 		for (i = 0; i < Game.map_grid.width; i++) {
-			sceneList[i] = sceneRow;
+			//sceneRow[i] = sceneBlank;
 			scene4 = new Array(Game.map_grid.height);
 			for (j = 0; j < Game.map_grid.height; j++) {
 				scene4[j] = sceneBlank;
 			}
-			console.log(scene4);
+			//console.log(scene4);
 			Game.c3(scene4, i);
-			console.log(sceneList);
+			//console.log(sceneList);
 		}
+		console.log(sceneList);
 	},
 	c3: function(cList, x) {
 		sceneList[x] = cList;
