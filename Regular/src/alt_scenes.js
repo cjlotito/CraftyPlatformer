@@ -123,7 +123,7 @@ Crafty.scene('LevelTest', function() {
 Crafty.scene('Level1', function() {
 	if (fresh) {
 		currentSceneList = Game.copyArr(sceneList1);
-		numbers = currentSceneList[14][100][3].split(','), ex = numbers[0], wy = numbers[1];
+		numbers = currentSceneList[currentSceneList.length-1][100][3].split(','), ex = numbers[0], wy = numbers[1];
 		checkPoint[0] = ex, checkPoint[1] = wy;
 		fresh = false;
 	}
