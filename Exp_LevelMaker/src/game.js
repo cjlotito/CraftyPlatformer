@@ -572,6 +572,7 @@ Game = {
 			scene4 = new Array(Game.map_grid.width);
 			for (j = 0; j < Game.map_grid.width; j++) {
 				sceneO = new Array(4);
+				sceneO = sceneBlank;
 				Game.exWy(sceneO, j, i);
 				scene4[j] = sceneO;
 				//scene4[j][4] = i+','+j;
