@@ -572,7 +572,7 @@ Game = {
 			scene4 = new Array(Game.map_grid.width);
 			for (j = 0; j < Game.map_grid.width; j++) {
 				scene4[j] = sceneBlank;
-				Game.exWy(i, j);
+				Game.exWy(j, i);
 				//scene4[j][4] = i+','+j;
 				//console.log(scene4[j]);
 			}
@@ -583,9 +583,7 @@ Game = {
 		console.log(sceneList);
 	},
 	exWy: function (x, y) {
-		for (i=0; i < y; i++) {
-			sceneList[x][y][4] = x + ',' + y;
-		}
+		sceneList[x][y][4] = x + ',' + y;
 	},
 	c3: function(cList, x) {
 		sceneList[x] = cList;
