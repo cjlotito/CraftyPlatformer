@@ -565,10 +565,21 @@ Game = {
 		//		console.log(make);
 		//	}
 		//}
-		for (i = 0; i < Game.map_grid.height; i++) {
+		
+		//for (i = 0; i < Game.map_grid.height; i++) {
+		//    sceneRow = new Array(Game.map_grid.width);
+		//    for (j = 0; j < Game.map_grid.width; j++) {
+		//        sceneRow[j] = ["00","white",0,0, i +',' + j];
+		//    }
+		//    Game.c3(sceneRow, i);
+		//}
+		for (i = 0; i < Game.map_grid.height-1; i++) {
 		    sceneRow = new Array(Game.map_grid.width);
 		    for (j = 0; j < Game.map_grid.width; j++) {
 		        sceneRow[j] = ["00","white",0,0, i +',' + j];
+		        if(i==(Game.map_grid.height-1)&&j==(Game.map_grid.width+1)) {
+		        	sceneRow[(j+1)] = ["00","white",0,0, i +',' + (j+1)];
+		        }
 		    }
 		    Game.c3(sceneRow, i);
 		}
