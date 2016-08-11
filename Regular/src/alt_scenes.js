@@ -102,7 +102,7 @@ Crafty.scene('LevelTest', function() {
 	checkPoint[0] = ex, checkPoint[1] = wy;
 	
 	//tilesize-Set
-	tileNumbers = specialSceneList[listX][listY][2].split(','), tileW = tileNumbers[0], tileH = tileNumbers[1];
+	tileNumbers = specialSceneList[listX][listY][2].split(','), tileW = parseInt(tileNumbers[0]), tileH = parseInt(tileNumbers[1]);
 	
 	//Player
 	var player = Crafty.e('Guy');
