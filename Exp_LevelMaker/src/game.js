@@ -40,8 +40,8 @@ var gridH = 16;
 
 Game = {
 	map_grid: {
-		width: 100, 
-		height: 16, 
+		width: gridW, 
+		height: gridH, 
 		tile: {
 			width: tileW, 
 			height: tileH
