@@ -104,6 +104,9 @@ Crafty.scene('LevelTest', function() {
 	//tilesize-Set
 	tileNumbers = specialSceneList[listX][listY][2].split(','), tileW = parseInt(tileNumbers[0]), tileH = parseInt(tileNumbers[1]);
 	
+	//gridsize-Set
+	gridNumbers = specialSceneList[listX][listY][1].split(','), gridW = parseInt(gridNumbers[0]), gridH = parseInt(gridNumbers[1]);
+	
 	//Player
 	var player = Crafty.e('Guy');
 	start();
