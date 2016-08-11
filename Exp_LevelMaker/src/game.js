@@ -577,7 +577,7 @@ Game = {
 		    sceneRow = new Array(Game.map_grid.width);
 		    for (j = 0; j < Game.map_grid.width; j++) {
 		        sceneRow[j] = ["00","white",0,0, i +',' + j];
-		        if(i==(Game.map_grid.height-1)&&j==(Game.map_grid.width+1)) {
+		        if(i==(Game.map_grid.height-1)&&j==(Game.map_grid.width-1)) {
 		        	sceneRow[(j+1)] = ["00","white",0,0, i +',' + (j+1)];
 		        }
 		    }
