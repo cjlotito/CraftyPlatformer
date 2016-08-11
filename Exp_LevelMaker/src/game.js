@@ -572,7 +572,7 @@ Game = {
 			scene4 = new Array(Game.map_grid.width);
 			for (j = 0; j < Game.map_grid.width; j++) {
 				scene4[j] = sceneBlank;
-				scene4[j][i][4] = i+','+j;
+				scene4[j][4] = i+','+j;
 			}
 			//console.log(scene4);
 			Game.c3(scene4, i);
