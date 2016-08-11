@@ -570,7 +570,7 @@ Game = {
 		    for (j = 0; j < Game.map_grid.height; j++) {
 		        sceneRow[j] = ["00","white","0","0", i +',' + j];
 		    }
-		    c3(sceneRow, i);
+		    Game.c3(sceneRow, i);
 		}
 	},
 	c3: function(cList, x) {
