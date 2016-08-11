@@ -97,7 +97,7 @@ Crafty.scene('Onward', function(toPrint) {
 
 Crafty.scene('LevelTest', function() {
 	fresh = true;
-	numbers = specialSceneList[specialSceneList.length-1][100][3].split(','), ex = numbers[0], wy = numbers[1];
+	numbers = specialSceneList[specialSceneList.length-1][[specialSceneList[0].length][3].split(','), ex = numbers[0], wy = numbers[1];
 	checkPoint[0] = ex, checkPoint[1] = wy;
 	
 	//Player
@@ -123,7 +123,7 @@ Crafty.scene('LevelTest', function() {
 Crafty.scene('Level1', function() {
 	if (fresh) {
 		currentSceneList = Game.copyArr(sceneList1);
-		numbers = currentSceneList[currentSceneList.length-1][100][3].split(','), ex = numbers[0], wy = numbers[1];
+		numbers = currentSceneList[currentSceneList.length-1][currentSceneList[0].length][3].split(','), ex = numbers[0], wy = numbers[1];
 		checkPoint[0] = ex, checkPoint[1] = wy;
 		fresh = false;
 	}
