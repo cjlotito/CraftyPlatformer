@@ -578,7 +578,7 @@ Game = {
 			console.log(sceneList);
 		}
 	},
-	function c3(cList, x) {
+	c3: function(cList, x) {
 		sceneList[x] = cList;
 	}
 	// Initialize and start our game
