@@ -556,19 +556,31 @@ Game = {
 		Game.start();
 	},
 	sceneListMaker: function() {
+		//for (i = 0; i < Game.map_grid.width; i++) {
+		//	sceneRow[i] = sceneBlank;
+		//	for (j = 0; j < Game.map_grid.height-1; j++) { 
+		//		sceneList[j] = sceneRow;
+		//		make = sceneList[j][i];
+		//		coords = i+','+j;
+		//		console.log(coords);
+		//		make[4] = coords;
+		//		console.log(make);
+		//	}
+		//}
 		for (i = 0; i < Game.map_grid.width; i++) {
-			sceneRow[i] = sceneBlank;
-			for (j = 0; j < Game.map_grid.height-1; j++) { 
-				sceneList[j] = sceneRow;
-				make = sceneList[j][i];
-				coords = i+','+j;
-				console.log(coords);
-				make[4] = coords;
-				console.log(make);
+			sceneList[i] = sceneRow;
+			scene4 = new Array(Game.map_grid.height);
+			for (j = 0; j < Game.map_grid.height; j++) {
+				scene4[j] = sceneBlank;
 			}
+			console.log(scene4);
+			c3(scene4, i);
+			console.log(sceneList);
 		}
-		console.log(sceneList);
 	},
+	function c3(cList, x) {
+		sceneList[x] = cList;
+	}
 	// Initialize and start our game
 	start: function() {
 		Game.specialText();
