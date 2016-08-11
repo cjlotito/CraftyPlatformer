@@ -580,7 +580,7 @@ Game = {
 	},
 	c3: function(cList, x) {
 		sceneList[x] = cList;
-	}
+	},
 	// Initialize and start our game
 	start: function() {
 		Game.specialText();
