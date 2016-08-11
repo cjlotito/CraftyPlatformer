@@ -571,8 +571,9 @@ Game = {
 			//sceneRow[i] = sceneBlank;
 			scene4 = new Array(Game.map_grid.width);
 			for (j = 0; j < Game.map_grid.width; j++) {
-				Game.exWy(j, i);
-				scene4[j] = sceneBlank;
+				sceneO = new Array(4);
+				Game.exWy(sceneO, j, i);
+				scene4[j] = sceneO;
 				//scene4[j][4] = i+','+j;
 				//console.log(scene4[j]);
 			}
@@ -582,8 +583,8 @@ Game = {
 		}
 		console.log(sceneList);
 	},
-	exWy: function (x, y) {
-		sceneBlank[4] = x + ',' + y;
+	exWy: function (list, x, y) {
+		list[4] = x + ',' + y;
 	},
 	c3: function(cList, x) {
 		sceneList[x] = cList;
