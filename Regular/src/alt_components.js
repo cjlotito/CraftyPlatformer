@@ -34,7 +34,7 @@ Crafty.c('Basics', {
 Crafty.c('TinyGround', {
 	init: function() {
 		this.requires('Basics, Floor, 2D, Canvas');
-		this.attr({x: 0, y: 250, w: 25, h: 5});
+		this.attr({x: 0, y: 250, w: tileW, h: 5});
 		this.origin(12.5, 2.5);
 		this.ID = 'ground';
 	}
@@ -512,7 +512,7 @@ Crafty.c('Guy', {
 Crafty.c('RockTB', {
 	init: function() {		
 		this.requires('Basics, 2D, Canvas, Collision');      
-		this.attr({x: 200, y: 100, w: 25, h: 15});
+		this.attr({x: 200, y: 100, w: tileW-10, h: tileH-5});
 		this.origin(12.5, 7.5);
 	}
 });
@@ -520,14 +520,14 @@ Crafty.c('RockTB', {
 Crafty.c('RockLR', {
 	init: function() {		
 		this.requires('Basics, 2D, Canvas, Collision');      
-		this.attr({x: 200, y: 100, w: 35, h: 10});
+		this.attr({x: 200, y: 100, w: tileW, h: tileH/2});
 	}
 });
 
 Crafty.c('RockCover', {
 	init: function() {		
 		this.requires('Basics, 2D, Canvas, Color, Collision');      
-		this.attr({x: 200, y: 100, w: 35, h: 20, z:2})
+		this.attr({x: 200, y: 100, w: tileW, h: tileH, z:2})
 			.color('yellow');
 	}
 });
@@ -535,7 +535,7 @@ Crafty.c('RockCover', {
 Crafty.c('ColorCover', {
 	init: function() {		
 		this.requires('Basics, 2D, Canvas, Color, Collision');      
-		this.attr({x: 200, y: 100, w: 35, h: 20, z:2})
+		this.attr({x: 200, y: 100, w: tileW, h: tileH, z:2})
 			.color('yellow');
 	}
 });
@@ -544,7 +544,7 @@ Crafty.c('Elevator', {
 	init: function() {		
 		this.requires('Basics, 2D, DOM, Color, Collision, End');
 		this.bind('EnterFrame', this.raise);
-		this.attr({x: 200, y: 100, w: 70, h: 80, z:2})
+		this.attr({x: 200, y: 100, w: tileW*2, h: tileH*4, z:2})
 			.color('black')
 			.onHit('RockCover', this.colliderRC);
 	},
@@ -592,7 +592,7 @@ Crafty.c('Wall', {
 Crafty.c('Door', {
   init: function() {
 	  this.requires('Basics, 2D, Canvas, Color, Collision');
-      this.attr({x: 0, y: 0, w: 35, h: 60, z: 2})
+      this.attr({x: 0, y: 0, w: tileW, h: tileH*3, z: 2})
 		  .color('yellow');
   }
 });
@@ -610,7 +610,7 @@ Crafty.c('Menu', {
 Crafty.c('Icon', {
 	init: function() {		
 		this.requires('Basics, 2D, Canvas, Menu, Mouse, Touch');      
-		this.attr({x: 200, y: 100, w: 35, h: 20, z:10});
+		this.attr({x: 200, y: 100, w: tileW, h: tileH, z:10});
 	}
 });
 
@@ -618,7 +618,7 @@ Crafty.c('Icon', {
 Crafty.c('Blank', {
 	init: function() {		
 		this.requires('Basics, 2D, Canvas, Keyboard, Mouse, Touch');      
-		this.attr({x: 200, y: 100, w: 35, h: 20, z:10});
+		this.attr({x: 200, y: 100, w: tileW, h: tileH, z:10});
 	}
 });
 
@@ -682,7 +682,7 @@ Crafty.c('Platform', {
 Crafty.c('Background', {
 	init: function() {		
 		this.requires('Basics, 2D, Canvas, Color');      
-		this.attr({x: 200, y: 100, w: 35, h: 20, z:2})
+		this.attr({x: 200, y: 100, w: tileW, h: tileH, z:2})
 			.color('white');
 	}
 });
