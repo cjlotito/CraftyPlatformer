@@ -28,8 +28,12 @@ var wide = 4.1;
 var high = 1.5;
 var scaled = 1;
 var length = 600;
-var width = 400;
+var width = 480;
 var start = function() {Crafty.init(length, width);Crafty.viewport.init(length, width);};
+var tileW = 35;
+var tileH = 20;
+var gridW = 100;
+var gridH = 16;
 
 //Click Controls
 /* var rightSet = false, leftSet = false, upSet = false, downSet = false, pauseSet = false;
@@ -55,11 +59,11 @@ Game = {
 	},
 	// This defines the size of each tile
 	map_grid: {
-		width: 100, 
-		height: 16, 
+		width: gridW, 
+		height: gridH, 
 		tile: {
-			width: 35, 
-			height: 20
+			width: tileW, 
+			height: tileH
 		}
 	},
 	copyArr: function(arr){ //Got From Online
