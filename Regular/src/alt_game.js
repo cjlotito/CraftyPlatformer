@@ -88,9 +88,6 @@ Game = {
 		console.log('Grid: ' + gridW + ', ' + gridH);
 		console.log('Game W/H: ' + Game.map_grid.width + ',' + Game.map_grid.height);
 		
-		gridW = x, gridH = y, Game.map_grid.width = x, Game.map_grid.height = y;
-		tileW = tx, tileH = ty, Game.map_grid.tile.width = tx, Game.map_grid.tile.height = ty;
-		
 		Crafty.scene('LevelTest');
 	},
 	toggleVisibility: function(id) {
