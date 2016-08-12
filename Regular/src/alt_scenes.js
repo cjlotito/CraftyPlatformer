@@ -103,9 +103,11 @@ Crafty.scene('LevelTest', function() {
 	
 	//tilesize-Set
 	tileNumbers = specialSceneList[listX][listY][2].split(','), tileW = parseInt(tileNumbers[0]), tileH = parseInt(tileNumbers[1]);
+	console.log('Tiles: ' + tileW + ', ' + tileH);
 	
 	//gridsize-Set
 	gridNumbers = specialSceneList[listX][listY][1].split(','), gridW = parseInt(gridNumbers[0]), gridH = parseInt(gridNumbers[1]);
+	console.log('Grid: ' + gridW + ', ' + gridH);
 	
 	//Player
 	var player = Crafty.e('Guy');
@@ -134,6 +136,9 @@ Crafty.scene('Level1', function() {
 		checkPoint[0] = ex, checkPoint[1] = wy;
 		fresh = false;
 	}
+	console.log('Tiles: ' + tileW + ', ' + tileH);
+	console.log('Grid: ' + gridW + ', ' + gridH);
+	
 	//Player
 	var player = Crafty.e('Guy');
 	start();
