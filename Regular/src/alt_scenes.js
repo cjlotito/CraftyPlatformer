@@ -163,7 +163,7 @@ Crafty.scene('Level1', function() {
 		}
 	});
 	
-
+	if(debug) {
 		//HorzLine
 		for (i=0;i<Game.map_grid.height;i++) {
 			Crafty.e('HorzLine').at(0,i);
@@ -172,7 +172,7 @@ Crafty.scene('Level1', function() {
 		for (i=0;i<(Game.map_grid.width+1);i++) {
 			Crafty.e('VertLine').at(i,0);
 		}
-
+	}
 	
 
 	sceneSet(currentSceneList);
