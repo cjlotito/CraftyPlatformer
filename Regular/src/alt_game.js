@@ -88,7 +88,7 @@ Game = {
 		console.log('Grid: ' + gridW + ', ' + gridH);
 		console.log('Game W/H: ' + Game.map_grid.width + ',' + Game.map_grid.height);
 		startPoint = -1;
-		setGrid(gridW, gridH, tileW, tileH);
+		Game.setGrid(gridW, gridH, tileW, tileH);
 		//Game.start('Onward');
 	},
 	toggleVisibility: function(id) {
