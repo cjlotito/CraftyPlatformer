@@ -87,8 +87,8 @@ Game = {
 		Game.map_grid.width = gridW, Game.map_grid.height = gridH;
 		console.log('Grid: ' + gridW + ', ' + gridH);
 		console.log('Game W/H: ' + Game.map_grid.width + ',' + Game.map_grid.height);
-		
-		Game.start('LevelTest');
+		startPoint = -1;
+		Game.start('Onward');
 	},
 	toggleVisibility: function(id) {
 		var e = document.getElementById(id);
