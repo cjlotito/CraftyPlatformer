@@ -158,5 +158,32 @@
 		<p></p>
 		<input id="clickMe" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" />
 	</div>
+	<div id='gridMod' class="gridMod" style="display: block"> 
+		<table>
+			<tr>
+				<td>Grid Size</td>
+				<td>Width<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>
+				<td>Height<input type="number" id="gridH" min="1" max="100" size="1" value="16"></td>
+			</tr>
+			<tr>
+				<td>Tile Size</td>
+				<td>Width<input type="number" id="tileW" min="25" max="100000" size="1" value="35"></td>
+				<td>Height<input type="number" id="tileH" min="10" max="100000" size="1" value="20"></td>
+			</tr>
+		</table>
+			<input type="submit" onclick="sendGrid()">
+	</div>
+	<div id="scripts">
+		<script>
+			function sendGrid() {
+				var HgridW = parseInt(document.getElementById('gridW').value);
+				var HgridH = parseInt(document.getElementById('gridH').value);
+				var HtileW = parseInt(document.getElementById('tileW').value);
+				var HtileH = parseInt(document.getElementById('tileH').value);
+				console.log("calling send grid(" + HgridW, + ", " + HgridH + ", " + HtileW + ", " + HtileH +")");
+				Game.setGrid(HgridW, HgridH, HtileW, HtileH);
+			}
+		</script>
+	</div>
 </body>
 </html>
