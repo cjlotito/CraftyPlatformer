@@ -213,8 +213,8 @@
 						<div class="inputWrapper">Load<input class="fileInput hidden" type="file" name="load" onchange="readURL(this);" /></div>
 						<div class="inputWrapper" onclick="Game.blockSetBackground();">Chage Background</div>
 						<div class="inputWrapper" onclick="Game.toggleVisibility('gridMod');">Resize Grid</div>
-						<div class="inputWrapper"><input type="file" id="fileinput" multiple onchange="readMultipleFiles(this)";/>Merge Levels</div>
-						<!--<input type="file" id="fileinput" multiple />-->
+						<!--<div class="inputWrapper"><input type="file" id="fileinput" multiple onchange="readMultipleFiles(this)";/>Merge Levels</div>-->
+						<input type="file" id="fileinput" multiple />
 					</div>
 				</li>
 				<!--<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button2()">News</a>
@@ -548,6 +548,7 @@
 						alert("Failed to load files"); 
 					}
 				}
+				document.getElementById('fileinput').addEventListener('change', readMultipleFiles, false);
 			</script>
 			<script>
 				$(function() {
