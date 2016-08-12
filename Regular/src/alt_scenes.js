@@ -107,7 +107,9 @@ Crafty.scene('LevelTest', function() {
 	
 	//gridsize-Set
 	gridNumbers = specialSceneList[listX][listY][1].split(','), gridW = parseInt(gridNumbers[0]), gridH = parseInt(gridNumbers[1]);
+	Game.map_grid.width = gridW, Game.map_grid.height = gridH;
 	console.log('Grid: ' + gridW + ', ' + gridH);
+	console.log('Game W/H: ' + Game.map_grid.width + ',' + Game.map_grid.height);
 	
 	if (debug) {
 		//HorzLine
