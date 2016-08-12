@@ -181,7 +181,13 @@ Game = {
 		if (buttonID == 'up') upSet = false;
 		if (buttonID == 'down') downSet = false; */
 	},
-	start: function() {
+	setGrid: function(x,y, tx, ty) {
+		gridW = x, gridH = y, Game.map_grid.width = x, Game.map_grid.height = y;
+		tileW = tx, tileH = ty, Game.map_grid.tile.width = tx, Game.map_grid.tile.height = ty;
+		console.log("setgrid started. Received: " + Game.map_grid.tile.width + ", " + Game.map_grid.tile.height + ", " + Game.map_grid.width + ", " + Game.map_grid.height);
+		Game.start('Onward');
+	},
+	start: function(goScene) {
 		Crafty.init(length, width, document.getElementById('cr-stage')); //Start
 		//Crafty.timer.steptype('variable', 1);
 		Crafty.multitouch(true);
@@ -191,7 +197,7 @@ Game = {
 		Crafty.background('cadetblue');
 		Base = Crafty.e('Basics');
 		Message = Base.message;
-		Crafty.scene('Onward', WelcomeLevelText());
+		Crafty.scene(goScene, WelcomeLevelText());
 	}
 }
 
