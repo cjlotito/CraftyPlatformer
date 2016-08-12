@@ -66,6 +66,17 @@ Game = {
 			height: tileH
 		}
 	},
+	// The total width of the game screen. Since our grid takes up the entire screen
+	//  this is just the width of a tile times the width of the grid
+	width: function() {
+		return this.map_grid.width * this.map_grid.tile.width;
+	},
+
+	// The total height of the game screen. Since our grid takes up the entire screen
+	//  this is just the height of a tile times the height of the grid
+	height: function() {
+		return this.map_grid.height * this.map_grid.tile.height;
+	},
 	copyArr: function(arr){ //Got From Online
 		var new_arr = arr.slice(0);
 		for(var i = new_arr.length; i--;)
@@ -169,7 +180,8 @@ Game = {
 		if (buttonID == 'down') downSet = false; */
 	},
 	start: function() {
-		Crafty.init(length, width, document.getElementById('cr-stage')); //Start
+		//Crafty.init(length, width, document.getElementById('cr-stage')); //Start
+		Crafty.init(Game.width(), Game.height());
 		//Crafty.timer.steptype('variable', 1);
 		Crafty.multitouch(true);
 		Crafty.pixelart(false);
