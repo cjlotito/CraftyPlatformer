@@ -83,7 +83,11 @@ Crafty.scene('Onward', function(toPrint) {
 	} else {
 		this.start_game = function() {
 			trans = 0;
-			Crafty.scene(Lev());
+			if (startPoint == -1) {
+				Crafty.scene('LevelTest');	
+			} else {
+				Crafty.scene(Lev())
+			}
 		}
 	}
 	
