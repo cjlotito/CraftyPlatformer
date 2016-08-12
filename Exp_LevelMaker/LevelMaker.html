@@ -496,6 +496,7 @@
 			<script> 
 				function readURL(input) {
 					fileRead = input.name;
+					console.log(fileRead);
 					if (input.files && input.files[0]) {
 						var reader = new FileReader();
 						if(fileRead=='load') {
