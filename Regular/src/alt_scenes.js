@@ -109,6 +109,17 @@ Crafty.scene('LevelTest', function() {
 	gridNumbers = specialSceneList[listX][listY][1].split(','), gridW = parseInt(gridNumbers[0]), gridH = parseInt(gridNumbers[1]);
 	console.log('Grid: ' + gridW + ', ' + gridH);
 	
+	if (debug) {
+		//HorzLine
+		for (i=0;i<Game.map_grid.height;i++) {
+			Crafty.e('HorzLine').at(0,i);
+		}
+		//VertLine
+		for (i=0;i<(Game.map_grid.width+1);i++) {
+			Crafty.e('VertLine').at(i,0);
+		}
+	}	
+	
 	//Player
 	var player = Crafty.e('Guy');
 	start();
@@ -151,6 +162,17 @@ Crafty.scene('Level1', function() {
 			player.playerPause(first_entity);
 		}
 	});
+	
+	if (debug) {
+		//HorzLine
+		for (i=0;i<Game.map_grid.height;i++) {
+			Crafty.e('HorzLine').at(0,i);
+		}
+		//VertLine
+		for (i=0;i<(Game.map_grid.width+1);i++) {
+			Crafty.e('VertLine').at(i,0);
+		}
+	}
 	
 
 	sceneSet(currentSceneList);
