@@ -689,7 +689,7 @@ Crafty.c('Background', {
 });
 Crafty.c('HorzLine', {
 	init: function() {		
-		this.requires('Actor, Color')     
+		this.requires('2d, Canvas, Basics, Color')     
 			.attr({x: 0, y: 0, w: (Game.map_grid.width*Game.map_grid.tile.width), h: 2, z:10, alpha:0.3})
 			.color('black');
 	}
@@ -697,7 +697,7 @@ Crafty.c('HorzLine', {
 
 Crafty.c('VertLine', {
 	init: function() {		
-		this.requires('Actor, Color')     
+		this.requires('2D, Canvas, Basics, Color')     
 			.attr({x: 0, y: 0, w: 2, h: (Game.map_grid.height*Game.map_grid.tile.height)-tileH, z:10, alpha:0.3})
 			.color('black');
 	}
