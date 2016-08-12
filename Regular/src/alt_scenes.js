@@ -102,14 +102,14 @@ Crafty.scene('LevelTest', function() {
 	checkPoint[0] = ex, checkPoint[1] = wy;
 	
 	//tilesize-Set
-	tileNumbers = specialSceneList[listX][listY][2].split(','), tileW = parseInt(tileNumbers[0]), tileH = parseInt(tileNumbers[1]);
-	console.log('Tiles: ' + tileW + ', ' + tileH);
+	//tileNumbers = specialSceneList[listX][listY][2].split(','), tileW = parseInt(tileNumbers[0]), tileH = parseInt(tileNumbers[1]);
+	//console.log('Tiles: ' + tileW + ', ' + tileH);
 	
 	//gridsize-Set
-	gridNumbers = specialSceneList[listX][listY][1].split(','), gridW = parseInt(gridNumbers[0]), gridH = parseInt(gridNumbers[1]);
-	Game.map_grid.width = gridW, Game.map_grid.height = gridH;
-	console.log('Grid: ' + gridW + ', ' + gridH);
-	console.log('Game W/H: ' + Game.map_grid.width + ',' + Game.map_grid.height);
+	//gridNumbers = specialSceneList[listX][listY][1].split(','), gridW = parseInt(gridNumbers[0]), gridH = parseInt(gridNumbers[1]);
+	//Game.map_grid.width = gridW, Game.map_grid.height = gridH;
+	//console.log('Grid: ' + gridW + ', ' + gridH);
+	//console.log('Game W/H: ' + Game.map_grid.width + ',' + Game.map_grid.height);
 	
 	if (debug) {
 		//HorzLine
