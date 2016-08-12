@@ -37,6 +37,7 @@ var tileW = 35;
 var tileH = 20;
 var gridW = 100;
 var gridH = 16;
+var GameLevels = [];
 
 Game = {
 	map_grid: {
@@ -586,6 +587,10 @@ Game = {
 	},
 	c3: function(cList, x) {
 		sceneList[x] = cList;
+	},
+	merger: function(contents) {
+		GameLevels.push(contents);
+		console.log(GameLevels[0]);
 	},
 	// Initialize and start our game
 	start: function() {
