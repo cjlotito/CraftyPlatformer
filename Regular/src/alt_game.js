@@ -32,7 +32,7 @@ var width = 480;
 var start = function() {Crafty.init(length, width);Crafty.viewport.init(length, width);};
 var tileW = 35;
 var tileH = 20;
-var gridW = 50;
+var gridW = 100;
 var gridH = 16;
 
 //Click Controls
