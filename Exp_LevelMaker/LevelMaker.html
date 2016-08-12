@@ -213,6 +213,8 @@
 						<div class="inputWrapper">Load<input class="fileInput hidden" type="file" name="load" onchange="readURL(this);" /></div>
 						<div class="inputWrapper" onclick="Game.blockSetBackground();">Chage Background</div>
 						<div class="inputWrapper" onclick="Game.toggleVisibility('gridMod');">Resize Grid</div>
+						<div class="inputWrapper" onclick="readMultipleFiles(this);">Merge Levels</div>
+						<!--<input type="file" id="fileinput" multiple />-->
 					</div>
 				</li>
 				<!--<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button2()">News</a>
@@ -518,6 +520,36 @@
 						}
 					}
 				}
+			</script>
+			<script type="text/javascript">
+				function readMultipleFiles(evt) {
+					//Retrieve all the files from the FileList object
+					var files = evt.target.files; 
+					
+					if (files) {
+						for (var i=0, f; f=files[i]; i++) {
+							var r = new FileReader();
+							r.onload = (function(f) {
+								return function(e) {
+									var contents = e.target.result;
+									console.log(f.name);
+									//alert( "Got the file.n" 
+									//+"name: " + f.name + "n"
+									//+"type: " + f.type + "n"
+									//+"size: " + f.size + " bytesn"
+									//+ "starts with: " + contents.substr(1, contents.indexOf("n"))
+									//); 
+								};
+							})(f);
+							
+							r.readAsText(f);
+						}   
+					} else {
+						alert("Failed to load files"); 
+					}
+				}
+				
+				document.getElementById('fileinput').addEventListener('change', readMultipleFiles, false);
 			</script>
 			<script>
 				$(function() {
