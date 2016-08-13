@@ -599,9 +599,9 @@ Game = {
 	},
 	saveMode: function(dlLink, tBox) {
 		Game.printArray();
-		var link = document.getElementById(dlLink);
+		var link = document.getElementById("&quot;" + dlLink + "&quot;");
 		console.log(link.class);
-		textB = document.getElementById(tBox);
+		textB = document.getElementById("&quot;" + tBox + "&quot;");
 		link.href = makeTextFile(textB.value);
 		link.style.display = 'block';
 	},
