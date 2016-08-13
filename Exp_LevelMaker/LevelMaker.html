@@ -209,7 +209,7 @@
 						<div class="inputWrapper" onclick="Game.undo()">Undo</div>
 						<div class="inputWrapper" onclick="Game.reSkin();">Skin</div>
 						<div class="inputWrapper" onclick="Game.toggleVisibility('debug');">Debug Mode</div>
-						<div class="inputWrapper" onclick="Game.saveMode();">Save</div>
+						<div class="inputWrapper" onclick="Game.saveMode(downloadLink, textbox);">Save</div>
 						<div class="inputWrapper">Load<input class="fileInput hidden" type="file" name="load" onchange="readURL(this);" /></div>
 						<div class="inputWrapper" onclick="Game.blockSetBackground();">Chage Background</div>
 						<div class="inputWrapper" onclick="Game.toggleVisibility('gridMod');">Resize Grid</div>
@@ -238,6 +238,11 @@
 				<textarea style="display: none" id="UserCode" class="debug" rows="4" cols="80"></textarea>
 				<input style="display: none" class="debug" id="Load" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" />
 				<!--<tr class="debug" style="display: none"><td><label><input id="exportText" type="checkbox" onchange="Game.textExport(this)">Format Text</label></tr>-->
+				<!-- NON Existent Text Field-->
+				<div id="textHolder" style="display: none">					
+					<textarea id="Collab" rows="4" cols="15" placeholder="Enter text to save"></textarea>
+				</div>
+				<a download="Levels.txt" id="Ldownloadlink" style="display: none">Download</a>
 			</div>
 			<div class="column-left" align="left">
 				<div>
@@ -279,7 +284,7 @@
 						<tr><td><label id="speck" style="display:none"><label id="inner"></label><input type="text" id="specialText" value='0' style="width:100px" onkeypress="Game.specialText()"></label></td></tr>
 						<div id="options">
 							<tr><td><label><input id="colorCheck" type="checkbox" onchange="Game.colorChange(this)">Type Check</label></td></tr>
-							<tr><td><a download="levels.txt" id="downloadlink" style="display: none">Download</a></td></tr>
+							<tr><td><a download="level.txt" id="downloadlink" style="display: none">Download</a></td></tr>
 							<!--<tr><td><label><input id="Paste" type="checkbox" onchange="Game.Paste(this)">Paste</label></td></tr>-->
 							<!--<tr><td><label><input id="clearCheck" type="checkbox" onchange="Game.clearBlock(this)">Remove</label></td></tr>-->
 							<!--<tr><td><label><input id="saveMode" type="checkbox" onchange="Game.toggleVisibility('debug')">Save/Load</label></td></tr>-->
@@ -532,12 +537,13 @@
 							})(f);
 							
 							r.readAsText(f);
-						}   
+						}
+						Game.mergerSave();
 					} else {
 						alert("Failed to load files"); 
 					}
 				}
-				document.getElementById('fileinput').addEventListener('change', readMultipleFiles, false);
+				document.getElementById('fileinput').addEventListener('change', Game.readMultipleFiles, false);
 			</script>
 			<script>
 				$(function() {
