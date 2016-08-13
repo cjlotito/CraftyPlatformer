@@ -443,6 +443,12 @@
 					
 					return textFile;
 				}
+				function saveMode() {
+ -					Game.printArray();
+ -					var link = document.getElementById('downloadlink');
+ -					link.href = makeTextFile(textbox.value);
+ -					link.style.display = 'block';
+ -				}
 			</script>
 			<script>
 				(function () {
@@ -544,14 +550,6 @@
 					}
 				}
 				document.getElementById('fileinput').addEventListener('change', Game.readMultipleFiles, false);
-			</script>
-			<script>
-				function saveMode() {
- -					Game.printArray();
- -					var link = document.getElementById('downloadlink');
- -					link.href = makeTextFile(textbox.value);
- -					link.style.display = 'block';
- -				}
 			</script>
 			<script>
 				$(function() {
