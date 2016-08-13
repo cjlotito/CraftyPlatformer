@@ -599,7 +599,7 @@ Game = {
 	},
 	saveMode: function(dlLink, tBox) {
 		Game.printArray();
-		console.log(dlink);
+		console.log(dlLink);
 		var link = document.getElementById(dlLink);
 		console.log(link);
 		textB = document.getElementById(tBox);
