@@ -599,12 +599,12 @@ Game = {
 	},
 	saveMode: function(dlLink, tBox) {
 		Game.printArray();
-		console.log(dlLink);
-		var link = document.getElementById(dlLink);
-		console.log(link);
-		textB = document.getElementById(tBox);
-		link.href = makeTextFile(textB.value);
-		link.style.display = 'block';
+		//console.log(dlLink);
+		//var link = document.getElementById(dlLink);
+		//console.log(link);
+		//textB = document.getElementById(tBox);
+		document.getElementById(dlLink).href = makeTextFile(document.getElementById(tBox).value);
+		document.getElementById(dlLink).style.display = 'block';
 	},
 	// Initialize and start our game
 	start: function() {
