@@ -600,6 +600,7 @@ Game = {
 	saveMode: function(dlLink, tBox) {
 		Game.printArray();
 		var link = document.getElementById(dlLink);
+		console.log(link.class);
 		textB = document.getElementById(tBox);
 		link.href = makeTextFile(textB.value);
 		link.style.display = 'block';
