@@ -595,7 +595,10 @@ Game = {
 		text = JSON.stringify(GameLevels);
 		document.getElementById("Collab").value = text;
 		//console.log(GameLevels[0]);
-		Game.saveMode("LdownloadLink", "Collab");	
+		//Game.saveMode("LdownloadLink", "Collab");
+		Game.printArray();
+		document.getElementById("LdownloadLink").href = makeTextFile(document.getElementById("Collab").value);
+		document.getElementById("LdownloadLink").style.display = 'block';
 	},
 	saveMode: function(dlLink, tBox) {
 		Game.printArray();
