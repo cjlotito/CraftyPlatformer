@@ -590,7 +590,19 @@ Game = {
 	},
 	merger: function(contents) {
 		GameLevels.push(contents);
-		console.log(GameLevels[0]);
+	},
+	mergerSave: function() {
+		text = JSON.stringify(GameLevels);
+		document.getElementById("Collab").value = text;
+		//console.log(GameLevels[0]);
+		Game.saveMode(LdownloadLink, Collab);	
+	},
+	saveMode: function(dlLink, tBox) {
+		Game.printArray();
+		var link = document.getElementById(dlLink);
+		textB = document.getElementById(tBox);
+		link.href = makeTextFile(textB.value);
+		link.style.display = 'block';
 	},
 	// Initialize and start our game
 	start: function() {
