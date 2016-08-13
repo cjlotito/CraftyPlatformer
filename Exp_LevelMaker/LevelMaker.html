@@ -209,7 +209,7 @@
 						<div class="inputWrapper" onclick="Game.undo()">Undo</div>
 						<div class="inputWrapper" onclick="Game.reSkin();">Skin</div>
 						<div class="inputWrapper" onclick="Game.toggleVisibility('debug');">Debug Mode</div>
-						<div class="inputWrapper" onclick='Game.saveMode("downloadLink", "UserCode");'>Save</div>
+						<div class="inputWrapper" onclick='saveMode();'>Save</div>
 						<div class="inputWrapper">Load<input class="fileInput hidden" type="file" name="load" onchange="readURL(this);" /></div>
 						<div class="inputWrapper" onclick="Game.blockSetBackground();">Chage Background</div>
 						<div class="inputWrapper" onclick="Game.toggleVisibility('gridMod');">Resize Grid</div>
@@ -544,6 +544,12 @@
 					}
 				}
 				document.getElementById('fileinput').addEventListener('change', Game.readMultipleFiles, false);
+				function saveMode() {
+ -					Game.printArray();
+ -					var link = document.getElementById('downloadlink');
+ -					link.href = makeTextFile(textbox.value);
+ -					link.style.display = 'block';
+ -				}
 			</script>
 			<script>
 				$(function() {
