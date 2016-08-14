@@ -588,27 +588,6 @@ Game = {
 	c3: function(cList, x) {
 		sceneList[x] = cList;
 	},
-	merger: function(contents) {
-		GameLevels.push(contents);
-	},
-	mergerSave: function() {
-		text = JSON.stringify(GameLevels);
-		document.getElementById("Collab").value = text;
-		//console.log(GameLevels[0]);
-		//Game.saveMode("LdownloadLink", "Collab");
-		Game.printArray();
-		document.getElementById("LdownloadLink").href = makeTextFile(document.getElementById("Collab").value);
-		document.getElementById("LdownloadLink").style.display = 'block';
-	},
-	saveMode: function(dlLink, tBox) {
-		Game.printArray();
-		//console.log(dlLink);
-		//var link = document.getElementById(dlLink);
-		//console.log(link);
-		//textB = document.getElementById(tBox);
-		document.getElementById(dlLink).href = makeTextFile(document.getElementById(tBox).value);
-		document.getElementById(dlLink).style.display = 'block';
-	},
 	// Initialize and start our game
 	start: function() {
 		Game.specialText();
