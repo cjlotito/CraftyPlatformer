@@ -528,6 +528,7 @@
 				}
 			</script>
 			<script type="text/javascript">
+				var GameLevels = [];
 				function readMultipleFiles(evt) {
 					//Retrieve all the files from the FileList object
 					var files = evt.target.files; 
@@ -539,6 +540,7 @@
 								return function(e) {
 									var contents = e.target.result;
 									console.log(f.name);
+									GameLevels.push(contents);
 									//alert( "Got the file.n" 
 									//+"name: " + f.name + "n"
 									//+"type: " + f.type + "n"
@@ -550,12 +552,13 @@
 							
 							r.readAsText(f);
 						}
-						Game.mergerSave();
 					} else {
 						alert("Failed to load files"); 
 					}
 				}
-				document.getElementById('fileinput').addEventListener('change', Game.readMultipleFiles, false);
+				fileSave = document.getElementById('Collab').value = GameLevels;
+				console.log(fileSave);
+				document.getElementById('fileinput').addEventListener('change', readMultipleFiles, false);
 			</script>
 			<script>
 				$(function() {
