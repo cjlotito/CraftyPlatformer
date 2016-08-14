@@ -444,6 +444,7 @@
 					return textFile;
 				}
 				function saveMode() {
+					textbox = document.getElementById('UserCode');
 					Game.printArray();
 					var link = document.getElementById('downloadlink');
 					link.href = makeTextFile(textbox.value);
