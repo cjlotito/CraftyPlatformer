@@ -214,7 +214,7 @@
 						<div class="inputWrapper" onclick="Game.blockSetBackground();">Chage Background</div>
 						<div class="inputWrapper" onclick="Game.toggleVisibility('gridMod');">Resize Grid</div>
 						<!--<div class="inputWrapper"><input type="file" id="fileinput" multiple onchange="readMultipleFiles(this)";/>Merge Levels</div>-->
-						<input type="file" onchange="readMulipleFiles(this)" id="fileinput" multiple />
+						<input type="file" onchange="readMultipleFiles(this);" id="fileinput" multiple />
 					</div>
 				</li>
 				<!--<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button2()">News</a>
@@ -404,6 +404,10 @@
 		</div>
 		<div id="scripts">
 			<script>
+				var swatchList = ["orange", "blue", "red", "yellow", "indigo", "black", "green", "violet", "white"];
+				var textFile = null;
+				var GameLevels = new Array();
+				var SingleSceneList = new Array();
 				function sendGrid() {
 					var HgridW = parseInt(document.getElementById('gridW').value);
 					var HgridH = parseInt(document.getElementById('gridH').value);
@@ -412,9 +416,6 @@
 					console.log("calling send grid(" + HgridW, + ", " + HgridH + ", " + HtileW + ", " + HtileH +")");
 					Game.setGrid(HgridW, HgridH, HtileW, HtileH);
 				}
-			</script>
-			<script>
-				var swatchList = ["orange", "blue", "red", "yellow", "indigo", "black", "green", "violet", "white"];
 				function swatchSelect(outColor) {
 					Game.playC(outColor.id);
 					for (i = 0; i < swatchList.length; i++) {
@@ -427,9 +428,6 @@
 						}
 					} 
 				}
-			</script>
-			<script>
-				var textFile = null, textbox = document.getElementById('textbox');
 				function makeTextFile(text) {
 					var data = new Blob([text], {type: 'text/plain'});
 					
@@ -445,13 +443,11 @@
 				}
 				function saveMode(box, dlink) {
 					textbox = document.getElementById(box);
-					Game.printArray();
 					var link = document.getElementById(dlink);
+					Game.printArray();
 					link.href = makeTextFile(textbox.value);
 					link.style.display = 'block';
 				}
-			</script>
-			<script>
 				/* When the user clicks on the button,
 				toggle between hiding and showing the dropdown content */
 				function button1() {
@@ -472,8 +468,6 @@
 						}
 					}
 				}
-			</script>
-			<script> 
 				function readURL(input) {
 					fileRead = input.name;
 					console.log(input.files + ' ' + input.files[0].name);
@@ -498,27 +492,31 @@
 						}
 					}
 				}
-			</script>
-			<script type="text/javascript">
-				var GameLevels = [];
 				function readMultipleFiles(evt) {
 					//Retrieve all the files from the FileList object
-					var files = evt.target.files; 
+					//console.log(evt.files);
+					//var files = evt.target.files; 
+					var files = evt.files; 
 					
 					if (files) {
 						for (var i=0, f; f=files[i]; i++) {
+							var q = 0;
 							var r = new FileReader();
 							r.onload = (function(f) {
 								return function(e) {
 									var contents = e.target.result;
-									console.log(f.name);
-									GameLevels.push(contents);
-									//alert( "Got the file.n" 
-									//+"name: " + f.name + "n"
-									//+"type: " + f.type + "n"
-									//+"size: " + f.size + " bytesn"
-									//+ "starts with: " + contents.substr(1, contents.indexOf("n"))
-									//); 
+									list = JSON.parse(contents);
+									SingleSceneList = list;
+									GameLevels.push(sceneList);
+									if (q == files.length-1) {
+										text = JSON.stringify(GameLevels);
+										test = document.getElementById('Collab').value = text;
+										//console.log(test);
+										saveMode('Collab', 'Ldownloadlink');
+									} else {
+										console.log(q);
+										q++;
+									}
 								};
 							})(f);
 							
@@ -527,12 +525,8 @@
 					} else {
 						alert("Failed to load files"); 
 					}
-					fileSave = document.getElementById('Collab').value = GameLevels;
-					console.log(fileSave);
 				}
 				//document.getElementById('fileinput').addEventListener('change', readMultipleFiles, false);
-			</script>
-			<script>
 				$(function() {
 				    $(".inputWrapper").mousedown(function() {
 				        var button = $(this);
