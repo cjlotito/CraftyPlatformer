@@ -187,7 +187,7 @@ Game = {
 		console.log("setgrid started. Received: " + Game.map_grid.tile.width + ", " + Game.map_grid.tile.height + ", " + Game.map_grid.width + ", " + Game.map_grid.height);
 		Game.start('Onward');
 	},
-	checkDebug: function(tf) {
+	checkDebug: function() {
 		if (document.getElementById('debugCheck').checked) {
 			debug = true;
 		} else {
