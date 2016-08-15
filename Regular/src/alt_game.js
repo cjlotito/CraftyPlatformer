@@ -14,7 +14,7 @@ var playerColor = 'yellow';
 var clicked = false;
 var rise = false;
 var color_default = ['blue'];
-var debug = true;
+var debug = false;
 var specialSceneList = [];
 var pauseKey = Crafty.keys.Q;
 //Key Color RED BLUE GREEN ORANGE BLACK INDIGO VIOLET WHITE YELLOW
@@ -187,6 +187,13 @@ Game = {
 		console.log("setgrid started. Received: " + Game.map_grid.tile.width + ", " + Game.map_grid.tile.height + ", " + Game.map_grid.width + ", " + Game.map_grid.height);
 		Game.start('Onward');
 	},
+	checkDebug: function(tf) {
+		if (document.getElementById('debugCheck').checked) {
+			debug = true;
+		} else {
+			debug = false;
+		}
+	},
 	start: function(goScene) {
 		Crafty.init(length, width, document.getElementById('cr-stage')); //Start
 		//Crafty.timer.steptype('variable', 1);
@@ -194,6 +201,10 @@ Game = {
 		Crafty.pixelart(false);
 		Crafty.timer.steptype("variable");
 		Crafty.timer.FPS(50);
+		
+		//Debug Mode
+		Game.checkDebug();
+		
 		Crafty.background('cadetblue');
 		Base = Crafty.e('Basics');
 		Message = Base.message;
