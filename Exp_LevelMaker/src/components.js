@@ -79,7 +79,7 @@ Crafty.c('Scroll', {
 					} 
 
 				});
-				//RIGHT
+				//RIGHT  
 				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 1, (5)).color('orange').bind('Click', function(){player.color(this.color()); playerColor = 'orange'; tempColor = 'orange'; background = 'orange';});
 				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 1, (7)).color('yellow').bind('Click', function(){player.color(this.color()); playerColor = 'yellow'; tempColor = 'yellow'; background = 'yellow';});
 				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 1, (9)).color('green').bind('Click', function(){player.color(this.color()); playerColor = 'green'; tempColor = 'green'; background = 'green';});

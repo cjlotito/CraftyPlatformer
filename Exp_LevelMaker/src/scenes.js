@@ -16,7 +16,7 @@ Crafty.scene('game', function () {
 //		}
 //		i++;
 //	}
-	//Player
+	//Player 
 	var player = Crafty.e('Scroll').bind('KeyDown', function(e) {
 		if(e.key == Crafty.keys.SPACE) {
 			console.log(player.direction);
