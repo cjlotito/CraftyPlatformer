@@ -195,7 +195,7 @@ Game = {
 		}
 	},
 	loadLevel: function() {
-		console.log(myLevels.length);
+		console.log(myLevels[0].length);
 	},
 	start: function(goScene) {
 		Crafty.init(length, width, document.getElementById('cr-stage')); //Start
