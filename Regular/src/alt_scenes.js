@@ -86,7 +86,7 @@ Crafty.scene('Onward', function(toPrint) {
 			if (startPoint == -1) {
 				Crafty.scene('LevelTest');	
 			} else {
-				Crafty.scene(Lev())
+				Crafty.scene(Level);
 			}
 		}
 	}
@@ -146,9 +146,10 @@ Crafty.scene('LevelTest', function() {
 	
 });
 
-Crafty.scene('Level1', function() {
+Crafty.scene('Level', function() {
 	if (fresh) {
-		currentSceneList = Game.copyArr(sceneList1);
+		//currentSceneList = Game.copyArr(sceneList1);
+		currentSceneList = myLevels[startPoint-1];
 		numbers = currentSceneList[currentSceneList.length-1][currentSceneList[0].length][3].split(','), ex = numbers[0], wy = numbers[1];
 		checkPoint[0] = ex, checkPoint[1] = wy;
 		fresh = false;
@@ -204,11 +205,6 @@ Crafty.scene('Level1', function() {
 		}
 	});
 	//END FIX
-	
-	Message(330, 115, 1200, 3, 'Bradley,',  '#FFFFFF', 99999);
-    Message(330, 135, 1200, 3, 'Warning! Sometimes you need to blend in with your surroundings.',  '#FFFFFF', 99999);
-    Message(330, 155, 1200, 3, 'Try Tapping the Orange Bar to match your color to the next room.',  '#FFFFFF', 99999);
-
 });
 	
 Crafty.scene('Level2', function() {
