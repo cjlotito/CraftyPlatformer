@@ -214,7 +214,11 @@
 						<div class="inputWrapper" onclick="Game.blockSetBackground();">Chage Background</div>
 						<div class="inputWrapper" onclick="Game.toggleVisibility('gridMod');">Resize Grid</div>
 						<!--<div class="inputWrapper"><input type="file" id="fileinput" multiple onchange="readMultipleFiles(this)";/>Merge Levels</div>-->
+<<<<<<< HEAD
 						<input type="file" onchange="readMultipleFiles(this);" id="fileinput" multiple />
+=======
+						<input type="file" onchange="readMultipleFiles(this)" id="fileinput" multiple />
+>>>>>>> origin/master
 					</div>
 				</li>
 				<!--<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="button2()">News</a>
@@ -284,7 +288,7 @@
 						<div id="options">
 							<tr><td><label><input id="colorCheck" type="checkbox" onchange="Game.colorChange(this)">Type Check</label></td></tr>
 							<tr><td><a download="level.txt" class="test" id="downloadlink" style="display: none">Download</a></td></tr>
-							<tr><td><a download="Levels.txt" class="test" id="Ldownloadlink" style="display: none">Download Level</a></td></tr>
+							<tr><td><a download="Levels.js" class="test" id="Ldownloadlink" style="display: none">Download Level</a></td></tr>
 							<!--<tr><td><label><input id="Paste" type="checkbox" onchange="Game.Paste(this)">Paste</label></td></tr>-->
 							<!--<tr><td><label><input id="clearCheck" type="checkbox" onchange="Game.clearBlock(this)">Remove</label></td></tr>-->
 							<!--<tr><td><label><input id="saveMode" type="checkbox" onchange="Game.toggleVisibility('debug')">Save/Load</label></td></tr>-->
@@ -494,8 +498,11 @@
 				}
 				function readMultipleFiles(evt) {
 					//Retrieve all the files from the FileList object
+<<<<<<< HEAD
 					//console.log(evt.files);
 					//var files = evt.target.files; 
+=======
+>>>>>>> origin/master
 					var files = evt.files; 
 					
 					if (files) {
