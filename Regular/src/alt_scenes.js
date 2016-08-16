@@ -86,7 +86,7 @@ Crafty.scene('Onward', function(toPrint) {
 			if (startPoint == -1) {
 				Crafty.scene('LevelTest');	
 			} else {
-				Crafty.scene(Level);
+				Crafty.scene('Level');
 			}
 		}
 	}
