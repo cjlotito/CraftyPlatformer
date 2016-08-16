@@ -509,7 +509,7 @@
 									SingleSceneList = list;
 									GameLevels.push(sceneList);
 									if (q == files.length-1) {
-										text = JSON.stringify(GameLevels);
+										text = "var myLevels =" + JSON.stringify(GameLevels);
 										test = document.getElementById('Collab').value = text;
 										//console.log(test);
 										saveMode('Collab', 'Ldownloadlink');
