@@ -194,6 +194,9 @@ Game = {
 			debug = false;
 		}
 	},
+	loadLevel: function() {
+		console.log(myLevels().length);
+	},
 	start: function(goScene) {
 		Crafty.init(length, width, document.getElementById('cr-stage')); //Start
 		//Crafty.timer.steptype('variable', 1);
@@ -204,6 +207,9 @@ Game = {
 		
 		//Debug Mode
 		Game.checkDebug();
+		
+		//Load Levels
+		loadLevel();
 		
 		Crafty.background('cadetblue');
 		Base = Crafty.e('Basics');
