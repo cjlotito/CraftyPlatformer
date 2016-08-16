@@ -209,7 +209,7 @@ Game = {
 		Game.checkDebug();
 		
 		//Load Levels
-		loadLevel();
+		Game.loadLevel();
 		
 		Crafty.background('cadetblue');
 		Base = Crafty.e('Basics');
