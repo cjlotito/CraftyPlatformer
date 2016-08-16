@@ -512,8 +512,8 @@ Crafty.c('Guy', {
 Crafty.c('RockTB', {
 	init: function() {		
 		this.requires('Basics, 2D, Canvas, Collision');      
-		//this.attr({x: 200, y: 100, w: tileW-10, h: tileH-5});
-		this.attr({x: 200, y: 100, w: tileW, h: tileH});
+		this.attr({x: 200, y: 100, w: tileW-10, h: tileH-5});
+		//this.attr({x: 200, y: 100, w: tileW, h: tileH});
 		this.origin(12.5, 7.5);
 	}
 });
