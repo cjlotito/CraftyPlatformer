@@ -139,6 +139,15 @@ Crafty.scene('LevelTest', function() {
 		}
 	});
 	
+	//FALLUPFIX
+	player.bind("CheckLanding", function(ground) {
+		//console.log(ground);
+		if (ground.ID == 'ground') { // allow landing, if player's feet are not above ground
+			player.canLand = true;
+		}
+	});
+	//END FIX	
+	
 	
 	sceneSet(specialSceneList);
 	console.log('Player Start point is: ' + checkPoint[0] + ',' + checkPoint[1]);
@@ -186,18 +195,6 @@ Crafty.scene('Level', function() {
 	sceneSet(currentSceneList);
 	player.at(checkPoint[0], checkPoint[1]);
 	
-	/* //Touch Controls
-	var up = Crafty.e('Button').attr({y: 300}).bind('EnterFrame', function() {this.x = player.x;});
-		up.set(0);
-	var down = Crafty.e('Button').attr({y: 400}).bind('EnterFrame', function() {this.x = player.x;});
-		down.set(1);
-	var left = Crafty.e('Button').attr({y: 350}).bind('EnterFrame', function() {this.x = player.x - 50;});
-		left.set(2);
-	var right = Crafty.e('Button').attr({y: 350}).bind('EnterFrame', function() {this.x = player.x + 50;});
-		right.set(3);
-	var pause = Crafty.e('Button').attr({y: 350}).color('red').bind('EnterFrame', function() {this.x = player.x;});
-		pause.set(4); */
-	
 	//FALLUPFIX
 	player.bind("CheckLanding", function(ground) {
 		//console.log(ground);
@@ -206,68 +203,4 @@ Crafty.scene('Level', function() {
 		}
 	});
 	//END FIX
-});
-	
-Crafty.scene('Level2', function() {
-	if (fresh) {
-		numbers = currentSceneList[14][100][3].split(','), ex = numbers[0], wy = numbers[1];
-		currentSceneList = Game.copyArr(sceneList2);
-		checkPoint[0] = ex, checkPoint[1] = wy;
-		fresh = false;
-	}
-	
-	//Player
-	var player = Crafty.e('Guy');
-	start();
-	Crafty.viewport.follow(player, -100, 100);
-	
-	//PAUSE BUTTON
-	var pauseBtn = Crafty.e('Blank').at(0, 0).bind('KeyDown', function(e) {
-		if(e.key == pauseKey) {
-			var first_entity = Crafty("Canvas").get(0);
-			player.playerPause(first_entity);
-		}
-	});
-	
-	//Pause Click
-	var pauseClk = Crafty.e('PIcon').at(0, 0).bind('Click', function() {
-		var first_entity = Crafty("Canvas").get(0);
-		player.playerPause(first_entity);
-	});
-
-	sceneSet(currentSceneList);
-	player.at(checkPoint[0], checkPoint[1]);
-	console.log('Player Start point is: ' + checkPoint[0] + ',' + checkPoint[1]);
-});
-
-Crafty.scene('Level3', function() {
-	if (fresh) {
-		numbers = currentSceneList[14][100][3].split(','), ex = numbers[0], wy = numbers[1];
-		currentSceneList = Game.copyArr(sceneList3);
-		checkPoint[0] = ex, checkPoint[1] = wy;
-		fresh = false;
-	}
-	
-	//Player
-	var player = Crafty.e('Guy');
-	start();
-	Crafty.viewport.follow(player, -100, 100);
-	
-	//PAUSE BUTTON
-	var pauseBtn = Crafty.e('Blank').at(0, 0).bind('KeyDown', function(e) {
-		if(e.key == pauseKey) {
-			var first_entity = Crafty("Canvas").get(0);
-			player.playerPause(first_entity);
-		}
-	});
-	
-	//Pause Click
-	var pauseClk = Crafty.e('PIcon').at(0, 0).bind('Click', function() {
-		var first_entity = Crafty("Canvas").get(0);
-		player.playerPause(first_entity);
-	});
-
-	sceneSet(currentSceneList);
-	player.at(checkPoint[0], checkPoint[1]);
-	console.log('Player Start point is: ' + checkPoint[0] + ',' + checkPoint[1]);
 });
