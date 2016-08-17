@@ -509,7 +509,7 @@ Game = {
 					//Keep Key Colors Matching Block Colors
 					if (rockName == "Key" || rockName == "Door" || rockName == "ColorZone") {
 						make[3] = rockColor;
-					} else if (rockName == "Wall") {
+					} else if (rockName == "WallChange") {
 						list = make[3].split(',');
 						if (list[0] == make[1]) {
 							list[0] = rockColor;
