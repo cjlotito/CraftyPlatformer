@@ -319,7 +319,7 @@ Crafty.c('Box', {
 				}else {
 					this.color(playerColor);
 				}
-			} else document.getElementById("console").value = 'Array is: ' + ' blockClass: "' + make[0] + '" blockColor: "' + make[1] + '" rockName: "' + make [2] + '" rockType: "' + make[3] + '" coords: "(' + wy + ', ' + ex + ') Real (' + this.x + ', ' + this.y + ')"';
+			} else document.getElementById("console").value = 'Array is: ' + ' blockClass: "' + make[0] + '" blockColor: "' + make[1] + '" rockName: "' + make [2] + '" rockType: "' + make[3] + '" coords: "(' + wy + ', ' + ex + ') Pixel Value (' + this.x + ', ' + this.y + ')"';
 		}
 	}
 });
