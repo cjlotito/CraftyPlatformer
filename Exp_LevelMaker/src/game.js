@@ -517,7 +517,7 @@ Game = {
 				if (rockColor != excluded) {
 					rockColor = playerColor;
 					Crafty.e('Box').color(rockColor);
-					if (document.getElementById('follow').checked) {
+					if (follow) {
 						//Keep Key Colors Matching Block Colors
 						if (rockName == "Key" || rockName == "Door" || rockName == "ColorZone" || rockName == "AntiColorZone") {
 							make[3] = rockColor;
