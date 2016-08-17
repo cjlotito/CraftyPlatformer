@@ -148,10 +148,9 @@ Crafty.scene('LevelTest', function() {
 
 Crafty.scene('Level', function() {
 	if (fresh) {
-		currentSceneList = Game.copyArr(sceneList1);
-		console.log("Before: " + currentSceneList);
+		//currentSceneList = Game.copyArr(sceneList1);
 		currentSceneList = myLevels[startPoint-1];
-		console.log("After: " + currentSceneList);
+		//console.log("After: " + currentSceneList);
 		numbers = currentSceneList[currentSceneList.length-1][currentSceneList[0].length][3].split(','), ex = numbers[0], wy = numbers[1];
 		checkPoint[0] = ex, checkPoint[1] = wy;
 		fresh = false;
