@@ -1,3 +1,4 @@
+//Testing SmartGit
 var startPoint = 1;
 var Lev = function() {return 'Level' + startPoint;}
 var Welcome =  function() {return 'Press to Start ' + Lev() + '!';}
