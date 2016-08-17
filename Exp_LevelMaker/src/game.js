@@ -508,7 +508,7 @@ Game = {
 					Crafty.e('Box').color(rockColor);
 					make[1] = rockColor;
 					//Keep Key Colors Matching Block Colors
-					if (rockName == "Key") {
+					if (rockName == "Key" || rockName == "Door" || rockName == "ColorZone") {
 						make[3]= rockColor;
 					}
 				}
