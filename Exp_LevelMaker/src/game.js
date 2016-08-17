@@ -502,11 +502,15 @@ Game = {
 		i = 0;
 		while (i < sceneList.length) {
 			for (j=0; j < sceneList[i].length; j++) {
-				ex = j, wy = i, make = sceneList[wy][ex], rockColor = make[1]; 
+				ex = j, wy = i, make = sceneList[wy][ex], rockColor = make[1], rockName = make[2], rockType = make[3]; 
 				if (rockColor != excluded) {
 					rockColor = playerColor;
 					Crafty.e('Box').color(rockColor);
 					make[1] = rockColor;
+					//Keep Key Colors Matching Block Colors
+					if (rockName == "Key") {
+						make[3]= rockColor;
+					}
 				}
 			}
 			i++;
