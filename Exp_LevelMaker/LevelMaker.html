@@ -208,7 +208,7 @@
 						<a href="#" onclick="saveMode()">Save</a>-->
 						<div class="inputWrapper" onclick="Game.undo()">Undo</div>
 						<div class="inputWrapper" onclick="Game.reSkin();">Skin</div>
-						<div class="inputWrapper" id="folowCheck" onclick="Game.followChange()">Skin Keys/Doors to Match New Colors</div>
+						<div class="inputWrapper"><input id="followCheck" type="checkbox" onchange="Game.followChange()">Type Check</label></div>
 						<div class="inputWrapper" onclick="Game.toggleVisibility('debug');">Debug Mode</div>
 						<div class="inputWrapper" onclick='saveMode("UserCode", "downloadlink");'>Save</div>
 						<div class="inputWrapper">Load<input class="fileInput hidden" type="file" name="load" onchange="readURL(this);" /></div>
