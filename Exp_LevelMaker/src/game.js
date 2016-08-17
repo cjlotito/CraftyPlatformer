@@ -38,6 +38,7 @@ var tileH = 20;
 var gridW = 100;
 var gridH = 16;
 var GameLevels = [];
+var follow = false;
 
 Game = {
 	map_grid: {
@@ -506,17 +507,19 @@ Game = {
 				if (rockColor != excluded) {
 					rockColor = playerColor;
 					Crafty.e('Box').color(rockColor);
-					//Keep Key Colors Matching Block Colors
-					if (rockName == "Key" || rockName == "Door" || rockName == "ColorZone" || rockName == "AntiColorZone") {
-						make[3] = rockColor;
-					} else if (rockName == "WallChange") {
-						list = make[3].split(',');
-						if (list[0] == make[1]) {
-							list[0] = rockColor;
-						} else if (list[1] == make[1]) {
-							list[1] = rockColor;
+					if (follow) {
+						//Keep Key Colors Matching Block Colors
+						if (rockName == "Key" || rockName == "Door" || rockName == "ColorZone" || rockName == "AntiColorZone") {
+							make[3] = rockColor;
+						} else if (rockName == "WallChange") {
+							list = make[3].split(',');
+							if (list[0] == make[1]) {
+								list[0] = rockColor;
+							} else if (list[1] == make[1]) {
+								list[1] = rockColor;
+							}
+							make[3] = list[0] + "," + list[1];
 						}
-						make[3] = list[0] + "," + list[1];
 					}
 					make[1] = rockColor;
 				}
