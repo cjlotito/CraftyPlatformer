@@ -507,7 +507,7 @@
 									var contents = e.target.result;
 									list = JSON.parse(contents);
 									SingleSceneList = list;
-									GameLevels.push(sceneList);
+									GameLevels.push(SingleSceneList);
 									if (q == files.length-1) {
 										text = "var myLevels =" + JSON.stringify(GameLevels) + ";";
 										test = document.getElementById('Collab').value = text;
