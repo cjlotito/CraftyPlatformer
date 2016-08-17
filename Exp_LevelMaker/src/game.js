@@ -437,7 +437,7 @@ Game = {
 			}
 			Crafty.e('Box').color(playerColor).at(exx, wyy);
 		}
-		document.getElementById("console").value = 'Array is: ' + ' blockClass: "' + make[0] + '" blockColor: "' + make[1] + '" rockName: "' + make [2] + '" rockType: "' + make[3] + '" coords: "(' + wy + ', ' + ex + ')"';
+		document.getElementById("console").value = 'Array is: ' + ' blockClass: "' + make[0] + '" blockColor: "' + make[1] + '" rockName: "' + make [2] + '" rockType: "' + make[3] + '" coords: "(' + ex + ', ' + wy + ')"';
 	},
 	/**Paste: function() {
 		if (paste) {
@@ -499,6 +499,16 @@ Game = {
 				i++;
 			}
 	},
+	followChange: function() {
+		if (follow) {
+			document.getElementById("followCheck").checked = false;
+			follow = false;
+		} else {
+			follow = true;
+		}
+		text = 'Follow is: ' + follow;
+		document.getElementById("console").value = text;
+	},
 	reSkin: function() {
 		i = 0;
 		while (i < sceneList.length) {
@@ -507,7 +517,7 @@ Game = {
 				if (rockColor != excluded) {
 					rockColor = playerColor;
 					Crafty.e('Box').color(rockColor);
-					if (follow) {
+					if (document.getElementById('follow').checked) {
 						//Keep Key Colors Matching Block Colors
 						if (rockName == "Key" || rockName == "Door" || rockName == "ColorZone" || rockName == "AntiColorZone") {
 							make[3] = rockColor;
