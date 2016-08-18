@@ -688,14 +688,12 @@ Crafty.c("Twoway", {
             RIGHT_ARROW: 0,
             LEFT_ARROW: 180,
             D: 0,
-            A: 180,
-            Q: 180
+            A: 180
         });
 
         this.jumper(jumpSpeed || speed * 2 || this._jumpSpeed, [
             Crafty.keys.UP_ARROW,
-            Crafty.keys.W,
-            Crafty.keys.Z
+            Crafty.keys.W
         ]);
 
         return this;
