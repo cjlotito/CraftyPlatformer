@@ -98,10 +98,10 @@ Crafty.c('Guy', {
 	init: function() {
 		player = this; 
 		//speed = 500;
-		gravitySet = 500;
-		jumperSet = 175;
+		gravitySet = 600;
+		jumperSet = 200;
 		antiGrav = false;
-		playerColor = 'yellow';
+		//playerColor = 'yellow';
 		//keys = {UP_ARROW: -90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
 		//alt_keys = 1;
 		this.requires('Basics, Player, 2D, Canvas, Color, Twoway, Jumper, Gravity, Collision')
@@ -230,84 +230,16 @@ Crafty.c('Guy', {
 			})
 			.onHit('RockCover', this.colliderRC)
 			.onHit('ColorCover', this.colorCollider);
-	},
-	
-	playerPause: function(first_entity) {
-		if (clicked == false) {
-			clicked = true;
-			holder = jumperSet;
-			player.removeComponent('Twoway');
-			player.removeComponent('Jumper');
-			//player.multiway({});
-			//alt_keys = 2;
-			//BG
-			Crafty.e('Menu').at((first_entity.x/(Game.map_grid.tile.width) + 1), (3)).bind('KeyDown', function(e){
-				if (e.key == Crafty.keys.O) {
-					player.color('orange'); playerColor = 'orange';
-				} else if (e.key == Crafty.keys.Y) {
-					player.color('yellow'); playerColor = 'yellow';
-				} else if (e.key == Crafty.keys.G) {
-					player.color('green'); playerColor = 'green';
-				} else if (e.key == Crafty.keys.B) {
-					player.color('blue'); playerColor = 'blue';
-				} else if (e.key == Crafty.keys.I) {
-					player.color('indigo'); playerColor = 'indigo';
-				} else if (e.key == Crafty.keys.V) {
-					player.color('violet'); playerColor = 'violet';
-				} else if (e.key == Crafty.keys.R) {
-					player.color('red'); playerColor = 'red';
-				} else if (e.key == Crafty.keys.L) {
-					player.color('black'); playerColor = 'black';
-				} else if (e.key == Crafty.keys.W) {
-					player.color('white'); playerColor = 'white';
-				} else if (e.key == Crafty.keys.ESC) {
-					fresh = true;
-					Game.playerLives(-1);
-					player.x = 0;
-					player.y =0;
-					Crafty.scene('Onward', RedoLevelText());
-				} 
-
-			});
-			//RIGHT
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 2, (4)).color('orange').bind('Click', function(){player.color(this.color()); playerColor = 'orange';}).bind('TouchStart', function(){player.color(this.color()); playerColor = 'orange';});
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 2, (6)).color('yellow').bind('Click', function(){player.color(this.color()); playerColor = 'yellow';}).bind('TouchStart', function(){player.color(this.color()); playerColor = 'yellow';});
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 2, (8)).color('green').bind('Click', function(){player.color(this.color()); playerColor = 'green';}).bind('TouchStart', function(){player.color(this.color()); playerColor = 'green';});
-			//MIDDLE
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 4, (4)).color('blue').bind('Click', function(){player.color(this.color()); playerColor = 'blue';}).bind('TouchStart', function(){player.color(this.color()); playerColor = 'blue';});
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 4, (6)).color('indigo').bind('Click', function(){player.color(this.color()); playerColor = 'indigo';}).bind('TouchStart', function(){player.color(this.color()); playerColor = 'indigo';});
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 4, (8)).color('violet').bind('Click', function(){player.color(this.color());  playerColor = 'violet';}).bind('TouchStart', function(){player.color(this.color());  playerColor = 'violet';});
-			//LEFT
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 6, (4)).color('red').bind('Click', function(){player.color(this.color()); playerColor = 'red';}).bind('TouchStart', function(){player.color(this.color()); playerColor = 'red';});
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 6, (6)).color('black').bind('Click', function(){player.color(this.color()); playerColor = 'black';}).bind('TouchStart', function(){player.color(this.color()); playerColor = 'black';});
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 6, (8)).color('white').bind('Click', function(){player.color(this.color());  playerColor = 'white';}).bind('TouchStart', function(){player.color(this.color());  playerColor = 'white';});
-			//Buttons
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 3, (10)).color('white').bind('Click', function(){player.color(this.color());  playerColor = 'white';}).bind('TouchStart', function(){player.color(this.color());  playerColor = 'white';});
-			Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 3, (10)).color('white').bind('Click', function(){fresh = true; Game.playerLives(-1); player.x = 0; player.y = 0; Crafty.scene('Onward', RedoLevelText());}).bind('TouchStart', function(){fresh = true; Game.playerLives(-1); player.x = 0; player.y = 0; Crafty.scene('Onward', RedoLevelText());});
-			Crafty.e("2D, DOM, Text").attr({x: (first_entity.x + 77), y: 203, w: 90, z: 10}).text('Redo')
-				.textColor('#FF0000')
-				.textFont({ type: 'italic', family: 'Arial' })
-				.textFont({ size: '13px', weight: 'bold' });
-		} else if (clicked == true) {
-			clicked = false;
-			Crafty("Menu").destroy();
-			Crafty("Text").destroy();
-			//alt_keys = holder;
-			//player.multiway(speed, keys);
-			player.addComponent('Twoway');
-			player.addComponent('Jumper');
-			player.jumper(holder, [Crafty.keys.UP_ARROW])
-			player.twoway();
-		}
+			this.bind("EnterFrame", function() {player.color(playerColor);});
 	},
 	
 	playerNormalize: function() {
 		//keys = {UP_ARROW: -90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
 		//speed = 300;
-		gravitySet = 500;
+		gravitySet = 600;
 		antiGrav = false;
 		playerColor = 'yellow';
-		jumperSet = 175;
+		jumperSet = 200;
 		this.attr({w: 20, h: 50});
 		this.Rotation == 0;
 		this.color(playerColor);
