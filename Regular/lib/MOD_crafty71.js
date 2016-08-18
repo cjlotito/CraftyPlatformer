@@ -641,9 +641,7 @@ Crafty.c("Fourway", {
             W: -90,
             S: 90,
             D: 0,
-            A: 180,
-            Z: -90,
-            Q: 180
+            A: 180
         });
 
         return this;
