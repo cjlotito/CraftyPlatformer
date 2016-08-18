@@ -90,13 +90,6 @@ Crafty.scene('Onward', function(toPrint) {
 			}
 		}
 	}
-	
-	//Start Button
-	var pauseBtn = Crafty.e('Blank').at(0, 0).bind('KeyDown', this.start_game);
-	
-	//Start Click
-	//var startBtn = Crafty.e('PIcon').at(0, 0).bind('Click', this.start_game)
-	var startBtn = Crafty.e('PIcon').at(0, 0).bind('TouchStart', this.start_game);
 });
 
 Crafty.scene('LevelTest', function() {
@@ -104,16 +97,6 @@ Crafty.scene('LevelTest', function() {
 	listX = specialSceneList.length-1, listY = specialSceneList[0].length;
 	numbers = specialSceneList[listX][listY][3].split(','), ex = numbers[0], wy = numbers[1];
 	checkPoint[0] = ex, checkPoint[1] = wy;
-	
-	//tilesize-Set
-	//tileNumbers = specialSceneList[listX][listY][2].split(','), tileW = parseInt(tileNumbers[0]), tileH = parseInt(tileNumbers[1]);
-	//console.log('Tiles: ' + tileW + ', ' + tileH);
-	
-	//gridsize-Set
-	//gridNumbers = specialSceneList[listX][listY][1].split(','), gridW = parseInt(gridNumbers[0]), gridH = parseInt(gridNumbers[1]);
-	//Game.map_grid.width = gridW, Game.map_grid.height = gridH;
-	//console.log('Grid: ' + gridW + ', ' + gridH);
-	//console.log('Game W/H: ' + Game.map_grid.width + ',' + Game.map_grid.height);
 	
 	if (debug) {
 		//HorzLine
@@ -130,14 +113,6 @@ Crafty.scene('LevelTest', function() {
 	var player = Crafty.e('Guy');
 	start();
 	Crafty.viewport.follow(player, -100, 100);
-	
-	//PAUSE BUTTON
-	var pauseBtn = Crafty.e('Blank').at(0, 0).bind('KeyDown', function(e) {
-		if(e.key == pauseKey) {
-			var first_entity = Crafty("Canvas").get(0);
-			player.playerPause(first_entity);
-		}
-	});
 	
 	//FALLUPFIX
 	player.bind("CheckLanding", function(ground) {
@@ -171,14 +146,6 @@ Crafty.scene('Level', function() {
 	var player = Crafty.e('Guy');
 	start();
 	Crafty.viewport.follow(player, -100, 100);
-	
-	//PAUSE BUTTON
-	var pauseBtn = Crafty.e('Blank').at(0, 0).bind('KeyDown', function(e) {
-		if(e.key == pauseKey) {
-			var first_entity = Crafty("Canvas").get(0);
-			player.playerPause(first_entity);
-		}
-	});
 	
 	if(debug) {
 		//HorzLine
