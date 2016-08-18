@@ -90,6 +90,9 @@ Crafty.scene('Onward', function(toPrint) {
 			}
 		}
 	}
+	
+	//Start Button
+	var pauseBtn = Crafty.e('Blank').at(0, 0).bind('KeyDown', this.start_game);
 });
 
 Crafty.scene('LevelTest', function() {
