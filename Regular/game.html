@@ -9,57 +9,16 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<style>
-    body, html { 
+    	body, html { 
 		text-align: center;
 		font-family:"Times New Roman",Times,serif; 
 		font-size:30px; 
 		background-color: palegreen; 
 		color: Black;
 	}
-	.red {
-		color: red;
-	}
-	.blue {
-		color: blue;
-	}
-	.green {
-		color: green;
-	}
-	.orange {
-		color: orange;
-	}
-	.yellow {
-		color: yellow;
-	}
-	.indigo {
-		color: indigo;
-	}
-	.violet {
-		color: violet;
-	}
-	.black {
-		color: black;
-	}
-	.white {
-		color: white;
-	}
-    #cr-stage {
+	#cr-stage {
 		border-top: 50px solid transparent;
 		margin:0px auto;
-	}
-	#buttonsL {
-		font-size:20px; 
-		position: absolute;
-		bottom: 8px;
-		right: 16px;
-		font-size: 18px;
-	}
-	#buttonsR {
-		font-size:20px; 
-		position: absolute;
-		bottom: 8px;
-		left: 16px;
-		font-size: 18px;
 	}
 	#direction {
 		-moz-user-select: -moz-none;
@@ -68,34 +27,6 @@
 	}
 	#blank {
 		height: 20px;
-	}
-	#UP {
-		width: 0;
-		height: 0;
-		border-left: 25px solid transparent;
-		border-right: 25px solid transparent;
-		border-bottom: 50px solid red;
-	}
-	#DOWN {
-		width: 0;
-		height: 0;
-		border-left: 25px solid transparent;
-		border-right: 25px solid transparent;
-		border-top: 50px solid red;
-	}
-	#RIGHT {
-		width: 0;
-		height: 0;
-		border-top: 25px solid transparent;
-		border-left: 50px solid red;
-		border-bottom: 25px solid transparent;
-	}
-	#LEFT {
-		width: 0;
-		height: 0;
-		border-top: 25px solid transparent;
-		border-right: 50px solid red;
-		border-bottom: 25px solid transparent;
 	}
 	#container {
 		background-color: cadetblue; 
@@ -107,7 +38,18 @@
 		margin:0px auto;
 		outline-style: outset;
 	}
-	
+	#Swatches {
+		color: white;
+		font-size:20px; 
+	}
+	orange, blue, red, yellow, indigo, black green, violet, white {
+		width:50px;
+		height:20px;
+		border: 3px solid #BEBEBE;
+		outline-style: solid;
+		outline-color:white;
+		margin-left:5px;
+	}
 	</style>
 	<title>Curtis' Game</title>
 </head>
@@ -118,36 +60,36 @@
 	<div style="background-color:mediumpurple">
 			<table style="width:100%">
 				<tr>
-						<td>Lives:</td>
-					<td id="Lives">3</td>	
-						<td>Keys:{</td>
-						<td class="red">R:</td>
-					<td id="0" class="red">0</td>	
-						<td class="blue">B:</td>
-					<td id="1" class="blue">0</td>	
-						<td class="green">G:</td>
-					<td id="2" class="green">0</td>	
-						<td class="orange" >O:</td>
-					<td id="3" class="orange">0</td>	
-						<td class="black">BL:</td>
-					<td id="4" class="black">0</td>	
-						<td class="indigo">I:</td>
-					<td id="5" class="indigo">0</td>	
-						<td class="violet">V:</td>
-					<td id="6" class="violet">0</td>	
-						<td class="white">W:</td>
-					<td id="7" class="white">0</td>	
-						<td class="yellow">Y:</td>
-					<td id="8" class="yellow">0</td>
-						<td>}</td>
-						<td>Score:</td>
-					<td id="score">000</td>
+					<td>Lives:</td><td id="Lives">3</td>	
+					<td>Keys:{</td>
+					<td style="color:red">R:</td><td id="0" style="color:red">0</td>	
+					<td style="color:blue">B:</td><td id="1" style="color:blue">0</td>	
+					<td style="color:green">G:</td><td id="2" style="color:green">0</td>	
+					<td style="color:orange" >O:</td><td id="3" style="color:orange">0</td>	
+					<td style="color:black">BL:</td><td id="4" style="color:black">0</td>	
+					<td style="color:indigo">I:</td><td id="5" style="color:indigo">0</td>	
+					<td style="color:violet">V:</td><td id="6" style="color:violet">0</td>	
+					<td style="color:white">W:</td><td id="7" style="color:white">0</td>	
+					<td style="color:yellow">Y:</td><td id="8" style="color:yellow">0</td>
+					<td>}</td>
+					<td>Score:</td><td id="score">000</td>
 				</tr>
 			</table>
 		</div>
 	<div id="cr-stage"></div>
-
-	
+	<div id="Swatches">
+		<table style="width:100%">
+				<td><div id="orange" onclick="swatchSelect(this)" style="background:orange;">Orange</div></td>
+				<td><div id="blue" onclick="swatchSelect(this)" style="background:blue;">Blue</div></td>
+				<td><div id="red" onclick="swatchSelect(this)" style="background:red;">Red</div></td>
+				<td><div id="yellow" onclick="swatchSelect(this)" style="background:yellow;" >Yellow</div></td>
+				<td><div id="indigo" onclick="swatchSelect(this)" style="background:indigo;">Indigo</div></td>
+				<td><div id="black" onclick="swatchSelect(this)" style="background:black;">Black</div></td>
+				<td><div id="green" onclick="swatchSelect(this)" style="background:green;">Green</div></td>
+				<td><div id="violet" onclick="swatchSelect(this)" style="background:violet;" >Violet</div></td>
+				<td><div id="white" onclick="swatchSelect(this)" style="background:white; color:gray">White</div></td>
+		</table>
+	</div>	
 	</div>
 	<!-- -->
 	
@@ -159,6 +101,23 @@
 		<p></p>
 		<input id="clickMe" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" />
 		<label><input id="debugCheck" type="checkbox" onchange="Game.start('Onward')">Set Wireframes</label>
+	</div>
+	<div id="scripts">
+		<script>
+			var swatchList = ["orange", "blue", "red", "yellow", "indigo", "black", "green", "violet", "white"];
+			function swatchSelect(outColor) {
+				Game.playC(outColor.id);
+					for (i = 0; i < swatchList.length; i++) {
+						if (swatchList[i] != outColor.id) {
+							var change = document.getElementById(swatchList[i]);
+							change.style.outlineColor="white"; 
+						} else {
+							var change = document.getElementById(swatchList[i]);
+							change.style.outlineColor="red"; 
+						}
+					} 
+				}
+		</script>
 	</div>
 </body>
 </html>
