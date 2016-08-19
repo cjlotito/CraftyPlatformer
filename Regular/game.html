@@ -9,14 +9,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<style>
-    	body, html { 
+    body, html { 
 		text-align: center;
 		font-family:"Times New Roman",Times,serif; 
 		font-size:30px; 
 		background-color: palegreen; 
 		color: Black;
 	}
-	#cr-stage {
+    #cr-stage {
 		border-top: 50px solid transparent;
 		margin:0px auto;
 	}
@@ -50,6 +50,7 @@
 		outline-color:white;
 		margin-left:5px;
 	}
+	
 	</style>
 	<title>Curtis' Game</title>
 </head>
@@ -100,7 +101,7 @@
 		<textarea id="UserCode" rows="4" cols="150"></textarea>
 		<p></p>
 		<input id="clickMe" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" />
-		<label><input id="debugCheck" type="checkbox" onchange="Game.start('Onward')">Set Wireframes</label>
+		<label><input id="debugCheck" type="checkbox" onchange="Game.reload()">Set Wireframes</label>
 	</div>
 	<div id="scripts">
 		<script>
