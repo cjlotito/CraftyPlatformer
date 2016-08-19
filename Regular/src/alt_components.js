@@ -40,72 +40,18 @@ Crafty.c('TinyGround', {
 	}
 });
 
-
-/* //ISSUE WITH TRIGGERING PAUSE WHILE BUTTON DOWN CAUSES FAILURE
-Crafty.c('Button', {
-	init: function() {
-		this.requires('Basics, 2D, Canvas, Color, Mouse, Touch')      
-			.attr({x: 200, y: 300, w: 35, h: 35, z:11})
-			.bind('TouchStart', function(TouchPoint){
-				if (this.type == 0) {
-					console.log('up tapped');
-					key = {key: Crafty.keys['UP_ARROW']};
-				} else if (this.type == 1) {
-					console.log('down tapped');
-					key = {key: Crafty.keys['DOWN_ARROW']};
-				} else if (this.type == 2) {
-					console.log('left tapped');
-					key = {key: Crafty.keys['LEFT_ARROW']};
-				} else if (this.type == 3) {
-					console.log('right tapped');
-					key = {key: Crafty.keys['RIGHT_ARROW']};
-				} else if (this.type == 4) {
-					console.log('pause tapped');
-					key = {key: Crafty.keys['Q']};
-				}
-				Crafty.trigger("KeyDown", key);
-			})
-			.bind('TouchEnd', function() {
-				if (this.type == 0) {
-					console.log('up released');
-					key = {key: Crafty.keys['UP_ARROW']};
-				} else if (this.type == 1) {
-					console.log('down released');
-					key = {key: Crafty.keys['DOWN_ARROW']};
-				} else if (this.type == 2) {
-					console.log('left released');
-					key = {key: Crafty.keys['LEFT_ARROW']};
-				} else if (this.type == 3) {
-					console.log('right released');
-					key = {key: Crafty.keys['RIGHT_ARROW']};
-				} else if (this.type == 4) {
-					console.log('pause released');
-					key = {key: Crafty.keys['Q']};
-				}
-				Crafty.trigger("KeyUp", key);
-			})
-			.color('blue');
-			this.type = 0;
-	},
-	
-	set: function(x) {
-		this.type = x;
-		return this;
-    },
-}); */
-
 Crafty.c('Guy', {
 	init: function() {
 		player = this; 
 		//speed = 500;
 		gravitySet = 600;
-		jumperSet = 200;
+		jumperSet = tileH*5;
 		antiGrav = false;
 		//playerColor = 'yellow';
 		//keys = {UP_ARROW: -90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
 		//alt_keys = 1;
 		this.requires('Basics, Player, 2D, Canvas, Color, Twoway, Jumper, Gravity, Collision')
-			.attr({x: 100, y: 100, w: 20, h: 50, z: 3})
+			.attr({x: 100, y: 100, w: tileW/2, h: tileH*2, z: 3})
 			.color(playerColor)
 			.twoway()
 			.jumper(jumperSet, [Crafty.keys.UP_ARROW])
@@ -266,7 +212,7 @@ Crafty.c('Guy', {
 	},
 	
 	playerAntiGrav: function(block) {
-		gravitySet = -500;
+		gravitySet = -600;
 		antiGrav = true;
 		jumperSet = jumperSet * -1;
 		//keys = {DOWN_ARROW: 90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
@@ -280,7 +226,7 @@ Crafty.c('Guy', {
 	
 	playerReGrav: function(block) {
 		//keys = {UP_ARROW: -90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
-		gravitySet = 500;
+		gravitySet = 600;
 		antiGrav = false;
 		jumperSet = jumperSet * -1;
 		this.gravityConst(gravitySet);
@@ -516,7 +462,7 @@ Crafty.c('Elevator', {
 Crafty.c('Wall', {
 	init: function() {
 		this.requires('Basics, 2D, Canvas, Color, Collision, ColorCover');
-		this.attr({x: 0, y: 0, w: 35, h: 100, z: 10})
+		this.attr({x: 0, y: 0, w: tileW, h: tileH*5, z: 10})
 			.color('yellow');
 	}
 });
