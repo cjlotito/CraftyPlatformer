@@ -16,7 +16,7 @@ var rise = false;
 var color_default = ['blue'];
 var debug = false;
 var specialSceneList = [];
-var pauseKey = Crafty.keys.Q;
+//var pauseKey = Crafty.keys.Q;
 //Key Color RED BLUE GREEN ORANGE BLACK INDIGO VIOLET WHITE YELLOW
 var Keys = [[0], [0], [0],  [0],   [0],  [0],  [0],   [0],  [0]];
 var points = 0;
@@ -35,8 +35,24 @@ var tileH = 20;
 var gridW = 100;
 var gridH = 16;
 
+var spriteW = 35;
+var spriteH = 20;
+
 var DebugTextOn = function() {return ['Debug Mode Active', 99999];};
 var DebugTextOff = function() {return ['Debug Mode Inactive', 99999];};
+
+var assetsObj = {
+    "sprites": {
+        "swatch.png": {
+            "tile": spriteW,
+            "tileh": spriteH,
+            "map": { "orange": [0,0], "blue":[1,0], "red":[2,0], "yellow": [3,0], "indigo": [4,0], "black": [5,0], "green": [6,0], "violet": [7,0], "white": [8,0], "gray": [0,1]},
+			"paddingX": 1,
+            "paddingY": 1,
+            "paddingAroundBorder": 1
+        }
+    },
+};
 
 Game = {
 	Res: {
@@ -101,8 +117,9 @@ Game = {
 				this.playerScore(points*-1);
 				Keys = [[0], [0], [0],  [0],   [0],  [0],  [0],   [0],  [0]];
 				//currentSceneList = sceneList1.slice(0);
-				currentSceneList = this.copyArr(sceneList1);
 				startPoint = 1;
+				currentSceneList = this.copyArr(myLevels[startPoint-1]);
+
 				fresh = true;
 				this.playerLives(3);
 			} else this.playerLives(-1);
@@ -120,7 +137,6 @@ Game = {
 	kill: function(entity) {
 		spwy = Math.round(entity.x/Game.map_grid.tile.width), spex = Math.round(entity.y/Game.map_grid.tile.height);
 		make = currentSceneList[spex][spwy];
-		console.log(make);
 		make[0] = '00'
 	},
 	playerScore: function(add) {
@@ -151,6 +167,10 @@ Game = {
 		if (key) {
 			Crafty.trigger("KeyDown", key);
 		}
+/* 		if (buttonID == 'right') rightSet = true;
+		if (buttonID == 'left') leftSet = true;
+		if (buttonID == 'up') upSet = true;
+		if (buttonID == 'down') downSet = true; */
 	},
 	playerRelease: function(buttonID) {
 		//console.log(buttonID, 'released');
@@ -158,11 +178,16 @@ Game = {
 		if (key) {
 			Crafty.trigger("KeyUp", key);
 		}
+/* 		if (buttonID == 'right') rightSet = false;
+		if (buttonID == 'left') leftSet = false;
+		if (buttonID == 'up') upSet = false;
+		if (buttonID == 'down') downSet = false; */
 	},
 	setGrid: function(x,y, tx, ty) {
 		gridW = x, gridH = y, Game.map_grid.width = x, Game.map_grid.height = y;
 		tileW = tx, tileH = ty, Game.map_grid.tile.width = tx, Game.map_grid.tile.height = ty;
 		console.log("setgrid started. Received: " + Game.map_grid.tile.width + ", " + Game.map_grid.tile.height + ", " + Game.map_grid.width + ", " + Game.map_grid.height);
+		//Game.start('Onward');
 		Game.reload();
 	},
 	checkDebug: function() {
@@ -192,14 +217,25 @@ Game = {
 		Crafty.pixelart(false);
 		Crafty.timer.steptype("variable");
 		Crafty.timer.FPS(30);
+		Crafty.background('cadetblue');
+		Base = Crafty.e('Basics');
+		Message = Base.message;
 		
 		//Debug Mode
 		Game.checkDebug();
 		
-		Crafty.background('cadetblue');
-		Base = Crafty.e('Basics');
-		Message = Base.message;
-		Crafty.scene(goScene, WelcomeLevelText());
+		Crafty.paths({images: "lvl/" });
+		
+		Crafty.load(assetsObj, // preload assets
+			function() { //when loaded
+				Crafty.scene(goScene, WelcomeLevelText());
+			},
+
+			function(e) { //progress
+			},
+
+			function(e) { //uh oh, error loading
+			}
+		);
 	}
 }
-
