@@ -44,8 +44,8 @@ Crafty.c('Guy', {
 	init: function() {
 		player = this; 
 		//speed = 500;
-		gravitySet = 600;
-		jumperSet = tileH*5;
+		gravitySet = tileH*20;
+		jumperSet = (tileH*2)*5;
 		antiGrav = false;
 		//playerColor = 'yellow';
 		//keys = {UP_ARROW: -90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
@@ -182,10 +182,10 @@ Crafty.c('Guy', {
 	playerNormalize: function() {
 		//keys = {UP_ARROW: -90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
 		//speed = 300;
-		gravitySet = 600;
+		gravitySet = tileH*20;
 		antiGrav = false;
 		playerColor = 'yellow';
-		jumperSet = 200;
+		jumperSet = (tileH*2)*5;
 		this.attr({w: 20, h: 50});
 		this.Rotation == 0;
 		this.color(playerColor);
@@ -212,7 +212,7 @@ Crafty.c('Guy', {
 	},
 	
 	playerAntiGrav: function(block) {
-		gravitySet = -600;
+		gravitySet = (tileH*20*)*-1;
 		antiGrav = true;
 		jumperSet = jumperSet * -1;
 		//keys = {DOWN_ARROW: 90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
@@ -226,7 +226,7 @@ Crafty.c('Guy', {
 	
 	playerReGrav: function(block) {
 		//keys = {UP_ARROW: -90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
-		gravitySet = 600;
+		gravitySet = tileH*20;
 		antiGrav = false;
 		jumperSet = jumperSet * -1;
 		this.gravityConst(gravitySet);
@@ -242,7 +242,7 @@ Crafty.c('Guy', {
 	playerSuper: function(block) {
 		//this.gravityConst(375);
 		//speed = 300;
-		jumperSet = 250;
+		jumperSet = (tileH*2)*6;
 		this.jumper(jumperSet, [Crafty.keys.UP_ARROW]);
 		Game.kill(block);
 	},
