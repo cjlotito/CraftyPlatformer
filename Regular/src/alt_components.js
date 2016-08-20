@@ -186,7 +186,7 @@ Crafty.c('Guy', {
 		antiGrav = false;
 		playerColor = 'yellow';
 		jumperSet = (tileH*2)*5;
-		this.attr({w: 20, h: 50});
+		this.attr({w: tileW/2, h: tileH*2});
 		this.Rotation == 0;
 		this.color(playerColor);
 		this.upsideDown(antiGrav);
@@ -201,7 +201,7 @@ Crafty.c('Guy', {
 		playerColor = ('red');
 		this.color('red');
 		this.rotation == 90;
-		this.attr({w: 50, h: 20});
+		this.attr({w: tileH*2, h: tileW/2});
 	},
 	
 	playerUpright: function() {
