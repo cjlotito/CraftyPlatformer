@@ -212,7 +212,7 @@ Crafty.c('Guy', {
 	},
 	
 	playerAntiGrav: function(block) {
-		gravitySet = (tileH*20*)*-1;
+		gravitySet = (tileH*20)*-1;
 		antiGrav = true;
 		jumperSet = jumperSet * -1;
 		//keys = {DOWN_ARROW: 90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
