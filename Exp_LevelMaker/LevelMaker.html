@@ -42,12 +42,12 @@
 				background-color: black;
 				font-size:20px; 
 			}
-			orange, blue, red, yellow, indigo, black green, violet, white {
+			#orange, #blue, #red, #yellow, #indigo, #black #green, #violet, #white {
 				width:35px;
 				height:20px;
 				border: 3px solid #BEBEBE;
 				outline-style: solid;
-				/*outline-color:white;*/
+				outline-color:white;
 				margin-left:5px;
 			}
 			#gridMod {
@@ -260,63 +260,90 @@
 				<div id="Swatches">
 					<table>
 						<tr>
-							<td><div id="orange" onclick="swatchSelect(this)" style="background:orange; outline-color:white;">Orange</div></td>
+							<td><div id="orange" onclick="swatchSelect(this)" style="background:orange;">Orange</div></td>
+							<td>Tile X Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>							
+							<td>Tile Y Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>
+							<td><img id="orangeSw" src="#" alt="your image" height="20" width="35"/></td>
 							<!--<td><input name="orangeSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="orangeSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<!--<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="orangeSw" onchange="readURL(this);" /></div></td>
 							<td><img id="orangeSw" src="#" alt="your image" height="20" width="35"/></td>-->
 						</tr>
 						<tr>
-							<td><div id="blue" onclick="swatchSelect(this)" style="background:blue; outline-color:white;">Blue</div></td>
+							<td><div id="blue" onclick="swatchSelect(this)" style="background:blue;">Blue</div></td>
+							<td>Tile X Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>							
+							<td>Tile Y Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>	
+							<td><img id="blueSw" src="#" alt="your image" height="20" width="35"/></td>
 							<!--<td><input name="blueSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="blueSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<!--<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="blueSw" onchange="readURL(this);" /></div></td>
 							<td><img id="blueSw" src="#" alt="your image" height="20" width="35"/></td>-->
 						</tr>
 						<tr>
-							<td><div id="red" onclick="swatchSelect(this)" style="background:red; outline-color:white;">Red</div></td>
+							<td><div id="red" onclick="swatchSelect(this)" style="background:red;">Red</div></td>
+							<td>Tile X Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>							
+							<td>Tile Y Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>
+							<td><img id="redSw" src="#" alt="your image" height="20" width="35"/></td>
 							<!--<td><input name="redSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="redSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<!--<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="redSw" onchange="readURL(this);" /></div></td>
 							<td><img id="redSw" src="#" alt="your image" height="20" width="35"/></td>-->
 						</tr>
 						<tr>
-							<td><div id="yellow" onclick="swatchSelect(this)" style="background:yellow; outline-color:white;">Yellow</div></td>
+							<td><div id="yellow" onclick="swatchSelect(this)" style="background:yellow;">Yellow</div></td>
+							<td>Tile X Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>							
+							<td>Tile Y Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>	
+							<td><img id="yellowSw" src="#" alt="your image" height="20" width="35"/></td>
 							<!--<td><input name="yellowSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="yellowSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<!--<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="yellowSw" onchange="readURL(this);" /></div></td>
 							<td><img id="yellowSw" src="#" alt="your image" height="20" width="35"/></td>-->
 						</tr>
 						<tr>
-							<td><div id="indigo" onclick="swatchSelect(this)" style="background:indigo; outline-color:white;">Indigo</div></td>
+							<td><div id="indigo" onclick="swatchSelect(this)" style="background:indigo;">Indigo</div></td>
+							<td>Tile X Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>							
+							<td>Tile Y Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>	
+							<td><img id="purpleSw" src="#" alt="your image" height="20" width="35"/></td>
 							<!--<td><input name="purpleSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="purpleSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<!--<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="purpleSw" onchange="readURL(this);" /></div></td>
 							<td><img id="purpleSw" src="#" alt="your image" height="20" width="35"/></td>-->
 						</tr>
 						<tr>	
-							<td><div id="black" onclick="swatchSelect(this)" style="background:black; outline-color:white;">Black</div></td>
+							<td><div id="black" onclick="swatchSelect(this)" style="background:black;">Black</div></td>
+							<td>Tile X Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>							
+							<td>Tile Y Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>
+							<td><img id="blackSw" src="#" alt="your image" height="20" width="35"/></td>
 							<!--<td><input name="blackSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="blackSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<!--<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="blackSw" onchange="readURL(this);" /></div></td>
 							<td><img id="blackSw" src="#" alt="your image" height="20" width="35"/></td>-->
 						</tr>
 						<tr>
-							<td><div id="green" onclick="swatchSelect(this)" style="background:green; outline-color:white;">Green</div></td>
+							<td><div id="green" onclick="swatchSelect(this)" style="background:green;">Green</div></td>
+							<td>Tile X Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>							
+							<td>Tile Y Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>
+							<td><img id="greenSw" src="#" alt="your image" height="20" width="35"/></td>
 							<!--<td><input name="greenSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="orangeSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<!--<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="greenSw" onchange="readURL(this);" /></div></td>
 							<td><img id="greenSw" src="#" alt="your image" height="20" width="35"/></td>-->
 						</tr>
 						<tr>
-							<td><div id="violet" onclick="swatchSelect(this)" style="background:violet; outline-color:white;">Violet</div></td>
+							<td><div id="violet" onclick="swatchSelect(this)" style="background:violet;">Violet</div></td>
+							<td>Tile X Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>							
+							<td>Tile Y Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>	
+							<td><img id="lpSw" src="#" alt="your image" height="20" width="35"/></td>
 							<!--<td><input name="lpSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="lpSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<!--<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="lpSw" onchange="readURL(this);" /></div></td>
 							<td><img id="lpSw" src="#" alt="your image" height="20" width="35"/></td>-->
 						</tr>
 						<tr>
-							<td><div id="white" onclick="swatchSelect(this)" style="background:white; outline-color:white;">White</div></td>
+							<td><div id="white" onclick="swatchSelect(this)" style="background:white;">White</div></td>
+							<td>Tile X Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>							
+							<td>Tile Y Location<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>	
+							<td><img id="whiteSw" src="#" alt="your image" height="20" width="35"/></td>
 							<!--<td><input name="whiteSw" type='file' onchange="readURL(this);" /></td>-->
 							<!--<td><input name="whiteSw" type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose." onchange="readURL(this);" /></td>-->
 							<!--<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="whiteSw" onchange="readURL(this);" /></div></td>
@@ -324,22 +351,20 @@
 						</tr>
 					</table>
 					<!--Sprite Sizes-->
-					<table>
-						<tr>
-							<td>Spacing</td>
-							<td>Border<input type="number" id="border" min="1" max="100" size="1" value="0"></td>
-							<td>Vertical Margin<input type="number" id="vertSprite" min="1" max="100" size="1" value="0"></td>
-							<td>Horizontal Margin<input type="number" id="horzSprite" min="1" max="100" size="1" value="0"></td>
-						</tr>
-						<tr>
-							<td>Sprite Tile Size</td>
-							<td>Width<input type="number" id="tileSpriteW" min="25" max="100000" size="1" value="35"></td>
-							<td>Height<input type="number" id="tileSpriteH" min="10" max="100000" size="1" value="20"></td>
-						</tr>
-						<tr>
-							<input type="submit" onclick="console.log('sprite sizes sent')">
-						</tr>
-					</table>
+					<div style="background:orange;">
+						<div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="orangeSw" onchange="readURL(this);" /></div>
+						<img id="orangeSw" src="#" alt="your image" height="20" width="35"/>
+						<table>
+							<tr>
+								<td>Padding Border<input type="number" id="gridW" min="1" max="100" size="1" value="100"></td>
+								<td>Padding X<input type="number" id="gridH" min="1" max="100" size="1" value="16"></td>
+								<td>Padding Y<input type="number" id="gridH" min="1" max="100" size="1" value="16"></td>
+								<td>Tile Width<input type="number" id="tileW" min="1" max="100" size="1" value="35"></td>
+								<td>Tile Height<input type="number" id="tileH" min="1" max="100" size="1" value="20"></td>
+							</tr>
+						</table>
+							<input type="submit" onclick="sendGrid()">
+					</div>
 					<!--Swatch File Select-->
 					<td><div class="inputWrapper" style="height: 15px; width: 90px;">Choose File<input class="fileInput hidden" type="file" name="whiteSw" onchange="readURL(this);" /></div></td>
 					<td><img id="whiteSw" src="#" alt="your image" height="20" width="35"/></td>
