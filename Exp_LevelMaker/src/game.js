@@ -56,6 +56,10 @@ var assetsObj = {
     },
 };
 
+//In-Line Ex:
+//Crafty.sprite(50, 100, "imgs/spritemap6.png", {flower:[0,0], grass:[0,1]}, 10, 2, 10);
+//Crafty.sprite(spriteW, spriteH, "e.target.result", {red:[redW,redH], green:[greenW,greenH]}, paddX, paddY, bord);
+
 Game = {
 	map_grid: {
 		width: gridW, 
@@ -430,6 +434,7 @@ Game = {
 			make[2] = rockName;
 			make[3] = rockType;
 			if (rockColor == 0) rockColor = permBackground;
+			//TESTING SWATCHES
 			//block = Crafty.e('Box').color(rockColor).at(exx, wyy);
 			block = Crafty.e('Box').addComponent(rockColor).at(exx, wyy);
 		} else {
@@ -452,8 +457,9 @@ Game = {
 			} else {
 				make[3] = attr2;
 			}
+			//TESTING SWATCHES
 			//Crafty.e('Box').color(playerColor).at(exx, wyy);
-			Crafty.e('Box').adComponent(playerColor).at(exx, wyy);
+			Crafty.e('Box').addComponent(playerColor).at(exx, wyy);
 		}
 		document.getElementById("console").value = 'Array is: ' + ' blockClass: "' + make[0] + '" blockColor: "' + make[1] + '" rockName: "' + make [2] + '" rockType: "' + make[3] + '" coords: "(' + ex + ', ' + wy + ')"';
 	},
@@ -631,6 +637,11 @@ Game = {
 	c3: function(cList, x) {
 		sceneList[x] = cList;
 	},
+	swatchSetter: function(sN) {
+		//Crafty.sprite(spriteW, spriteH, "e.target.result", {red:[redW,redH], green:[greenW,greenH]}, paddX, paddY, bord);
+		console.log('swatchSetter: ' + sN[0]);
+		Crafty.sprite(sN[4], sN[5], sN[0], {orange: [sN[6], sN[7]], blue:[sN[8], sN[9]], red:[sN[10], sN[11]], yellow:[sN[12], sN[13]], indigo:[sN[14], sN[15]], black:[sN[16], sN[17]], green:[sN[18], sN[19]], violet:[sN[20], sN[21]], white:[sN[22], sN[23]]}, sN[2], sN[3], sN[1]);
+	},
 	// Initialize and start our game
 	start: function() {
 		Game.specialText();
@@ -640,9 +651,26 @@ Game = {
 		Crafty.background('white');
 		
 		Game.sceneListMaker();
+		
+		//SWATCH TEST
+		Crafty.paths({images: "lvl/" });
+		
+		Crafty.load(assetsObj, // preload assets
+			function() { //when loaded
+				// Simply start the "Loading" scene to get things going
+				Crafty.scene('game');
+			},
 
+			function(e) { //progress
+			},
+
+			function(e) { //uh oh, error loading
+			}
+		);
+		//END SWATCH TEST
+		
 		// Simply start the "Loading" scene to get things going
-		Crafty.scene('game');
+		//Crafty.scene('game');
 	}
 }
 

@@ -463,8 +463,8 @@
 								for (i = 0; i<swatchList.length; i++) {
 									$("#" + swatchList[i] + "Sw")
 										.attr('src', e.target.result)
-										.width(35)
-										.height(20);
+										.width(document.getElementById('tileW'))
+										.height(document.getElementById('tileH'));
 									var change = document.getElementById(swatchList[i] + 'Sw');
 									chex = document.getElementById(swatchList[i] + 'W').value, chey = document.getElementById(swatchList[i] + 'H').value;
 									bord = parseInt(document.getElementById('border').value), paddX = document.getElementById('padEx').value, paddY = document.getElementById('padWy').value, spW = document.getElementById('spriteW').value, spH = document.getElementById('spriteH').value; 
@@ -480,6 +480,23 @@
 									console.log(newPos);
 									change.style.objectPosition=newPos;
 								}
+								console.log('lvl/' + input.files[0].name);
+								swatchFile = 'lvl/' + input.files[0].name;
+								swatchNumbers = [
+									swatchFile, parseInt(document.getElementById('border').value), 
+									parseInt(document.getElementById('padEx').value), parseInt(document.getElementById('padWy').value), 
+									parseInt(document.getElementById('spriteW').value), parseInt(document.getElementById('spriteH').value), 
+									parseInt(document.getElementById('orangeW').value), parseInt(document.getElementById('orangeH').value),
+									parseInt(document.getElementById('blueW').value), parseInt(document.getElementById('blueH').value),
+									parseInt(document.getElementById('redW').value), parseInt(document.getElementById('redH').value),
+									parseInt(document.getElementById('yellowW').value), parseInt(document.getElementById('yellowH').value),
+									parseInt(document.getElementById('indigoW').value), parseInt(document.getElementById('indigoH').value),
+									parseInt(document.getElementById('blackW').value), parseInt(document.getElementById('blackH').value),
+									parseInt(document.getElementById('greenW').value), parseInt(document.getElementById('greenH').value),
+									parseInt(document.getElementById('violetW').value), parseInt(document.getElementById('violetH').value),
+									parseInt(document.getElementById('whiteW').value), parseInt(document.getElementById('whiteH').value)
+								];
+								Game.swatchSetter(swatchNumbers)
 							};
 							reader.readAsDataURL(input.files[0]);
 						}
