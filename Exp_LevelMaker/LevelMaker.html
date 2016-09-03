@@ -462,11 +462,11 @@
 						} else {
 							reader.onload = function (e) {
 								for (i = 0; i<swatchList.length; i++) {
-									$("#" + swatchList[i])
+									$("#" + swatchList[i] + "Sw")
 										.attr('src', e.target.result)
 										.width(35)
 										.height(20);
-									var change = document.getElementById(swatchList[i] = 'Sw');
+									var change = document.getElementById(swatchList[i] + 'Sw');
 									chex = document.getElementById(swatchList[i] + 'W').value, chey = document.getElementById(swatchList[i] + 'H').value;
 									bord = document.getElementById('border').value, paddX = document.getElementById('padEx').value, paddY = document.getElementById('padWy').value, spW = document.getElementById('spriteW').value, spH = document.getElementById('spriteH').value; 
 									positX = ((chex*spW) + (chex*paddX) + bord)*-1, positY = ((chey*spH) + (chey*paddY) + bord)*-1;
