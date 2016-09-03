@@ -469,8 +469,13 @@
 									var change = document.getElementById(swatchList[i] + 'Sw');
 									chex = document.getElementById(swatchList[i] + 'W').value, chey = document.getElementById(swatchList[i] + 'H').value;
 									bord = document.getElementById('border').value, paddX = document.getElementById('padEx').value, paddY = document.getElementById('padWy').value, spW = document.getElementById('spriteW').value, spH = document.getElementById('spriteH').value; 
-									positX = ((chex*spW) + (chex*paddX) + bord)*-1, positY = ((chey*spH) + (chey*paddY) + bord)*-1;
-									change.style.objectPosition=positX + 'px' + positY + 'px';
+									positX = ((chex*spW) + (chex*paddX) + bord);
+									positY = ((chey*spH) + (chey*paddY) + bord)*-1;
+									console.log("equation is: ((" + chex + "*" + spW + ") + (" + chex + "*" + paddX + ") +" + bord + ")*-1");
+									console.log('chex: ' + chex + ' chey: ' + chey + " bord: " + bord + " paddX: " + paddX + " paddY: " + paddY + " spW: " + spW + " spH: " + spH + " positX: " + positX + " positY: " + positY);
+									newPos = positX + 'px ' + positY + 'px';
+									console.log(newPos);
+									change.style.objectPosition=newPos;
 								}
 							};
 							reader.readAsDataURL(input.files[0]);
