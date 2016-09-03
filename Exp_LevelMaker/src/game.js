@@ -40,6 +40,8 @@ var gridH = 16;
 var GameLevels = [];
 var follow = false;
 
+
+
 Game = {
 	map_grid: {
 		width: gridW, 
@@ -414,7 +416,8 @@ Game = {
 			make[2] = rockName;
 			make[3] = rockType;
 			if (rockColor == 0) rockColor = permBackground;
-			block = Crafty.e('Box').color(rockColor).at(exx, wyy);
+			//block = Crafty.e('Box').color(rockColor).at(exx, wyy);
+			block = Crafty.e('Box').addComponent(rockColor).at(exx, wyy);
 		} else {
 			//[blockClass, blockColor, attr1, attr2]
 			make[0] = blockClass;
@@ -435,7 +438,8 @@ Game = {
 			} else {
 				make[3] = attr2;
 			}
-			Crafty.e('Box').color(playerColor).at(exx, wyy);
+			//Crafty.e('Box').color(playerColor).at(exx, wyy);
+			Crafty.e('Box').adComponent(playerColor).at(exx, wyy);
 		}
 		document.getElementById("console").value = 'Array is: ' + ' blockClass: "' + make[0] + '" blockColor: "' + make[1] + '" rockName: "' + make [2] + '" rockType: "' + make[3] + '" coords: "(' + ex + ', ' + wy + ')"';
 	},
