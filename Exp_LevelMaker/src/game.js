@@ -40,7 +40,21 @@ var gridH = 16;
 var GameLevels = [];
 var follow = false;
 
+var spriteW = 35;
+var spriteH = 20;
 
+var assetsObj = {
+    "sprites": {
+        "swatch.png": {
+            "tile": spriteW,
+            "tileh": spriteH,
+            "map": { "orange": [0,0], "blue":[1,0], "red":[2,0], "yellow": [3,0], "indigo": [4,0], "black": [5,0], "green": [6,0], "violet": [7,0], "white": [8,0], "gray": [0,1]},
+			"paddingX": 1,
+            "paddingY": 1,
+            "paddingAroundBorder": 1
+        }
+    },
+};
 
 Game = {
 	map_grid: {
