@@ -2,7 +2,11 @@ Crafty.scene('game', function () {
 	i = 0;
 	while (i < Game.map_grid.height) {
 		for (j=0; j < Game.map_grid.width; j++) {
-			Crafty.e('Box').color(background).at(j, i);
+			if (error) {
+				Crafty.e('Box').color(background).at(j, i);
+			} else {
+				Crafty.e('Box').addComponent(background).at(j, i);
+			}
 		}
 		i++;
 	}
