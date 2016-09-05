@@ -210,6 +210,11 @@ Game = {
 		playerColor = sel;
 		//console.log(playerColor);
 	},
+	swatchSetter: function(sN) {
+		//Crafty.sprite(spriteW, spriteH, "e.target.result", {red:[redW,redH], green:[greenW,greenH]}, paddX, paddY, bord);
+		console.log('swatchSetter: ' + sN[0]);
+		Crafty.sprite(sN[4], sN[5], sN[0], {orange: [sN[6], sN[7]], blue:[sN[8], sN[9]], red:[sN[10], sN[11]], yellow:[sN[12], sN[13]], indigo:[sN[14], sN[15]], black:[sN[16], sN[17]], green:[sN[18], sN[19]], violet:[sN[20], sN[21]], white:[sN[22], sN[23]]}, sN[2], sN[3], sN[1]);
+	},
 	start: function(goScene) {
 		Crafty.init(length, width, document.getElementById('cr-stage')); //Start
 		//Crafty.timer.steptype('variable', 1);

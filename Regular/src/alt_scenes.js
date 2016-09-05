@@ -200,6 +200,10 @@ Crafty.scene('Level', function() {
 		}
 	}
 	
+	swatchNumbers = currentSceneList[listX][listY][5]
+	//console.log(swatchNumbers)
+	Game.swatchSetter(swatchNumbers);
+	
 
 	sceneSet(currentSceneList);
 	player.at(checkPoint[0], checkPoint[1]);
