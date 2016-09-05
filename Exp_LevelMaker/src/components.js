@@ -193,8 +193,11 @@ Crafty.c('Box', {
 			otherMake[0] = '00', otherMake[1] = 0; otherMake[2] = 0; otherMake[3] = 0;
 			
 			//TESTING SWATCHES
-			//Crafty.e('Box').color(permBackground).at(oMex, oMwy);
-			Crafty.e('Box').addCompnent(permBackground).at(oMex, oMwy);
+			if (error) {
+				Crafty.e('Box').color(permBackground).at(oMex, oMwy);
+			} else {
+				Crafty.e('Box').addCompnent(permBackground).at(oMex, oMwy);
+			}
 			
 			make[0] = '00', make[1] = 0; make[2] = 0; make[3] = spwy + ',' + spex;
 			console.log('New Start set to: ' + make[3]);
@@ -235,50 +238,58 @@ Crafty.c('Box', {
 				document.getElementById("console").value = 'Array is: ' + ' blockClass: "' + make[0] + '" blockColor: "' + make[1] + '" rockName: "' + make [2] + '" rockType: "' + make[3] + '" coords: "(' + wy + ', ' + ex + ') Real (' + this.x + ', ' + this.y + ')"';				
 				//TESTING SWATCHES
 				if (blockClass == 'Door') {
-					//this.color(playerColor);
-					//Crafty.e('Box').color(playerColor).at(spwy, spex + 1);
-					//Crafty.e('Box').color(playerColor).at(spwy, spex + 2);
-					
-					this.addComponent(playerColor);
-					Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 1);
-					Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 2);
+					if (error) {
+						this.color(playerColor);
+						Crafty.e('Box').color(playerColor).at(spwy, spex + 1);
+						Crafty.e('Box').color(playerColor).at(spwy, spex + 2);
+					} else {
+						this.addComponent(playerColor);
+						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 1);
+						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 2);
+				
+					}		
 				} else if (blockClass == 'Elevator') {
-					/*this.color(playerColor);
-					Crafty.e('Box').color(playerColor).at(spwy, spex + 1);
-					Crafty.e('Box').color(playerColor).at(spwy, spex + 2);
-					Crafty.e('Box').color(playerColor).at(spwy, spex + 3);
-					//Over
-					Crafty.e('Box').color(playerColor).at(spwy + 1, spex);
-					Crafty.e('Box').color(playerColor).at(spwy + 1, spex + 1);
-					Crafty.e('Box').color(playerColor).at(spwy + 1, spex + 2);
-					Crafty.e('Box').color(playerColor).at(spwy + 1, spex + 3);*/					
-					
-					this.addComponent(playerColor);
-					Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 1);
-					Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 2);
-					Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 3);
-					//Over
-					Crafty.e('Box').addComponent(playerColor).at(spwy + 1, spex);
-					Crafty.e('Box').addComponent(playerColor).at(spwy + 1, spex + 1);
-					Crafty.e('Box').addComponent(playerColor).at(spwy + 1, spex + 2);
-					Crafty.e('Box').addComponent(playerColor).at(spwy + 1, spex + 3);
-					
+					if (error) {
+						this.color(playerColor);
+						Crafty.e('Box').color(playerColor).at(spwy, spex + 1);
+						Crafty.e('Box').color(playerColor).at(spwy, spex + 2);
+						Crafty.e('Box').color(playerColor).at(spwy, spex + 3);
+						//Over
+						Crafty.e('Box').color(playerColor).at(spwy + 1, spex);
+						Crafty.e('Box').color(playerColor).at(spwy + 1, spex + 1);
+						Crafty.e('Box').color(playerColor).at(spwy + 1, spex + 2);
+						Crafty.e('Box').color(playerColor).at(spwy + 1, spex + 3);*/					
+					} else {
+						this.addComponent(playerColor);
+						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 1);
+						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 2);
+						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 3);
+						//Over
+						Crafty.e('Box').addComponent(playerColor).at(spwy + 1, spex);
+						Crafty.e('Box').addComponent(playerColor).at(spwy + 1, spex + 1);
+						Crafty.e('Box').addComponent(playerColor).at(spwy + 1, spex + 2);
+						Crafty.e('Box').addComponent(playerColor).at(spwy + 1, spex + 3);
+					}
 				} else if (blockClass == 'Wall') {
-					/*this.color(playerColor);
-					Crafty.e('Box').color(playerColor).at(spwy, spex + 1);
-					Crafty.e('Box').color(playerColor).at(spwy, spex + 2);
-					Crafty.e('Box').color(playerColor).at(spwy, spex + 3);
-					Crafty.e('Box').color(playerColor).at(spwy, spex + 4);*/
-					
-					this.addComponent(playerColor);
-					Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 1);
-					Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 2);
-					Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 3);
-					Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 4);
+					if (error) {
+						this.color(playerColor);
+						Crafty.e('Box').color(playerColor).at(spwy, spex + 1);
+						Crafty.e('Box').color(playerColor).at(spwy, spex + 2);
+						Crafty.e('Box').color(playerColor).at(spwy, spex + 3);
+						Crafty.e('Box').color(playerColor).at(spwy, spex + 4);*/
+					} else {
+						this.addComponent(playerColor);
+						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 1);
+						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 2);
+						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 3);
+						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 4);
+					}
 				}else {
-					//this.color(playerColor);
-					
+					if (error) {
+						this.color(playerColor);
+					} else {
 					this.addComponent(playerColor);
+					}
 				}
 				//END SWATCH TEST
 			} else document.getElementById("console").value = 'Array is: ' + ' blockClass: "' + make[0] + '" blockColor: "' + make[1] + '" rockName: "' + make [2] + '" rockType: "' + make[3] + '" coords: "(' + wy + ', ' + ex + ') Pixel Value (' + this.x + ', ' + this.y + ')"';
