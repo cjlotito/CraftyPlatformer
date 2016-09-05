@@ -39,6 +39,7 @@ var gridW = 100;
 var gridH = 16;
 var GameLevels = [];
 var follow = false;
+var error = false;
 
 var spriteW = 35;
 var spriteH = 20;
@@ -669,6 +670,7 @@ Game = {
 			},
 
 			function(e) { //uh oh, error loading
+				error = true;
 			}
 		);
 		//END SWATCH TEST
