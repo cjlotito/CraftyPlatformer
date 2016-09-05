@@ -356,7 +356,11 @@ Game = {
 			edit[2] = rockName;
 			edit[3] = rockType;
 			if (rockColor == 0) rockColor = permBackground;
-			Crafty.e('Box').color(rockColor).at(ex, wy);
+			if (error) {
+				Crafty.e('Box').color(rockColor).at(ex, wy);
+			} else {
+				Crafty.e('Box').addComponent(rockColor).at(ex, wy);
+			}	
 		} else {
 			console.log('Process! ' + setUndo[1]);
 			redo = true;
@@ -436,8 +440,11 @@ Game = {
 			make[3] = rockType;
 			if (rockColor == 0) rockColor = permBackground;
 			//TESTING SWATCHES
-			//block = Crafty.e('Box').color(rockColor).at(exx, wyy);
-			block = Crafty.e('Box').addComponent(rockColor).at(exx, wyy);
+			if (error) {
+				block = Crafty.e('Box').color(rockColor).at(exx, wyy);
+			} else {
+				block = Crafty.e('Box').addComponent(rockColor).at(exx, wyy);
+			}
 		} else {
 			//[blockClass, blockColor, attr1, attr2]
 			make[0] = blockClass;
@@ -459,8 +466,11 @@ Game = {
 				make[3] = attr2;
 			}
 			//TESTING SWATCHES
-			//Crafty.e('Box').color(playerColor).at(exx, wyy);
-			Crafty.e('Box').addComponent(playerColor).at(exx, wyy);
+			if (error) {
+				Crafty.e('Box').color(playerColor).at(exx, wyy);
+			} else {
+				Crafty.e('Box').addComponent(playerColor).at(exx, wyy);
+			}
 		}
 		document.getElementById("console").value = 'Array is: ' + ' blockClass: "' + make[0] + '" blockColor: "' + make[1] + '" rockName: "' + make [2] + '" rockType: "' + make[3] + '" coords: "(' + ex + ', ' + wy + ')"';
 	},
@@ -496,7 +506,11 @@ Game = {
 					document.getElementById("console").value = text;
 					if (rockColor == excluded) {
 						rockColor = playerColor;
-						Crafty.e('Box').color(rockColor).at(j,i);
+						if (error) {
+							Crafty.e('Box').color(rockColor).at(j,i);
+						} else {
+							Crafty.e('Box').addComponent(rockColor).at(j,i);	
+						}
 						make[1] = rockColor;
 						make[0] = 'back';
 					}
@@ -519,7 +533,11 @@ Game = {
 					text = 'Class: ' + rockClass + ' Color: ' + rockColor + ' Name: ' + rockName + ' Type: ' + rockType;
 					document.getElementById("console").value = text;
 					if (rockColor == "0") rockColor = 'white';
-					Crafty.e('Box').color(rockColor).at(j, i);
+					if (error) {
+						Crafty.e('Box').color(rockColor).at(j, i);
+					} else {
+						Crafty.e('Box').addComponent(rockColor).at(j, i);
+					}				
 				}
 				i++;
 			}
@@ -541,7 +559,11 @@ Game = {
 				ex = j, wy = i, make = sceneList[wy][ex], rockColor = make[1], rockName = make[2], rockType = make[3]; 
 				if (rockColor != excluded) {
 					rockColor = playerColor;
-					Crafty.e('Box').color(rockColor);
+					if (error) {
+						Crafty.e('Box').color(rockColor);
+					} else {
+						Crafty.e('Box').addComponent(rockColor);
+					}
 					if (follow) {
 						//Keep Key Colors Matching Block Colors
 						if (rockName == "Key" || rockName == "Door" || rockName == "ColorZone" || rockName == "AntiColorZone") {
