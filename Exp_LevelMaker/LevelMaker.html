@@ -385,6 +385,22 @@
 				var textFile = null;
 				var GameLevels = new Array();
 				var SingleSceneList = new Array();
+				//var swatchNumbers = new Array();
+				var swatchFile = 'lvl/swatch.png';
+				var swatchNumbers = [
+									swatchFile, parseInt(document.getElementById('border').value), 
+									parseInt(document.getElementById('padEx').value), parseInt(document.getElementById('padWy').value), 
+									parseInt(document.getElementById('spriteW').value), parseInt(document.getElementById('spriteH').value), 
+									parseInt(document.getElementById('orangeW').value), parseInt(document.getElementById('orangeH').value),
+									parseInt(document.getElementById('blueW').value), parseInt(document.getElementById('blueH').value),
+									parseInt(document.getElementById('redW').value), parseInt(document.getElementById('redH').value),
+									parseInt(document.getElementById('yellowW').value), parseInt(document.getElementById('yellowH').value),
+									parseInt(document.getElementById('indigoW').value), parseInt(document.getElementById('indigoH').value),
+									parseInt(document.getElementById('blackW').value), parseInt(document.getElementById('blackH').value),
+									parseInt(document.getElementById('greenW').value), parseInt(document.getElementById('greenH').value),
+									parseInt(document.getElementById('violetW').value), parseInt(document.getElementById('violetH').value),
+									parseInt(document.getElementById('whiteW').value), parseInt(document.getElementById('whiteH').value)
+								];
 				function sendGrid() {
 					var HgridW = parseInt(document.getElementById('gridW').value);
 					var HgridH = parseInt(document.getElementById('gridH').value);
@@ -424,6 +440,7 @@
 					Game.printArray();
 					link.href = makeTextFile(textbox.value);
 					link.style.display = 'block';
+					console.log(swatchNumbers[0]);
 				}
 				/* When the user clicks on the button,
 				toggle between hiding and showing the dropdown content */
@@ -523,6 +540,7 @@
 										test = document.getElementById('Collab').value = text;
 										//console.log(test);
 										saveMode('Collab', 'Ldownloadlink');
+										
 									} else {
 										console.log(q);
 										q++;

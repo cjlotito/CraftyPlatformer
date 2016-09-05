@@ -640,6 +640,10 @@ Game = {
 	swatchSetter: function(sN) {
 		//Crafty.sprite(spriteW, spriteH, "e.target.result", {red:[redW,redH], green:[greenW,greenH]}, paddX, paddY, bord);
 		console.log('swatchSetter: ' + sN[0]);
+		//Testing ADD List to SceneList
+		swatchPlace = sceneList[Game.map_grid.height-2][Game.map_grid.width-1].length;
+		//Possibly Only use sN[0] below:
+		sceneList[Game.map_grid.height-2][Game.map_grid.width][swatchPlace] = sN;
 		Crafty.sprite(sN[4], sN[5], sN[0], {orange: [sN[6], sN[7]], blue:[sN[8], sN[9]], red:[sN[10], sN[11]], yellow:[sN[12], sN[13]], indigo:[sN[14], sN[15]], black:[sN[16], sN[17]], green:[sN[18], sN[19]], violet:[sN[20], sN[21]], white:[sN[22], sN[23]]}, sN[2], sN[3], sN[1]);
 	},
 	// Initialize and start our game
