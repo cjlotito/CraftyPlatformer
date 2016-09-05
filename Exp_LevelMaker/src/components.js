@@ -258,7 +258,7 @@ Crafty.c('Box', {
 						Crafty.e('Box').color(playerColor).at(spwy + 1, spex);
 						Crafty.e('Box').color(playerColor).at(spwy + 1, spex + 1);
 						Crafty.e('Box').color(playerColor).at(spwy + 1, spex + 2);
-						Crafty.e('Box').color(playerColor).at(spwy + 1, spex + 3);*/					
+						Crafty.e('Box').color(playerColor).at(spwy + 1, spex + 3);					
 					} else {
 						this.addComponent(playerColor);
 						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 1);
@@ -276,7 +276,7 @@ Crafty.c('Box', {
 						Crafty.e('Box').color(playerColor).at(spwy, spex + 1);
 						Crafty.e('Box').color(playerColor).at(spwy, spex + 2);
 						Crafty.e('Box').color(playerColor).at(spwy, spex + 3);
-						Crafty.e('Box').color(playerColor).at(spwy, spex + 4);*/
+						Crafty.e('Box').color(playerColor).at(spwy, spex + 4);
 					} else {
 						this.addComponent(playerColor);
 						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 1);
