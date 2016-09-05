@@ -47,75 +47,7 @@ Crafty.c('Scroll', {
 					this.y = entity.y - this.h;
 				}
         		 });
-	},
-	playerPause: function(first_entity) {
-		if (clicked == false) {
-			//text = 'Color changed to: ' + playerColor;
-			//document.getElementById("console").value = text;
-			if (erase) {
-			} else {
-				clicked = true;
-				this.multiway({});
-				//BG
-				Crafty.e('Menu').at((first_entity.x/Game.map_grid.tile.width), (4)).bind('KeyDown', function(e){
-					if (e.key == Crafty.keys.O) {
-						player.color('orange'); playerColor = 'orange'; tempColor = 'orange';
-					} else if (e.key == Crafty.keys.Y) {
-						player.color('yellow'); playerColor = 'yellow'; tempColor = 'yellow';
-					} else if (e.key == Crafty.keys.G) {
-						player.color('green'); playerColor = 'green'; tempColor = 'green';
-					} else if (e.key == Crafty.keys.B) {
-						player.color('blue'); playerColor = 'blue'; tempColor = 'blue';
-					} else if (e.key == Crafty.keys.I) {
-						player.color('indigo'); playerColor = 'indigo'; tempColor = 'indigo';
-					} else if (e.key == Crafty.keys.V) {
-						player.color('violet'); playerColor = 'violet'; tempColor = 'violet';
-					} else if (e.key == Crafty.keys.R) {
-						player.color('red'); playerColor = 'red'; tempColor = 'red';
-					} else if (e.key == Crafty.keys.L) {
-						player.color('black'); playerColor = 'black'; tempColor = 'black';
-					} else if (e.key == Crafty.keys.W) {
-						player.color('white'); playerColor = 'white'; tempColor = 'white';
-					} 
-
-				});
-				//RIGHT
-				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 1, (5)).color('orange').bind('Click', function(){player.color(this.color()); playerColor = 'orange'; tempColor = 'orange'; background = 'orange';});
-				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 1, (7)).color('yellow').bind('Click', function(){player.color(this.color()); playerColor = 'yellow'; tempColor = 'yellow'; background = 'yellow';});
-				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 1, (9)).color('green').bind('Click', function(){player.color(this.color()); playerColor = 'green'; tempColor = 'green'; background = 'green';});
-				//MIDDLE
-				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 3, (5)).color('blue').bind('Click', function(){player.color(this.color()); playerColor = 'blue'; tempColor = 'blue'; background = 'blue';});
-				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 3, (7)).color('indigo').bind('Click', function(){player.color(this.color()); playerColor = 'indigo'; tempColor = 'indigo'; background = 'indigo';});
-				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 3, (9)).color('violet').bind('Click', function(){player.color(this.color());  playerColor = 'violet'; tempColor = 'violet'; background = 'violet';});
-				//LEFT
-				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 5, (5)).color('red').bind('Click', function(){player.color(this.color()); playerColor = 'red'; tempColor = 'red'; background = 'red';});
-				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 5, (7)).color('black').bind('Click', function(){player.color(this.color()); playerColor = 'black'; tempColor = 'black'; background = 'black';});
-				Crafty.e('Icon').at((first_entity.x/Game.map_grid.tile.width) + 5, (9)).color('white').bind('Click', function(){player.color(this.color());  playerColor = 'white'; tempColor = 'white'; background = 'white';});
-			}
-		} else if (clicked == true) {
-			clicked = false;
-			Crafty("Menu").destroy();
-			player.multiway(speed, keys);
-		}
-	},
-	
-	playerHeightRef: function(first_entity) {
-		if (Ref == false) {
-			Ref = true;
-			ex = (first_entity.x/Game.map_grid.tile.width)
-			Crafty.e('Height').at(ex, 0).color('orange');
-			Crafty.e('Height').at(ex, 2).color('orange');
-			Crafty.e('Height').at(ex, 4).color('orange');
-			Crafty.e('Height').at(ex, 6).color('orange');
-			Crafty.e('Height').at(ex, 8).color('orange');
-			Crafty.e('Height').at(ex, 10).color('orange');
-			Crafty.e('Height').at(ex, 12).color('orange');
-			Crafty.e('Height').at(ex, 14).color('orange');
-		} else if (Ref == true) {
-			Ref = false;
-			Crafty("Reference").destroy();
-		}
-	},
+	}
 });
 
 //Costume/Pause Menu
