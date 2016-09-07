@@ -675,6 +675,7 @@ Game = {
 		Crafty.sprite(sN[4], sN[5], sN[0], {orange: [sN[6], sN[7]], blue:[sN[8], sN[9]], red:[sN[10], sN[11]], yellow:[sN[12], sN[13]], indigo:[sN[14], sN[15]], black:[sN[16], sN[17]], green:[sN[18], sN[19]], violet:[sN[20], sN[21]], white:[sN[22], sN[23]]}, sN[2], sN[3], sN[1]);
 	},
 	swatchSelectSet: function (file, load) {
+		listX = sceneList.length-1, listY = sceneList[0].length;
 		if (load) {
 			swatchNums = sceneList[listX][listY][5];
 			document.getElementById('tileW').value = parseInt(swatchNums[4]);
