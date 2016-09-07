@@ -477,26 +477,7 @@
 							reader.readAsText(input.files[0]);
 						} else {
 							reader.onload = function (e) {
-								for (i = 0; i<swatchList.length; i++) {
-									$("#" + swatchList[i] + "Sw")
-										.attr('src', e.target.result)
-										.width(document.getElementById('tileW'))
-										.height(document.getElementById('tileH'));
-									var change = document.getElementById(swatchList[i] + 'Sw');
-									chex = document.getElementById(swatchList[i] + 'W').value, chey = document.getElementById(swatchList[i] + 'H').value;
-									bord = parseInt(document.getElementById('border').value), paddX = document.getElementById('padEx').value, paddY = document.getElementById('padWy').value, spW = document.getElementById('spriteW').value, spH = document.getElementById('spriteH').value; 
-									//console.log("chex*spW = " + chex*spW);
-									//console.log("chex*paddX = " + chex*paddX);
-									//console.log(bord);
-									positX = ((chex*spW) + (chex*paddX) + bord)*-1;
-									positY = ((chey*spH) + (chey*paddY) + bord)*-1;
-									//console.log("equation is: ((" + chex + "*" + spW + ") + (" + chex + "*" + paddX + ") +" + bord + ")*-1");
-									//console.log('chex: ' + chex + ' chey: ' + chey + " bord: " + bord + " paddX: " + paddX + " paddY: " + paddY + " spW: " + spW + " spH: " + spH + " positX: " + positX + " positY: " + positY);
-									//console.log(positX);
-									newPos = positX + 'px ' + positY + 'px';
-									console.log(newPos);
-									change.style.objectPosition=newPos;
-								}
+								Game.swatchSelectSet(e.target.result, false);
 								console.log('lvl/' + input.files[0].name);
 								swatchFile = 'lvl/' + input.files[0].name;
 								swatchNumbers = [
