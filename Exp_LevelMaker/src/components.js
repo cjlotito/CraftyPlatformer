@@ -184,7 +184,7 @@ Crafty.c('Box', {
 		if (setStart) {
 			//console.log('Set STart!');
 			this.color(playerColor);
-			make = sceneList[14][100];
+			make = sceneList[Game.map_grid.tile.width-2][Game.map_grid.tile.height];
 			oMCoords = make[3].split(',');
 			oMex = oMCoords[0], oMwy = oMCoords[1];
 			//console.log('Previous start: ' + oMex + ',' + oMwy);
@@ -246,7 +246,6 @@ Crafty.c('Box', {
 						this.addComponent(playerColor);
 						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 1);
 						Crafty.e('Box').addComponent(playerColor).at(spwy, spex + 2);
-				
 					}		
 				} else if (blockClass == 'Elevator') {
 					if (error) {
