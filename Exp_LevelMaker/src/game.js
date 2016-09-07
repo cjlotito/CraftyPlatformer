@@ -522,6 +522,9 @@ Game = {
 	setBackground: function (hold) {
 		list = JSON.parse(hold);
 		sceneList = list;
+		swatcher = sceneList[Game.map_grid.height-2][Game.map_grid.width][5];
+		Game.swatchSetter(swatcher);
+		Game.swatchSelectSet(swatcher[0], true);
 			i = 0;
 			while (i < sceneList.length) {
 				for (j=0; j < sceneList[i].length; j++) {
@@ -665,9 +668,50 @@ Game = {
 		console.log('swatchSetter: ' + sN[0]);
 		//Testing ADD List to SceneList
 		swatchPlace = sceneList[Game.map_grid.height-2][Game.map_grid.width-1].length;
-		//Possibly Only use sN[0] below:
-		sceneList[Game.map_grid.height-2][Game.map_grid.width][swatchPlace] = sN;
+		if (swatchPlace == 5) {
+			//Possibly Only use sN[0] below:
+			sceneList[Game.map_grid.height-2][Game.map_grid.width][swatchPlace] = sN;
+		}
 		Crafty.sprite(sN[4], sN[5], sN[0], {orange: [sN[6], sN[7]], blue:[sN[8], sN[9]], red:[sN[10], sN[11]], yellow:[sN[12], sN[13]], indigo:[sN[14], sN[15]], black:[sN[16], sN[17]], green:[sN[18], sN[19]], violet:[sN[20], sN[21]], white:[sN[22], sN[23]]}, sN[2], sN[3], sN[1]);
+	},
+	swatchSelectSet: function (file, load) {
+		if (load) {
+			swatchNums = sceneList[listX][listY][5];
+			document.getElementById('tileW').value = parseInt(swatchNums[4]);
+			document.getElementById('tileH').value = parseInt(swatchNums[5]);
+			document.getElementById('border').value = parseInt(swatchNums[1]);
+			document.getElementById('padEx').value = parseInt(swatchNums[2]);
+			document.getElementById('padWy').value = parseInt(swatchNums[3]);
+			
+			j = 6;
+			for (i = 0; i<swatchList.length; i++) {
+				document.getElementById(swatchList[i] + 'W').value = swatchNums[j];
+				document.getElementById(swatchList[i] + 'H').value = swatchNums[j+1];
+				j = j + 2;
+			}
+		} else {
+			tileW = document.getElementById('tileW'), tileH = document.getElementById('tileH');	
+		}
+		for (i = 0; i<swatchList.length; i++) {
+			$("#" + swatchList[i] + "Sw")
+				.attr('src', file)
+				.width(document.getElementById('tileW').value)
+				.height(document.getElementById('tileH').value);
+			var change = document.getElementById(swatchList[i] + 'Sw');
+			chex = document.getElementById(swatchList[i] + 'W').value, chey = document.getElementById(swatchList[i] + 'H').value;
+			bord = parseInt(document.getElementById('border').value), paddX = document.getElementById('padEx').value, paddY = document.getElementById('padWy').value, spW = document.getElementById('spriteW').value, spH = document.getElementById('spriteH').value; 
+			//console.log("chex*spW = " + chex*spW);
+			//console.log("chex*paddX = " + chex*paddX);
+			//console.log(bord);
+			positX = ((chex*spW) + (chex*paddX) + bord)*-1;
+			positY = ((chey*spH) + (chey*paddY) + bord)*-1;
+			//console.log("equation is: ((" + chex + "*" + spW + ") + (" + chex + "*" + paddX + ") +" + bord + ")*-1");
+			//console.log('chex: ' + chex + ' chey: ' + chey + " bord: " + bord + " paddX: " + paddX + " paddY: " + paddY + " spW: " + spW + " spH: " + spH + " positX: " + positX + " positY: " + positY);
+			//console.log(positX);
+			newPos = positX + 'px ' + positY + 'px';
+			console.log(newPos);
+			change.style.objectPosition=newPos;
+		}
 	},
 	// Initialize and start our game
 	start: function() {
