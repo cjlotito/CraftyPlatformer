@@ -1,4 +1,4 @@
--Transfer Sprite Load feature from Game to Level Maker Load Feature(For Proper Level Reload) i.e. fix SetBackground function to load proper sprite sheet before loading "boxes"
--Replace "addComponent" to all "color" areas of Level Maker
--Create Error Var in Game set to false, which can be made true when sprite sheet fails to load and will make all "Box" color instead of addComponent
--Repeat Above for LevelMaker
+X-Transfer Sprite Load feature from Game to Level Maker Load Feature(For Proper Level Reload) i.e. fix SetBackground function to load proper sprite sheet before loading "boxes"
+X-Replace "addComponent" to all "color" areas of Level Maker
+X-Create Error Var in Game set to false, which can be made true when sprite sheet fails to load and will make all "Box" color instead of addComponent
+X-Repeat Above for LevelMaker
