@@ -23,7 +23,13 @@ var sceneSet = function(list) {
 					if (rockColor == 'clear') {
 						if (debug == false) Crafty.e('RockCover').at(ex, wy).removeComponent('Color').attr({name: rockName, type: rockType});
 					} else {
-						if (debug == false) Crafty.e('RockCover').at(ex, wy).addComponent(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						if (error && localError) {
+							if (debug == false) Crafty.e('RockCover').at(ex, wy).color(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						} if (localError) {
+							if (debug == false) Crafty.e('RockCover').at(ex, wy).addComponent('D' + rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						} else {
+							if (debug == false) Crafty.e('RockCover').at(ex, wy).addComponent(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						}
 					}
 				} else {
 					Crafty.e('TinyGround').at(ex + 0.15, wy);
@@ -32,8 +38,13 @@ var sceneSet = function(list) {
 					if (rockColor == 'clear') {
 						if (debug == false) Crafty.e('RockCover').at(ex, wy - 0.05).removeComponent('Color').attr({name: rockName, type: rockType});
 					} else {
-						//if (debug == false) Crafty.e('RockCover').at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
-						if (debug == false) Crafty.e('RockCover').at(ex, wy - 0.05).addComponent(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						if (error && localError) {
+							if (debug == false) Crafty.e('RockCover').at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
+						} if (localError) {
+							if (debug == false) Crafty.e('RockCover').at(ex, wy - 0.05).addComponent('D' + rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});							
+						} else {
+							if (debug == false) Crafty.e('RockCover').at(ex, wy - 0.05).addComponent(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						}
 					}
 				}	
 			} else if (rockClass === 'ColorCover') {
@@ -44,8 +55,13 @@ var sceneSet = function(list) {
 					if (rockColor == 'clear') {
 						if (debug == false) Crafty.e('ColorCover').at(ex, wy - 0.05).removeComponent('Color').attr({name: rockName, type: rockType});
 					} else {
-						//if (debug == false) Crafty.e('ColorCover').at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
-						if (debug == false) Crafty.e('ColorCover').at(ex, wy - 0.05).addComponent(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						if (error && localError) {
+							if (debug == false) Crafty.e('ColorCover').at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
+						} if (localError) {
+							if (debug == false) Crafty.e('ColorCover').at(ex, wy - 0.05).addComponent('D' + rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						} else {
+							if (debug == false) Crafty.e('ColorCover').at(ex, wy - 0.05).addComponent(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						}
 					}
 				} else if (rockName === 'AntiColorZone') {
 					Crafty.e('TinyGround').at(ex + 0.15, wy + 0.7);
@@ -54,39 +70,70 @@ var sceneSet = function(list) {
 					if (rockColor == 'clear') {
 						if (debug == false) Crafty.e('ColorCover').at(ex, wy).removeComponent('Color').attr({name: rockName, type: rockType});
 					} else {
-						//if (debug == false) Crafty.e('ColorCover').at(ex, wy).color(rockColor).attr({name: rockName, type: rockType});
-						if (debug == false) Crafty.e('ColorCover').at(ex, wy).addComponent(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						if (error && localError) {
+							if (debug == false) Crafty.e('ColorCover').at(ex, wy).color(rockColor).attr({name: rockName, type: rockType});
+						} if (localError) {
+							if (debug == false) Crafty.e('ColorCover').at(ex, wy).addComponent('D' + rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});							
+						} else {
+							if (debug == false) Crafty.e('ColorCover').at(ex, wy).addComponent(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+						}
 					}
 				}
 			} else if (rockClass == 'back') {
-				Crafty.e('Background').at(ex, wy).color(rockColor);	
+				if (error && localError) {
+					Crafty.e('Background').at(ex, wy).color(rockColor);	
+				} if (localError) {
+					Crafty.e('Background').at(ex, wy).addComponent('D' + rockColor);	
+				} else {
+					Crafty.e('Background').at(ex, wy).addComponent(rockColor);	
+				}
 			} else if (rockClass == 'Door') {
 				if (rockColor == 'clear') {
 					Crafty.e(rockClass).at(ex, wy - 0.05).removeComponent('Color').attr({h:tileH*3, w: tileW, name: rockName, type: rockType});
 				} else {
-					//Crafty.e(rockClass).at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
-					Crafty.e(rockClass).at(ex, wy - 0.05).addComponent(rockColor).attr({h:tileH*3, w: tileW, name: rockName, type: rockType});
+					if (error && localError) {
+						Crafty.e(rockClass).at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
+					} if (localError) {
+						Crafty.e(rockClass).at(ex, wy - 0.05).addComponent('D' + rockColor).attr({h:tileH*3, w: tileW, name: rockName, type: rockType});
+					} else {
+						Crafty.e(rockClass).at(ex, wy - 0.05).addComponent(rockColor).attr({h:tileH*3, w: tileW, name: rockName, type: rockType});
+					}
 				}
 			} else if (rockClass == 'Elevator') {
 				if (rockColor == 'clear') {
 					Crafty.e(rockClass).at(ex, wy - 0.05).removeComponent('Color').attr({w: tileW*2, h:tileH*4, name: rockName, type: rockType});
 				} else {
-					//Crafty.e(rockClass).at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
-					Crafty.e(rockClass).at(ex, wy - 0.05).addComponent(rockColor).attr({w: tileW*2, h:tileH*4, name: rockName, type: rockType});
+					if (error && localError) {
+						Crafty.e(rockClass).at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
+					} if (localError) {
+						Crafty.e(rockClass).at(ex, wy - 0.05).addComponent('D' + rockColor).attr({w: tileW*2, h:tileH*4, name: rockName, type: rockType});
+					} else {
+						Crafty.e(rockClass).at(ex, wy - 0.05).addComponent(rockColor).attr({w: tileW*2, h:tileH*4, name: rockName, type: rockType});
+					}
 				}
 			} else if (rockClass == 'Wall') {
 				if (rockColor == 'clear') {
 					Crafty.e(rockClass).at(ex, wy - 0.05).removeComponent('Color').attr({h:tileH*5, w: tileW, name: rockName, type: rockType});
 				} else {
-					//Crafty.e(rockClass).at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
-					Crafty.e(rockClass).at(ex, wy - 0.05).addComponent(rockColor).attr({h:tileH*5, w: tileW, name: rockName, type: rockType});
+					if (error && localError) {
+						Crafty.e(rockClass).at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
+					} if (localError) {
+						Crafty.e(rockClass).at(ex, wy - 0.05).addComponent('D' + rockColor).attr({h:tileH*5, w: tileW, name: rockName, type: rockType});	
+					} else {
+						Crafty.e(rockClass).at(ex, wy - 0.05).addComponent(rockColor).attr({h:tileH*5, w: tileW, name: rockName, type: rockType});
+					}
 				}
 			} else {
 				if (rockColor == 'clear') {
 					Crafty.e(rockClass).at(ex, wy - 0.05).removeComponent('Color').attr({name: rockName, type: rockType});
 				} else {
-					//Crafty.e(rockClass).at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
-					Crafty.e(rockClass).at(ex, wy - 0.05).addComponent(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+					if (error && localError) {
+						Crafty.e(rockClass).at(ex, wy - 0.05).color(rockColor).attr({name: rockName, type: rockType});
+					} if (localError) {
+						Crafty.e(rockClass).at(ex, wy - 0.05).addComponent('D' + rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+					} else {
+						Crafty.e(rockClass).at(ex, wy - 0.05).addComponent(rockColor).attr({w: tileW, h: tileH, name: rockName, type: rockType});
+					}
 				}
 			}
 			//END COPY
@@ -111,7 +158,7 @@ Crafty.scene('Onward', function(toPrint) {
 			if (startPoint == -1) {
 				Crafty.scene('LevelTest');	
 			} else {
-				Crafty.scene('Level');
+				Crafty.scene('Loader');
 			}
 		}
 	}
@@ -160,6 +207,14 @@ Crafty.scene('LevelTest', function() {
 	
 });
 
+Crafty.scene('Loader', function() {
+	currentSceneList = Game.copyArr(myLevels[startPoint-1]);
+	listX = currentSceneList.length-1, listY = currentSceneList[0].length;
+	swatchNumbers = currentSceneList[listX][listY][5]
+	//console.log(swatchNumbers)
+	Game.swatchSetter(swatchNumbers);
+});
+	
 Crafty.scene('Level', function() {
 	if (fresh) {
 		//currentSceneList = Game.copyArr(sceneList1);
@@ -200,9 +255,7 @@ Crafty.scene('Level', function() {
 		}
 	}
 	
-	swatchNumbers = currentSceneList[listX][listY][5]
-	//console.log(swatchNumbers)
-	Game.swatchSetter(swatchNumbers);
+
 	
 
 	sceneSet(currentSceneList);

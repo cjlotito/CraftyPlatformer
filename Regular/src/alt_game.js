@@ -34,6 +34,8 @@ var tileW = 35;
 var tileH = 20;
 var gridW = 100;
 var gridH = 16;
+var error = false;
+var localError = false;
 
 var spriteW = 35;
 var spriteH = 20;
@@ -46,7 +48,7 @@ var assetsObj = {
         "swatch.png": {
             "tile": spriteW,
             "tileh": spriteH,
-            "map": { "orange": [0,0], "blue":[1,0], "red":[2,0], "yellow": [3,0], "indigo": [4,0], "black": [5,0], "green": [6,0], "violet": [7,0], "white": [8,0], "gray": [0,1]},
+            "map": { "Dorange": [0,0], "Dblue":[1,0], "Dred":[2,0], "Dyellow": [3,0], "Dindigo": [4,0], "Dblack": [5,0], "Dgreen": [6,0], "Dviolet": [7,0], "Dwhite": [8,0], "Dgray": [0,1]},
 			"paddingX": 1,
             "paddingY": 1,
             "paddingAroundBorder": 1
@@ -211,9 +213,42 @@ Game = {
 		//console.log(playerColor);
 	},
 	swatchSetter: function(sN) {
+		//Working Version
 		//Crafty.sprite(spriteW, spriteH, "e.target.result", {red:[redW,redH], green:[greenW,greenH]}, paddX, paddY, bord);
-		console.log('swatchSetter: ' + sN[0]);
-		Crafty.sprite(sN[4], sN[5], sN[0], {orange: [sN[6], sN[7]], blue:[sN[8], sN[9]], red:[sN[10], sN[11]], yellow:[sN[12], sN[13]], indigo:[sN[14], sN[15]], black:[sN[16], sN[17]], green:[sN[18], sN[19]], violet:[sN[20], sN[21]], white:[sN[22], sN[23]]}, sN[2], sN[3], sN[1]);
+		//console.log('swatchSetter: ' + sN[0]);
+		//Crafty.sprite(sN[4], sN[5], sN[0], {orange: [sN[6], sN[7]], blue:[sN[8], sN[9]], red:[sN[10], sN[11]], yellow:[sN[12], sN[13]], indigo:[sN[14], sN[15]], black:[sN[16], sN[17]], green:[sN[18], sN[19]], violet:[sN[20], sN[21]], white:[sN[22], sN[23]]}, sN[2], sN[3], sN[1]);
+		
+		//Attempted NEw Loader with error support
+		swatchName = '"' + 'colors.jpg' + '"';
+		console.log(swatchName);
+		//cannot use var in url spot i.e colors.jpg
+		var newAssetsObj = {
+			"sprites": {
+				'colors.jpg': {
+					"tile": sN[4],
+					"tileh": sN[5],
+					"map": { "orange": [sN[6], sN[7]], "blue":[sN[8], sN[9]], "red":[sN[10], sN[11]], "yellow": [sN[12], sN[13]], "indigo": [sN[14], sN[15]], "black": [sN[16], sN[17]], "green": [sN[18], sN[19]], "violet": [sN[20], sN[21]], "white": [sN[22], sN[23]], "gray": [sN[24], sN[25]]},
+					"paddingX": sN[2],
+					"paddingY": sN[3],
+					"paddingAroundBorder": sN[1]
+				}
+			},
+		};
+		Crafty.load(newAssetsObj, // preload assets
+			function() { //when loaded
+				console.log('completed');
+				Crafty.scene('Level');
+			},
+
+			function(e) { //progress
+			},
+
+			function(e) { //uh oh, error loading
+				localError = true;
+				console.log('localError = ' + localError);
+				console.log('Error! Level Spritesheet not found!');
+			}
+		);
 	},
 	start: function(goScene) {
 		Crafty.init(length, width, document.getElementById('cr-stage')); //Start
@@ -240,6 +275,9 @@ Game = {
 			},
 
 			function(e) { //uh oh, error loading
+				error = true;
+				console.log('error = ' + error);
+				console.log('Error! Main Spritesheet not found!');
 			}
 		);
 	}
