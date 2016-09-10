@@ -62,6 +62,14 @@ var assetsObj = {
             "paddingY": 1,
             "paddingAroundBorder": 1
         },
+		"Chars/bikeGuy.png": {
+            "tile": 240,
+            "tileh": 134,
+            "map": { "bikeGuy": [0,0]},
+            "paddingX": 0,
+            "paddingY": 0,
+            "paddingAroundBorder": 0
+        },
     },
 };
 
@@ -250,7 +258,8 @@ Game = {
 		} else if (color == 'blue') {
 		    player.addComponent('regularGirl');
 		} else if (color == 'red') {
-		    player.addComponent('businessGuy');
+		    //player.addComponent('businessGuy');
+		    player.addComponent('bikeGuy');
 		} else if (color == 'yellow') {
 		    player.addComponent('musicGuy');
 		}else if (color == 'indigo') {

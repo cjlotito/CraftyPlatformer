@@ -225,8 +225,8 @@ Crafty.c('Guy', {
         	} else {
         		Game.playerSprite('red');
         	}
-		this.rotation == 90;
-		this.attr({w: tileH*2, h: tileW/2});
+		//this.rotation == 90;
+		//this.attr({w: tileH*2, h: tileW/2});
 	},
 	
 	playerUpright: function() {
