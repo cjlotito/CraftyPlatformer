@@ -264,7 +264,12 @@ Game = {
 		}else if (color == 'white') {
 		    player.addComponent('dancerGirl');
 		}
-		player.attr({w: tileW/2, h: tileH*2})
+		
+		if (color == 'red') {
+			player.attr({w: tileW*2, h: tileH/2});
+		} else {
+			player.attr({w: tileW/2, h: tileH*2});
+		}
 	},
 	swatchSetter: function(sN) {
 		//Working Version
