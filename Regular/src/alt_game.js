@@ -52,7 +52,15 @@ var assetsObj = {
 			"paddingX": 1,
             "paddingY": 1,
             "paddingAroundBorder": 1
-        }
+        },
+        "Chars/stickFigures.png": {
+            "tile": 159,
+            "tileh": 254,
+            "map": { "regularGuy": [1,1], "regularGirl":[2,1], "youngGuy":[1,2], "youngGirl": [2,2], "businessGuy": [0,2], "musicGuy": [0,1], "baseballGuy": [0,0], "chefGuy": [1,0], "dancerGirl": [2,0]},
+            "paddingX": 1,
+            "paddingY": 1,
+            "paddingAroundBorder": 1
+        },
     },
 };
 
@@ -210,7 +218,52 @@ Game = {
 	},
 	playC: function(sel) {
 		playerColor = sel;
-		//console.log(playerColor);
+	        //player.addComponent(sel);
+	        //console.log(playerColor);
+	        Game.playerSprite(sel);
+    	},
+	playerSprite: function(color) {
+		console.log(playerColor);
+		if (playerColor == 'orange') {
+		    player.removeComponent('regularGuy');
+		} else if (playerColor == 'blue') {
+		    player.removeComponent('regularGirl');
+		} else if (playerColor == 'red') {
+		    player.removeComponent('businessGuy');
+		} else if (playerColor == 'yellow') {
+		    player.removeComponent('musicGuy');
+		}else if (playerColor == 'indigo') {
+		    player.removeComponent('youngGuy');
+		}else if (playerColor == 'black') {
+		    player.removeComponent('youngGirl');
+		}else if (playerColor == 'green') {
+		    player.removeComponent('chefGuy');
+		}else if (playerColor == 'violet') {
+		    player.removeComponent('baseballGuy');
+		}else if (playerColor == 'white') {
+		    player.removeComponent('dancerGirl');
+		}
+		
+		if (color == 'orange') {
+		    player.addComponent('regularGuy');
+		} else if (color == 'blue') {
+		    player.addComponent('regularGirl');
+		} else if (color == 'red') {
+		    player.addComponent('businessGuy');
+		} else if (color == 'yellow') {
+		    player.addComponent('musicGuy');
+		}else if (color == 'indigo') {
+		    player.addComponent('youngGuy');
+		}else if (color == 'black') {
+		    player.addComponent('youngGirl');
+		}else if (color == 'green') {
+		    player.addComponent('chefGuy');
+		}else if (color == 'violet') {
+		    player.addComponent('baseballGuy');
+		}else if (color == 'white') {
+		    player.addComponent('dancerGirl');
+		}
+		player.attr({w: tileW/2, h: tileH*2})
 	},
 	swatchSetter: function(sN) {
 		//Working Version
@@ -218,23 +271,27 @@ Game = {
 		//console.log('swatchSetter: ' + sN[0]);
 		//Crafty.sprite(sN[4], sN[5], sN[0], {orange: [sN[6], sN[7]], blue:[sN[8], sN[9]], red:[sN[10], sN[11]], yellow:[sN[12], sN[13]], indigo:[sN[14], sN[15]], black:[sN[16], sN[17]], green:[sN[18], sN[19]], violet:[sN[20], sN[21]], white:[sN[22], sN[23]]}, sN[2], sN[3], sN[1]);
 		
-		//Attempted NEw Loader with error support
-		swatchName = '"' + 'colors.jpg' + '"';
-		console.log(swatchName);
-		//cannot use var in url spot i.e colors.jpg
-		var newAssetsObj = {
-			"sprites": {
-				'colors.jpg': {
-					"tile": sN[4],
-					"tileh": sN[5],
-					"map": { "orange": [sN[6], sN[7]], "blue":[sN[8], sN[9]], "red":[sN[10], sN[11]], "yellow": [sN[12], sN[13]], "indigo": [sN[14], sN[15]], "black": [sN[16], sN[17]], "green": [sN[18], sN[19]], "violet": [sN[20], sN[21]], "white": [sN[22], sN[23]], "gray": [sN[24], sN[25]]},
-					"paddingX": sN[2],
-					"paddingY": sN[3],
-					"paddingAroundBorder": sN[1]
-				}
-			},
-		};
-		Crafty.load(newAssetsObj, // preload assets
+		//Attempted New Loader with error support
+	        localError = false;
+	        swatchName = sN[0];
+	        console.log(swatchName);
+	        //cannot use var in url spot i.e colors.jpg
+	        document.getElementById('superSecret').value = '{"sprites": {' + '"' + swatchName + '"' + ':{"tile": ' + sN[4] + ',"tileh": ' + sN[5] + ',"map": { "orange": [' + sN[6] + ', ' + sN[7] + '], "blue":[' + sN[8] + ', ' + sN[9] + '], "red":[' + sN[10] + ', ' + sN[11] + '], "yellow": [' + sN[12] + ', ' + sN[13] + '], "indigo": [' + sN[14] + ', ' + sN[15] + '], "black": [' + sN[16] + ', ' + sN[17] + '], "green": [' + sN[18] + ', ' + sN[19] + '], "violet": [' + sN[20] + ', ' + sN[21] + '], "white": [' + sN[22] +', ' + sN[23] +']},"paddingX": ' + sN[2] + ',"paddingY": ' + sN[3] +',"paddingAroundBorder": ' + sN[1] + '}}}';
+	        var change = document.getElementById('superSecret').value;
+	        //var change = document.getElementById('superSecret').value;
+	        /*var newAssetsObj = {
+	            "sprites": {
+	                swatchName: {
+	                    "tile": sN[4],
+	                    "tileh": sN[5],
+	                    "map": { "orange": [sN[6], sN[7]], "blue":[sN[8], sN[9]], "red":[sN[10], sN[11]], "yellow": [sN[12], sN[13]], "indigo": [sN[14], sN[15]], "black": [sN[16], sN[17]], "green": [sN[18], sN[19]], "violet": [sN[20], sN[21]], "white": [sN[22], sN[23]], "gray": [sN[24], sN[25]]},
+	                    "paddingX": sN[2],
+	                    "paddingY": sN[3],
+	                    "paddingAroundBorder": sN[1]
+	                }
+	            },
+	        };*/
+	        Crafty.load(change, // preload assets
 			function() { //when loaded
 				console.log('completed');
 				Crafty.scene('Level');
