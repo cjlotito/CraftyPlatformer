@@ -50,7 +50,7 @@ Crafty.c('Guy', {
 		//playerColor = 'yellow';
 		//keys = {UP_ARROW: -90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
 		//alt_keys = 1;
-		this.requires('Basics, Player, 2D, Canvas, Color, Twoway, Jumper, Gravity, Collision')
+		this.requires('Basics, Player, 2D, Canvas, Color, Twoway, Jumper, Gravity, Collision, musicGuy')
 			.attr({x: 100, y: 100, w: tileW/2, h: tileH*2, z: 3})
 			.color(playerColor)
 			.twoway()
