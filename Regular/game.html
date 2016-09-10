@@ -42,13 +42,14 @@
 		color: white;
 		font-size:20px; 
 	}
-	orange, blue, red, yellow, indigo, black green, violet, white {
-		width:50px;
-		height:20px;
+	 #orange, #blue, #red, #yellow, #indigo, #black, #green, #violet, #white {
+	        width:31px;
+	        height:52px;
 		border: 3px solid #BEBEBE;
 		outline-style: solid;
 		outline-color:white;
 		margin-left:5px;
+	        object-fit: none;
 	}
 	
 	</style>
@@ -80,15 +81,24 @@
 	<div id="cr-stage"></div>
 	<div id="Swatches">
 		<table style="width:100%">
-				<td><div id="orange" onclick="swatchSelect(this)" style="background:orange;">Orange</div></td>
-				<td><div id="blue" onclick="swatchSelect(this)" style="background:blue;">Blue</div></td>
-				<td><div id="red" onclick="swatchSelect(this)" style="background:red;">Red</div></td>
-				<td><div id="yellow" onclick="swatchSelect(this)" style="background:yellow;" >Yellow</div></td>
-				<td><div id="indigo" onclick="swatchSelect(this)" style="background:indigo;">Indigo</div></td>
-				<td><div id="black" onclick="swatchSelect(this)" style="background:black;">Black</div></td>
-				<td><div id="green" onclick="swatchSelect(this)" style="background:green;">Green</div></td>
-				<td><div id="violet" onclick="swatchSelect(this)" style="background:violet;" >Violet</div></td>
-				<td><div id="white" onclick="swatchSelect(this)" style="background:white; color:gray">White</div></td>
+			<td><img id="orange" onclick="swatchSelect(this)" src="lvl/Chars/smallStickFigures.png" height="51" width="31" style="object-position: -34px -53px;"/></td>
+	                <td><img id="blue" onclick="swatchSelect(this)" src="lvl/Chars/smallStickFigures.png" height="51" width="31" style="object-position: -67px -53px;"/></td>
+	                <td><img id="red" onclick="swatchSelect(this)" src="lvl/Chars/smallStickFigures.png" height="51" width="31" style="object-position: -1px -106px;"/></td>
+	                <td><img id="yellow" onclick="swatchSelect(this)" src="lvl/Chars/smallStickFigures.png" height="51" width="31" style="object-position: -1px -53px;"/></td>
+	                <td><img id="indigo" onclick="swatchSelect(this)" src="lvl/Chars/smallStickFigures.png" height="51" width="31" style="object-position: -34px -106px;"/></td>
+	                <td><img id="black" onclick="swatchSelect(this)" src="lvl/Chars/smallStickFigures.png" height="51" width="31" style="object-position: -67px -106px;"/></td>
+	                <td><img id="green" onclick="swatchSelect(this)" src="lvl/Chars/smallStickFigures.png" height="51" width="31" style="object-position: -34px -1px;"/></td>
+	                <td><img id="violet" onclick="swatchSelect(this)" src="lvl/Chars/smallStickFigures.png" height="51" width="31" style="object-position: -1px -1px;"/></td>
+	                <td><img id="white" onclick="swatchSelect(this)" src="lvl/Chars/smallStickFigures.png" height="51" width="31" style="object-position: -67px -1px;"/></td>             
+	                <!--<td><div id="orange" onclick="swatchSelect(this)" style="background:orange;">Orange</div></td>
+	                <td><div id="blue" onclick="swatchSelect(this)" style="background:blue;">Blue</div></td>
+	                <td><div id="red" onclick="swatchSelect(this)" style="background:red;">Red</div></td>
+	                <td><div id="yellow" onclick="swatchSelect(this)" style="background:yellow;" >Yellow</div></td>
+	                <td><div id="indigo" onclick="swatchSelect(this)" style="background:indigo;">Indigo</div></td>
+	                <td><div id="black" onclick="swatchSelect(this)" style="background:black;">Black</div></td>
+	                <td><div id="green" onclick="swatchSelect(this)" style="background:green;">Green</div></td>
+	                <td><div id="violet" onclick="swatchSelect(this)" style="background:violet;" >Violet</div></td>
+	                <td><div id="white" onclick="swatchSelect(this)" style="background:white; color:gray">White</div></td>-->
 		</table>
 	</div>	
 	</div>
@@ -102,6 +112,7 @@
 		<p></p>
 		<input id="clickMe" type="button" value="Load Array" onclick="Game.setBackground(document.getElementById('UserCode').value);" />
 		<label><input id="debugCheck" type="checkbox" onchange="Game.reload()">Set Wireframes</label>
+	        <textarea id="superSecret" rows="4" cols="15" style="display: none"></textarea>
 	</div>
 	<div id="scripts">
 		<script>
