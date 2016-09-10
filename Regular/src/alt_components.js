@@ -50,7 +50,7 @@ Crafty.c('Guy', {
 		//playerColor = 'yellow';
 		//keys = {UP_ARROW: -90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
 		//alt_keys = 1;
-		this.requires('Basics, Player, 2D, Canvas, Color, Twoway, Jumper, Gravity, Collision, musicGuy')
+		this.requires('Basics, Player, 2D, Canvas, Color, Twoway, Jumper, Gravity, Collision')
 			.attr({x: 100, y: 100, w: tileW/2, h: tileH*2, z: 3})
 			.twoway()
 			.jumper(jumperSet, [Crafty.keys.UP_ARROW])
@@ -178,6 +178,7 @@ Crafty.c('Guy', {
 			//this.bind("EnterFrame", function() {player.color(playerColor);});
 			//Component Test
 			if (playerError) this.color(playerColor);
+			else this.addComponent('musicGuy');
 			this.bind("EnterFrame", function() {
 				if(this.isDown(Crafty.keys.LEFT_ARROW)) {
 					this.flip('X');
