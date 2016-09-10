@@ -221,7 +221,7 @@ Game = {
 		playerColor = sel;
 	        //player.addComponent(sel);
 	        //console.log(playerColor);
-	        Game.playerSprite(sel);
+	        if (!playerError) Game.playerSprite(sel);
     	},
 	playerSprite: function(color) {
 		console.log(playerColor);
