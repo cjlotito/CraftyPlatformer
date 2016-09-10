@@ -52,7 +52,6 @@ Crafty.c('Guy', {
 		//alt_keys = 1;
 		this.requires('Basics, Player, 2D, Canvas, Color, Twoway, Jumper, Gravity, Collision, musicGuy')
 			.attr({x: 100, y: 100, w: tileW/2, h: tileH*2, z: 3})
-			.color(playerColor)
 			.twoway()
 			.jumper(jumperSet, [Crafty.keys.UP_ARROW])
 			//.multiway(speed, keys)
@@ -176,7 +175,22 @@ Crafty.c('Guy', {
 			})
 			.onHit('RockCover', this.colliderRC)
 			.onHit('ColorCover', this.colorCollider);
-			this.bind("EnterFrame", function() {player.color(playerColor);});
+			//this.bind("EnterFrame", function() {player.color(playerColor);});
+			//Component Test
+			if (playerError) this.color(playerColor);
+			this.bind("EnterFrame", function() {
+				if(this.isDown(Crafty.keys.LEFT_ARROW)) {
+					this.flip('X');
+				}
+				if(this.isDown(Crafty.keys.RIGHT_ARROW)) {
+					this.unflip('X');
+				}
+				if (playerError) {
+					player.color(playerColor);
+				} else {
+					Game.playerSprite(playerColor);
+				}
+			});
 	},
 	
 	playerNormalize: function() {
@@ -188,7 +202,11 @@ Crafty.c('Guy', {
 		jumperSet = (tileH*2)*5;
 		this.attr({w: tileW/2, h: tileH*2});
 		this.Rotation == 0;
-		this.color(playerColor);
+		if (playerError) {
+			this.color(playerColor);
+		} else {
+			Game.playerSprite(playerColor);
+		}
 		this.upsideDown(antiGrav);
 		//alt_keys = 1;
 		//this.multiway(speed, keys);
@@ -199,14 +217,26 @@ Crafty.c('Guy', {
 	
 	playerRotate: function() {
 		playerColor = ('red');
-		this.color('red');
+		//this.color('red');
+        	//Component Test
+        	if (playerError) {
+        		this.color('red');	
+        	} else {
+        		Game.playerSprite('red');
+        	}
 		this.rotation == 90;
 		this.attr({w: tileH*2, h: tileW/2});
 	},
 	
 	playerUpright: function() {
 		playerColor = ('orange');
-		this.color('orange');
+		//this.color('orange');
+		//Component Test
+        	if (playerError) {
+        		this.color('orange');	
+        	} else {
+        		Game.playerSprite('orange');
+        	}
 		this.rotation == 180;
 		this.attr({w: 20, h: 50});
 	},
@@ -220,6 +250,7 @@ Crafty.c('Guy', {
 		this.upsideDown(true);
 		//alt_keys = 0;
 		//this.multiway(speed, keys);
+		this.flip('Y');
 		this.jumper(jumperSet, [Crafty.keys.DOWN_ARROW]);
 		Game.kill(block);
 	},
@@ -233,6 +264,7 @@ Crafty.c('Guy', {
 		this.upsideDown(false);
 		//alt_keys = 1;
 		//this.multiway(speed, keys);
+		this.unflip('Y');
 		this.twoway();
 		console.log(jumperSet);
 		this.jumper(jumperSet, [Crafty.keys.UP_ARROW]);
@@ -263,16 +295,34 @@ Crafty.c('Guy', {
 				Game.playerStats(true, false);				
 			}
 		} else if (entity.name == 'WallChange') {
-			this.color(entity.color());
+			//Component Test
+			//this.color(entity.color());
+			if (playerError) {
+				this.color(entity.color());
+			} else {
+				Game.playerSprite(entity.color());
+			}
 			colors = entity.type.split(',');
 			from = colors[0], to = colors[1];
 			if (this.x > entity.x + 18) {
 				playerColor = to;
-				this.color(to);
+				//Component Test
+				//this.color(to);
+				if (playerError) {
+					this.color(to);	
+				} else {
+					Game.playerSprite(to);
+				}
 				console.log(playerColor + ' ' + entity.x);
 			} else if (this.x < (entity.x + 16)) {
 				playerColor = from;
-				this.color(from);
+				//this.color(from);
+				//Component Test
+				if (playerError) {
+					this.color(from);	
+				} else {
+					Game.playerSprite(from);
+				}
 				console.log(playerColor + ' ' + entity.x);
 			}
 		}
@@ -330,12 +380,24 @@ Crafty.c('Guy', {
 			Game.kill(entity);
 		} else if (entity.name == 'ColorChange0') {
 			playerColor = (entity.type);
-			this.color(entity.type);
+			//this.color(entity.type);
+			//Component Test
+			if (playerError) {
+				this.color(entity.type);	
+			} else {
+				Game.playerSprite(entity.type);
+			}
 			entity.destroy();
 			Game.kill(entity);
 		} else if (entity.name == 'ColorChange1') {
 			playerColor = (entity.type);
-			this.color(entity.type);
+			//this.color(entity.type);
+			//Component Test
+			if (playerError) {
+				this.color(entity.type);	
+			} else {
+				Game.playerSprite(entity.type);
+			}
 			Game.kill(entity);
 		} else if (entity.name == 'null') {
 			entity.destroy();
