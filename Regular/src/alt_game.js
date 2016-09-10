@@ -36,6 +36,7 @@ var gridW = 100;
 var gridH = 16;
 var error = false;
 var localError = false;
+var playerError = false;
 
 var spriteW = 35;
 var spriteH = 20;
@@ -332,6 +333,15 @@ Game = {
 			},
 
 			function(e) { //uh oh, error loading
+			problem = e.src;
+				list = problem.split('/');
+				//console.log(list);
+				for (i=0; i<list.length; i++) {
+					if (list[i] == 'stickFigures.png') {
+						playerError = true;
+						console.log('player sprite not found');
+					}
+				}
 				error = true;
 				console.log('error = ' + error);
 				console.log('Error! Main Spritesheet not found!');
