@@ -263,6 +263,7 @@ Crafty.scene('Level', function() {
 	
 	//FALLUPFIX
 	player.bind("CheckLanding", function(ground) {
+		Game.playerSprite(playerColor);
 		//console.log(ground);
 		if (ground.ID == 'ground') { // allow landing, if player's feet are not above ground
 			player.canLand = true;
