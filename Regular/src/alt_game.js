@@ -31,6 +31,9 @@ var length = 600;
 var width = 400;
 var start = function() {Crafty.init(length, width);Crafty.viewport.init(length, width);};
 
+var filterStrength = 20;
+var frameTime = 0, lastLoop = new Date, thisLoop;
+
 //Click Controls
 /* var rightSet = false, leftSet = false, upSet = false, downSet = false, pauseSet = false;
 var right = function() {return rightSet;};
