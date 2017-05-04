@@ -121,6 +121,10 @@ Crafty.scene('LevelTest', function() {
 });
 
 Crafty.scene('Level1', function() {
+	var thisFrameTime = (thisLoop=new Date) - lastLoop;
+  	console.log(thisFrameTime);
+  	frameTime+= (thisFrameTime - frameTime) / filterStrength;
+    	lastLoop = thisLoop;
 	if (fresh) {
 		currentSceneList = Game.copyArr(sceneList1);
 		numbers = currentSceneList[14][100][3].split(','), ex = numbers[0], wy = numbers[1];
@@ -164,6 +168,11 @@ Crafty.scene('Level1', function() {
 		}
 	});
 	//END FIX
+	
+	var fpsOut = document.getElementById('fps');
+	setInterval(function(){
+  		fpsOut.innerHTML = 	(1000/frameTime).toFixed(1) + " fps";
+    	},1000);
 	
 	Message(330, 115, 1200, 3, 'Bradley,',  '#FFFFFF', 99999);
     Message(330, 135, 1200, 3, 'Warning! Sometimes you need to blend in with your surroundings.',  '#FFFFFF', 99999);
