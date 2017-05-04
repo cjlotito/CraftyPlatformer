@@ -180,6 +180,7 @@ Crafty.c('Guy', {
 			if (playerError) this.color(playerColor);
 			else this.addComponent('musicGuy');
 			this.bind("EnterFrame", function() {
+				console.log(Crafty.timer.FPS());
 				if(this.isDown(Crafty.keys.LEFT_ARROW)) {
 					this.flip('X');
 				}
