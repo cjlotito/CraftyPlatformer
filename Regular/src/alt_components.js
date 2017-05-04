@@ -179,8 +179,10 @@ Crafty.c('Guy', {
 			//Component Test
 			if (playerError) this.color(playerColor);
 			else this.addComponent('musicGuy');
-			this.bind("EnterFrame", function() {
-				console.log(Crafty.timer.FPS());
+			this.bind("EnterFrame", function(eventData) {
+				fpps = (eventData.dt / 1000);
+				console.log(fpps);
+				Game.setFPS(fpps);
 				if(this.isDown(Crafty.keys.LEFT_ARROW)) {
 					this.flip('X');
 				}
