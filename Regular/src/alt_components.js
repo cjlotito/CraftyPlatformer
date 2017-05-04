@@ -48,7 +48,7 @@ Crafty.c('Guy', {
 		jumperSet = (tileH*2)*5;
 		antiGrav = false;
 		console.log(Crafty.timer.FPS());
-		Game.setFPS();
+		//Game.setFPS();
 		//playerColor = 'yellow';
 		//keys = {UP_ARROW: -90, RIGHT_ARROW: 0, LEFT_ARROW: 180};
 		//alt_keys = 1;
