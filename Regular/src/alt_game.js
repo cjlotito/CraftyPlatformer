@@ -325,7 +325,7 @@ Game = {
 	setFPS: function(add) {
 		if (typeof add != 'number') add = 0;
 		fps = Crafty.timer.FPS();
-		//console.log(fps);
+		console.log(fps);
 		document.getElementById("FPS").innerHTML = fps;
 	},	
 	start: function(goScene) {
