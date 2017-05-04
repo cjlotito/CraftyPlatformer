@@ -322,6 +322,12 @@ Game = {
 			}
 		);
 	},
+	setFPS: function(add) {
+		if (typeof add != 'number') add = 0;
+		fps = Crafty.timer.FPS();
+		//console.log(fps);
+		document.getElementById("FPS").innerHTML = fps;
+	},	
 	start: function(goScene) {
 		Crafty.init(length, width, document.getElementById('cr-stage')); //Start
 		//Crafty.timer.steptype('variable', 1);
